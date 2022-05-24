@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <include name="Episode">
+        <control type="group">
+            <visible>Control.IsVisible(728)</visible>
+            <include>Animation.Common</include>
+            <include content="NoFloorSlide">
+                <param name="contentslide">60</param>
+            </include>
+            <left>0</left>
+            <top>82</top>
+            <control type="scrollbar" id="60">
+                <include content="ScrollBarPosition">
+                    <param name="scrollbarslide">548</param>
+                </include>
+                <left>1296</left>
+                <top>147</top>
+                <width>30</width>
+                <height>706</height>
+                <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                <onleft>728</onleft>
+                <onright>2</onright>
+                <showonepage>false</showonepage>
+                <orientation>vertical</orientation>
+            </control>
+            <control type="fixedlist" id="728">
+                <viewtype label="$LOCALIZE[20360]">list</viewtype>
+                <pagecontrol>60</pagecontrol>
+                <left>-75</left>
+                <top>165</top>
+                <width>1950</width>
+                <height>675</height>
+                <scrolltime>200</scrolltime>
+                <orientation>vertical</orientation>
+                <movement>4</movement>
+                <focusposition>3</focusposition>
+                <onup>728</onup>
+                <ondown>728</ondown>
+                <onleft>2</onleft>
+                <onright>60</onright>
+                <pagecontrol></pagecontrol>
+                <visible>[Container.Content(Episodes)]</visible>
+                <itemlayout width="1800" height="60">
+                    <control type="label">
+                        <left>292</left>
+                        <top>12</top>
+                        <width>1140</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <left>292</left>
+                        <top>12</top>
+                        <width>870</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1246</left>
+                        <top>0</top>
+                        <width>75</width>
+                        <height>75</height>
+                        <aligny>center</aligny>
+                        <align>left</align>
+                        <texture>$VAR[MediaInfoOverlayVar]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+                    </control>
+                    <control type="label">
+                        <left>1200</left>
+                        <top>21</top>
+                        <width>950</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Rating]</label>
+                        <font>font12</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                    </control>
+                    <control type="image">
+                        <left>1328</left>
+                        <top>21</top>
+                        <width>36</width>
+                        <height>36</height>
+                        <aligny>center</aligny>
+                        <texture>$INFO[ListItem.Overlay]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1328</left>
+                        <top>21</top>
+                        <width>36</width>
+                        <height>36</height>
+                        <aligny>center</aligny>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>OverlayWatching.png</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay) + ListItem.IsResumable</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1800" height="246">
+                    <control type="group">
+                        <left>202</left>
+                        <top>0</top>
+                        <include content="SelectedSolidVar" condition="!Skin.HasSetting(UseOutline)">
+                            <param name="width">1552</param>
+                            <param name="height">246</param>
+                        </include>
+                        <include content="SelectedOutlineVar" condition="Skin.HasSetting(UseOutline)">
+                            <param name="width">1552</param>
+                            <param name="height">246</param>
+                        </include>
+                        <include content="UnselectFade">
+                            <param name="id">728</param>
+                        </include>
+                    </control>
+                    <control type="label">
+                        <left>292</left>
+                        <top>12</top>
+                        <width>600</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font24_title</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1320</left>
+                        <top>9</top>
+                        <width>420</width>
+                        <height>228</height>
+                        <texture fallback="SmallFanartFallback.jpg" background="true">$VAR[ThumbThumb]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1665</left>
+                        <top>9</top>
+                        <width>72</width>
+                        <height>72</height>
+                        <texture>$INFO[ListItem.Overlay]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1665</left>
+                        <top>9</top>
+                        <width>72</width>
+                        <height>72</height>
+                        <texture>OverlayWatching.png</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay) + ListItem.IsResumable</visible>
+                    </control>
+                    <control type="label">
+                        <description>INFO txt</description>
+                        <left>375</left>
+                        <top>54</top>
+                        <width>300</width>
+                        <height>30</height>
+                        <label>$INFO[ListItem.premiered,$LOCALIZE[31322]: ]</label>
+                        <align>left</align>
+                        <aligny>top</aligny>
+                        <font>font12</font>
+                        <textcolor>grey</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <wrapmultiline>false</wrapmultiline>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <left>225</left>
+                        <top>54</top>
+                        <width>300</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <label>Rating: $INFO[ListItem.Rating]</label>
+                        <font>font12</font>
+                        <textcolor>grey</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <left>220</left>
+                        <top>3</top>
+                        <width>1050</width>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font28_title</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="textbox">
+                        <left>225</left>
+                        <top>105</top>
+                        <width>1050</width>
+                        <height>128</height>
+                        <font>font12</font>
+                        <align>justify</align>
+                        <aligny>top</aligny>
+                        <label>$INFO[ListItem.Plot]</label>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <autoscroll time="2000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
+                    <control type="group">
+                        <left>850</left>
+                        <top>55</top>
+                        <include content="VideoStereoscopicsFlaggingConditions">
+                            <param name="Left">0</param>
+                            <param name="Width">94</param>
+                            <param name="Height">53</param>
+                        </include>
+                        <include content="AspectCodecFlaggingConditions">
+                            <param name="Left">70</param>
+                            <param name="Width">94</param>
+                            <param name="Height">53</param>
+                        </include>
+                        <include content="VideoCodecFlaggingConditions">
+                            <param name="Left">140</param>
+                            <param name="Left2">210</param>
+                            <param name="Width">94</param>
+                            <param name="Height">53</param>
+                        </include>
+                        <include content="AudioCodecFlaggingConditions">
+                            <param name="Left">280</param>
+                            <param name="Width">94</param>
+                            <param name="Height">53</param>
+                        </include>
+                        <include content="AudioChannelsFlaggingConditions">
+                            <param name="Left">350</param>
+                            <param name="Width">94</param>
+                            <param name="Height">53</param>
+                        </include>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <include>DimForContextMenu</include>
+    </include>
+</includes>

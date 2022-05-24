@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">8</defaultcontrol>
+    <controls>
+        <include>CommonBackground2</include>
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>black-back.png</texture>
+        </control>
+        <!-- Poster and Episode Thumb -->
+        <control type="group">
+            <left>90</left>
+            <top>150</top>
+            <visible>!Window.IsVisible(FileBrowser)</visible>
+            <include>Animation.Common</include>
+            <!-- Poster -->
+            <control type="image">
+                <left></left>
+                <top></top>
+                <width>550</width>
+                <height>825</height>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$VAR[VideoInfoPosterVar]</texture>
+                <bordertexture border="12">ThumbShadow.png</bordertexture>
+                <animation effect="fade" start="100" end="70" time="0" condition="Container.Content(Episodes)">Conditional</animation>
+            </control>
+        </control>
+        <!-- Header and Sub Labels -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <left>0</left>
+            <top>22</top>
+            <control type="label">
+                <description>header label</description>
+                <left>90</left>
+                <top>0</top>
+                <width>1695</width>
+                <height>57</height>
+                <font>font_MainMenu</font>
+                <label>$VAR[VideoInfoHeadingLabelVar]</label>
+                <align>center</align>
+                <textcolor>white</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <description>subheader label</description>
+                <left>90</left>
+                <top>75</top>
+                <width>1695</width>
+                <height>300</height>
+                <font>font13</font>
+                <label>$VAR[VideoInfoSubheadingLabelVar]</label>
+                <textcolor>grey</textcolor>
+                <align>center</align>
+                <scroll>true</scroll>
+            </control>
+        </control>
+        <!-- Codec Info -->
+        <!--control type="group">
+            <include>Animation.Common</include>
+            <control type="grouplist">
+                <description>Media Codec Flagging Images</description>
+                <left>90</left>
+                <top>990</top>
+                <width>550</width>
+                <align>center</align>
+                <itemgap></itemgap>
+                <orientation>horizontal</orientation>
+                <include>VisibleFadeEffect</include>
+                <visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+                <include>VideoCodecFlaggingConditions</include>
+                <include>AudioCodecFlaggingConditions</include>
+                <include>AudioChannelsFlaggingConditions</include>
+                <include>AspectCodecFlaggingConditions</include>
+                <include>VideoStereoscopicsFlaggingConditions</include>
+            </control>
+        </control-->
+        <!-- Actors -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <left>660</left>
+            <top>150</top>
+            <control type="panel" id="50">
+                <left>0</left>
+                <top>0</top>
+                <width>1132</width>
+                <height>300</height>
+                <!--onup condition="System.hasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
+                <onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup-->
+                <ondown>499</ondown>
+                <viewtype label="">list</viewtype>
+                <pagecontrol>61</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <orientation>horizontal</orientation>
+                <itemlayout height="308" width="225">
+                    <control type="image">
+                        <left>14</left>
+                        <top>3</top>
+                        <width>212</width>
+                        <height>300</height>
+                        <texture border="8">button-nofocus.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>16</left>
+                        <top>3</top>
+                        <width>212</width>
+                        <height>232</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$INFO[Listitem.Icon]</texture>
+                    </control>
+                    <control type="textbox">
+                        <description>Actor and Role</description>
+                        <left>14</left>
+                        <top>232</top>
+                        <width>212</width>
+                        <height>60</height>
+                        <font>font12</font>
+                        <align>center</align>
+                        <selectedcolor>white</selectedcolor>
+                        <label>$INFO[ListItem.Label]$INFO[ListItem.Label2,[COLOR FF999999][CR] ,[/COLOR]]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="308" width="225">
+                    <control type="image">
+                        <left>14</left>
+                        <top></top>
+                        <width>218</width>
+                        <height>308</height>
+                        <visible>!Control.HasFocus(50)</visible>
+                        <texture border="8">button-nofocus.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>14</left>
+                        <top></top>
+                        <width>218</width>
+                        <height>306</height>
+                        <visible>Control.HasFocus(50)</visible>
+                        <texture colordiffuse="$VAR[ColorHighlightVar]" border="6">button-focus2.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>16</left>
+                        <top>3</top>
+                        <width>212</width>
+                        <height>232</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$INFO[Listitem.Icon]</texture>
+                    </control>
+                    <control type="textbox">
+                        <description>Actor and Role</description>
+                        <left>14</left>
+                        <top>232</top>
+                        <width>212</width>
+                        <height>60</height>
+                        <font>font12</font>
+                        <align>center</align>
+                        <selectedcolor>white</selectedcolor>
+                        <label>$INFO[ListItem.Label]$INFO[ListItem.Label2,[COLOR FF999999][CR] ,[/COLOR]]</label>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <!-- Plot Box -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <left>675</left>
+            <top>480</top>
+            <control type="image">
+                <left></left>
+                <top></top>
+                <width>645</width>
+                <height>450</height>
+                <texture border="22,0,0,0" flipx="true">black-back.png</texture>
+            </control>
+            <control type="button" id="499">
+                <description>Description Value for Movies BUTTON</description>
+                <left></left>
+                <top></top>
+                <width>645</width>
+                <height>450</height>
+                <onup>50</onup>
+                <ondown>9000</ondown>
+                <onright>49</onright>
+                <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="6">button-focus.png</texturefocus>
+                <texturenofocus border="8"></texturenofocus>
+                <onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Header,$ESCINFO[ListItem.Title,, - $LOCALIZE[207]],home)</onclick>
+                <onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Text_Pre,$ESCINFO[ListItem.TagLine],home)</onclick>
+                <onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Text,$ESCINFO[ListItem.Plot],home)</onclick>
+                <onclick condition="!String.IsEmpty(ListItem.Plot)">ActivateWindow(1102)</onclick>
+                <visible>!String.IsEmpty(ListItem.Plot)</visible>
+            </control>
+            <control type="textbox" id="400">
+                <description>Description Value for Artists</description>
+                <visible>Container.Content(Artists)</visible>
+                <left>15</left>
+                <top>15</top>
+                <width>600</width>
+                <height>423</height>
+                <font>font14</font>
+                <align>center</align>
+                <aligny>top</aligny>
+                <textcolor>white</textcolor>
+                <pagecontrol>61</pagecontrol>
+                <label>$INFO[ListItem.Property(Artist_Description)]</label>
+                <autoscroll time="2000" delay="12000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+            </control>
+            <control type="textbox" id="401">
+                <description>Description Value for Albums</description>
+                <visible>Container.Content(Albums)</visible>
+                <left>15</left>
+                <top>15</top>
+                <width>600</width>
+                <height>423</height>
+                <font>font14</font>
+                <align>center</align>
+                <aligny>top</aligny>
+                <textcolor>white</textcolor>
+                <pagecontrol>61</pagecontrol>
+                <label>$INFO[ListItem.Property(Album_Description)]</label>
+                <autoscroll time="2000" delay="12000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+            </control>
+        </control>
+        <!-- Main Buttons -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <left>675</left>
+            <top>975</top>
+            <control type="image">
+                <left>-8</left>
+                <top>-8</top>
+                <width>1125</width>
+                <height>90</height>
+                <texture border="22,0,0,0" flipx="true">black-back.png</texture>
+            </control>
+            <control type="grouplist" id="9000">
+                <left></left>
+                <top></top>
+                <width>1110</width>
+                <height>180</height>
+                <itemgap></itemgap>
+                <align>left</align>
+                <orientation>horizontal</orientation>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <onup>499</onup>
+                <control type="togglebutton" id="8">
+                    <description>Play/browse to Show</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>208</label>
+                    <alttexturefocus colordiffuse="$VAR[ColorHighlightVar]">button-focus.png</alttexturefocus>
+                    <alttexturenofocus>button-nofocus.png</alttexturenofocus>
+                    <altlabel>1024</altlabel>
+                    <usealttexture>String.IsEqual(ListItem.DBTYPE,tvshow)</usealttexture>
+                </control>
+                <control type="button" id="88">
+                    <description>Extended Info</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>Extended Info</label>
+                    <onclick condition="[System.hasAddon(script.extendedinfo) + Container.Content(Movies)]">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title])</onclick>
+                    <onclick condition="[System.hasAddon(script.extendedinfo) + Container.Content(tvshows)]">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Listitem.Title])</onclick>
+                    <onclick condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+                    <visible>[Container.Content(Movies) | Container.Content(TVShows) + !Container.Content(Episodes)]</visible>
+                </control>
+                <control type="button" id="11">
+                    <description>Play Trailer</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>20410</label>
+                    <visible>!String.IsEmpty(ListItem.Trailer)</visible>
+                </control>
+                <control type="button" id="89">
+                    <description>Show Fanart</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>Show Fanart</label>
+                    <onclick>SetFocus(90400)</onclick>
+                </control>
+                <control type="button" id="6">
+                    <description>Refresh</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>184</label>
+                </control>
+                <control type="button" id="10">
+                    <description>Get Thumb</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>13511</label>
+                </control>
+                <control type="button" id="7">
+                    <description>Set my rating</description>
+                    <width>216</width>
+                    <height>75</height>
+                    <include>ButtonInfoDialogsCommonValues</include>
+                    <label>38023</label>
+                    <visible>Control.IsEnabled(7)</visible>
+                </control>
+            </control>
+        </control>
+        <!-- Details List -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <left>1342</left>
+            <top>480</top>
+            <width>450</width>
+            <height>450</height>
+            <control type="image">
+                <left></left>
+                <top></top>
+                <width>450</width>
+                <height>450</height>
+                <texture border="22,0,0,0" flipx="true">black-back.png</texture>
+            </control>
+            <control type="group">
+                <top>22</top>
+                <left>8</left>
+                <control type="list" id="49">
+                    <left></left>
+                    <top></top>
+                    <width>435</width>
+                    <height>405</height>
+                    <onleft>499</onleft>
+                    <onright>499</onright>
+                    <onup>49</onup>
+                    <ondown>49</ondown>
+                    <pagecontrol></pagecontrol>
+                    <scrolltime>200</scrolltime>
+                    <itemlayout height="45">
+                        <control type="label">
+                            <left>8</left>
+                            <top>0</top>
+                            <width>135</width>
+                            <height>45</height>
+                            <font>font12</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <left>150</left>
+                            <top>0</top>
+                            <width>285</width>
+                            <height>45</height>
+                            <font>font12</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>white</selectedcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="45">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>435</width>
+                            <height>45</height>
+                            <visible>Control.HasFocus(49)</visible>
+                            <texture colordiffuse="$VAR[ColorHighlightVar]">MenuItemFO.png</texture>
+                            <include>VisibleFadeEffect</include>
+                        </control>
+                        <control type="label">
+                            <left>8</left>
+                            <top>0</top>
+                            <width>135</width>
+                            <height>45</height>
+                            <font>font12</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <left>150</left>
+                            <top>0</top>
+                            <width>285</width>
+                            <height>45</height>
+                            <font>font12</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>white</selectedcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <include condition="String.IsEqual(ListItem.DBTYPE,artist)">MusicInfoArtistInfo</include>
+                        <include condition="String.IsEqual(ListItem.DBTYPE,album)">MusicInfoAlbumInfo</include>
+                        <include condition="String.IsEqual(ListItem.DBTYPE,song)">MusicInfoSongInfo</include>
+                    </content>
+                </control>
+            </control>
+        </control>
+        <!-- Show fanart -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <visible allowhiddenfocus="true">Control.HasFocus(90400)</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="button" id="90400">
+                <description>FS Fanart button</description>
+                <width>1620</width>
+                <height>1080</height>
+                <texturefocus />
+                <texturenofocus />
+                <onclick>SetFocus(9000)</onclick>
+                <onleft>SetFocus(9000)</onleft>
+                <onright>SetFocus(9000)</onright>
+                <onup>SetFocus(9000)</onup>
+                <ondown>SetFocus(9000)</ondown>
+                <label />
+                <hitrect x="0" y="0" w="0" h="0" />
+            </control>
+            <control type="image">
+                <texture>$INFO[ListItem.Art(fanart)]</texture>
+            </control>
+        </control>
+    </controls>
+</window>

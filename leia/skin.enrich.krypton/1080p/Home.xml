@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|specialitemswidget)</onload>
+    <controls>
+        <include>BehindDialogFadeOut</include>
+        <include>CommonBackground2</include>
+        <include>skinshortcuts-template-WidgetFanart</include>
+        <control type="group">
+            <include>HomeMainMenu</include>
+        </control>
+        <control type="group">
+            <depth>DepthMenu-</depth>
+            <left>0</left>
+            <top>50r</top>
+            <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+            <include>Animation.Common</include>
+            <animation effect="slide" reversible="true" start="0,0" end="45,0" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+            <control type="rss">
+                <description>RSS feed</description>
+                <left>450</left>
+                <top>0</top>
+                <height>45</height>
+                <width>1425</width>
+                <font>font12</font>
+                <urlset>1</urlset>
+                <textcolor>$VAR[ColorHighlightVar]</textcolor>
+                <titlecolor>$VAR[ColorHighlightVar]</titlecolor>
+                <headlinecolor>white</headlinecolor>
+            </control>
+            <control type="image">
+                <description>RSS background</description>
+                <left>1875</left>
+                <top>3</top>
+                <width>36</width>
+                <height>36</height>
+                <texture>icon-rss.png</texture>
+            </control>
+        </control>
+        <control type="group">
+            <depth>DepthHeader</depth>
+            <include>Animation.Common</include>
+            <control type="image">
+                <description>LOGO</description>
+                <left>120</left>
+                <top>8</top>
+                <width>180</width>
+                <height>74</height>
+                <aspectratio aligny="top" align="left">keep</aspectratio>
+                <texture>kodi-logo.png</texture>
+                <include>VisibleFadeEffect</include>
+                <include>Animation.Common</include>
+                <animation effect="slide" reversible="true" start="0,0" end="45,0" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <animation effect="fade" start="100" end="30" time="300" condition="!Control.HasFocus(9000)">conditional</animation>
+                <visible>!Skin.HasSetting(homepageWeatherinfo)</visible>
+            </control>
+            <control type="group">
+                <left>60</left>
+                <top>0</top>
+                <visible>Skin.HasSetting(homepageWeatherinfo) + !IsEmpty(Weather.Plugin)</visible>
+                <include>Animation.Common</include>
+                <animation effect="slide" reversible="true" start="0,0" end="45,0" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <animation effect="fade" start="100" end="30" time="300" condition="!Control.HasFocus(9000)">conditional</animation>
+                <control type="image">
+                    <!-- Offscreen to trigger weather on load -->
+                    <description>Weather image</description>
+                    <left>0</left>
+                    <top>-1200</top>
+                    <width>90</width>
+                    <height>90</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>$INFO[Weather.Conditions]</texture>
+                </control>
+                <control type="image">
+                    <description>Weather image</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>90</width>
+                    <height>90</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day0.FanartCode),,.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Location label</description>
+                    <left>98</left>
+                    <top>8</top>
+                    <width>750</width>
+                    <height>22</height>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>font10</font>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <label>$INFO[Window(Weather).Property(Location)]</label>
+                </control>
+                <control type="grouplist">
+                    <left>98</left>
+                    <top>30</top>
+                    <width>1500</width>
+                    <height>45</height>
+                    <orientation>horizontal</orientation>
+                    <align>left</align>
+                    <itemgap>0</itemgap>
+                    <control type="label">
+                        <description>Temp label</description>
+                        <width min="0" max="450">auto</width>
+                        <height>45</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font28_title</font>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
+                    </control>
+                    <control type="label">
+                        <description>Temp Units</description>
+                        <width min="0" max="150">auto</width>
+                        <height>33</height>
+                        <font>font10</font>
+                        <aligny>center</aligny>
+                        <label>$INFO[System.TemperatureUnits]</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
+                    </control>
+                    <control type="label">
+                        <description>Conditions Label</description>
+                        <width>750</width>
+                        <height>33</height>
+                        <font>font10</font>
+                        <aligny>center</aligny>
+                        <label>$INFO[Window(Weather).Property(Current.Condition),  ]</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                    </control>
+                </control>
+            </control>
+            <include>Clock</include>
+            <control type="label">
+                <description>Date label</description>
+                <right>30</right>
+                <top>52</top>
+                <width>450</width>
+                <height>22</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <font>font10</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <label>$INFO[System.Date]</label>
+                <include>Animation.Common</include>
+                <animation effect="slide" start="0,0" end="-60,0" time="75" condition="Player.Muted">conditional</animation>
+                <animation effect="fade" start="100" end="45" time="300" condition="!Control.HasFocus(9000)">conditional</animation>
+            </control>
+        </control>
+        <!--control type="group" id="10">
+            <depth>DepthFooter</depth>
+            <left>0</left>
+            <top>98r</top>
+            <include>Animation.Common</include>
+            <animation effect="slide" start="0,0" end="-450,0" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+            <animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(9060)">conditional</animation>
+            <control type="button" id="603">
+                <description>Player Controls</description>
+                <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
+                <animation effect="fade" start="100" end="30" time="0" condition="Window.IsActive(playercontrols)">Conditional</animation>
+                <left>0</left>
+                <top>1058r</top>
+                <width>450</width>
+                <height>105</height>
+                <font>font30</font>
+                <textcolor>$VAR[ColorHighlightVar]</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>[I]• Player Controls[/I] •</label>
+                <onclick>ActivateWindow(PlayerControls)</onclick>
+                <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="6,6,6,6">MenuItemFO.png</texturefocus>
+                <texturenofocus border="8">floor_button.png</texturenofocus>
+                <onleft></onleft>
+                <onright></onright>
+                <onup></onup>
+                <ondown>9000</ondown>
+            </control>
+        </control-->
+        <include>DimForContextMenu</include>
+    </controls>
+</window>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overrides>
+ 
+    <!-- Custom shortcuts -->
+    <shortcut label="$LOCALIZE[24001]" type="$ADDON[script.skinshortcuts 32034]" thumbnail="DefaultAddon.png" icon="DefaultAddon.png">ActivateWindow(1110)</shortcut>
+    <shortcut label="Shutdown" type="$ADDON[script.skinshortcuts 32034]" thumbnail="DefaultIconPower.png" icon="DefaultIconPower.png">ActivateWindow(shutdownmenu)</shortcut>
+
+
+    <!-- Widgets -->
+    <widget label="12600" condition="!IsEmpty(Weather.Plugin)">weather</widget>
+    <widget label="10004">settings</widget>
+    <widget label="Addons" icon="DefaultAddon.png">addons</widget>
+    <widget label="Special Items" icon="special://skin/extras/icons/wand.png">specialitems</widget>
+    <widget label="System Info" icon="defaulticoninfo.png">systeminfo</widget>
+    <widget label="1034" icon="DefaultFile.png" name="1034" type="" path="$INCLUDE[skinshortcuts-submenu]" target="">mysubmenu</widget>
+    <widget label="1036" icon="DefaultIconFavourite.png" name="1036" type="" path="favourites://" target="">myfavorites</widget>
+
+
+    <widget-groupings>
+        <!-- script.skin.helper.service default widgets -->
+        <shortcut label="32119" type="32010" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,extendedinfo,smartshortcuts,pvr</shortcut>
+
+        <shortcut label="32107" type="32010" condition="!System.HasAddon(script.skin.helper.service)">::INSTALL::script.skin.helper.service</shortcut>
+
+        <!-- Skin Widgets -->
+        <node label="Skin Widgets">
+            <node label="Special Widgets">
+                <content>widgets</content>
+            </node>
+        <!-- Playlist Widgets -->
+            <node label="Playlist Widgets">
+                <node label="Movie Lists">
+                    <shortcut widget="NewMovies" label="New Movies" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewMovies.xsp</shortcut>
+                    <shortcut widget="RecentMovies" label="Recent Movies" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="video">special://skin/extras/playlists/RecentMovies.xsp</shortcut>
+                    <shortcut widget="RandomMovies" label="Random Movies" icon="DefaultMovies.png" widgetTarget="video">special://skin/extras/playlists/RandomMovies.xsp</shortcut>
+                    <shortcut widget="InProgressMovies" label="In Progress Movies" icon="special://skin/extras/icons/timer.png" widgetTarget="video">special://skin/extras/playlists/InProgressMovies.xsp</shortcut>
+                    <shortcut widget="TopRatedMovies" label="Top Rated Movies" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedMovies.xsp</shortcut>
+                    <shortcut widget="Top250Movies" label="Top 250 Movies" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/Top250Movies.xsp</shortcut>
+                    <shortcut widget="UnwatchedMovies" label="Unwatched Movies" icon="DefaultMovies.png" widgetTarget="video">special://skin/extras/playlists/UnwatchedMovies.xsp</shortcut>
+                    <shortcut widget="MovieNodes" label="Movie Nodes" icon="special://skin/extras/icons/title.png" widgetTarget="video">library://video/movies/</shortcut>
+                    <shortcut widget="MovieGenres" label="Movie Genres" icon="DefaultGenre.png" widgetTarget="video">library://video/movies/genres.xml</shortcut>
+                    <shortcut widget="MovieSets" label="Movie Sets" icon="DefaultSets.png" widgetTarget="video">videodb://movies/sets/</shortcut>
+                </node>
+                <node label="TV Show Lists">
+                    <shortcut widget="NewTvShows" label="New TV Shows" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewShows.xsp</shortcut>
+                    <shortcut widget="RecentTvShows" label="Recent TV Shows" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="video">special://skin/extras/playlists/RecentTvShows.xsp</shortcut>
+                    <shortcut widget="InProgress" label="In Progress" icon="special://skin/extras/icons/timer.png" widgetTarget="video">library://video/tvshows/inprogressshows.xml</shortcut>
+                    <shortcut widget="RandomTvShows" label="Random TV Shows" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/RandomTvShows.xsp</shortcut>
+                    <shortcut widget="TopRatedTvShows" label="TopRated TV Shows" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedTvShows.xsp</shortcut>
+                    <shortcut widget="TvShowNodes" label="TV Show Nodes" icon="special://skin/extras/icons/title.png" widgetTarget="video">library://video/tvshows/</shortcut>
+                    <shortcut widget="TvShowGenres" label="TV Show Genres" icon="DefaultGenre.png" widgetTarget="video">library://video/tvshows/genres.xml</shortcut>
+                </node>
+                <node label="Episodes Lists">
+                    <shortcut widget="NewEpisodes" label="New Episodes" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewEpisodes.xsp</shortcut>
+                    <shortcut widget="Recent Episodes" label="Recent Episodes" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="video">special://skin/extras/playlists/RecentEpisodes.xsp</shortcut>
+                    <shortcut widget="RandomEpisodes" label="Random Episodes" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/RandomEpisodes.xsp</shortcut>
+                    <shortcut widget="UnwatchedEpisodes" label="Unwatched Episodes" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/UnwatchedEpisodes.xsp</shortcut>
+                    <shortcut widget="InProgressEpisodes" label="In Progress Episodes" icon="special://skin/extras/icons/timer.png" widgetTarget="video">special://skin/extras/playlists/InProgressEpisodes.xsp</shortcut>
+                    <shortcut widget="TopRatedEpisodes" label="Top Rated Episodes" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedEpisodes.xsp</shortcut>
+                </node>
+                <node label="Music Lists">
+                    <shortcut widget="NewAlbums" label="New Albums" icon="DefaultMusicRecentlyAdded.png" widgetTarget="music">musicdb://recentlyaddedalbums/</shortcut>
+                    <shortcut widget="RecentAlbums" label="Recent Albums" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="music">musicdb://recentlyplayedalbums/</shortcut>
+                    <shortcut widget="TopAlbums" label="Top Albums" icon="DefaultMusicTop100Albums.png" widgetTarget="music">musicdb://top100/albums/</shortcut>
+                    <shortcut widget="RandomAlbums" label="Random Albums" icon="DefaultMusicAlbums.png" widgetTarget="music">special://skin/extras/playlists/RandomAlbums.xsp</shortcut>
+                    <shortcut widget="RandomArtists" label="RandomArtists" icon="DefaultMusicArtists.png" widgetTarget="music">special://skin/extras/playlists/RandomArtists.xsp</shortcut>
+                    <shortcut widget="MusicNodes" label="Music Nodes" icon="special://skin/extras/icons/title.png" widgetTarget="music">library://music/</shortcut>
+                </node>
+            </node>
+        </node>
+
+        <node label="32030">
+            <content>video</content>
+            <node label="32040">
+                <content>playlist-video</content>
+            </node>
+            <node label="32010">
+                <content>addon-video</content>
+            </node>
+            <node label="32075">
+                <content>videosources</content>
+            </node>
+        </node>
+
+        <node label="32031">
+            <content>music</content>
+            <node label="32040">
+                <content>playlist-audio</content>
+            </node>
+            <node label="32011">
+                <content>addon-audio</content>
+            </node>
+            <node label="32075">
+                <content>musicsources</content>
+            </node>
+        </node>
+
+        <node label="32020">
+            <content>picturesources</content>
+        </node>
+
+        <node label="32007">
+            <node label="32009">
+                <content>addon-program-plugin</content>
+            </node>
+            <node label="32010">
+                <content>addon-video</content>
+            </node>
+            <node label="32011">
+                <content>addon-audio</content>
+            </node>
+            <node label="32012">
+                <content>addon-image</content>
+            </node>
+            <shortcut label="10001" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
+            <shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs" condition="System.Platform.Android">androidapp://sources/apps</shortcut>
+            <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>
+            <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
+            <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
+        </node>
+    </widget-groupings>
+
+    <contextmenu>
+        <!-- Enable context menu on controls 211, 303 and 304 -->
+        <enableon>211</enableon>
+
+        <!-- Add enable/disable controls -->
+        <item control="313" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),False)">$LOCALIZE[24021]</item>
+        <item control="313" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">$LOCALIZE[24022]</item>
+        <item control="303">$ADDON[script.skinshortcuts 32002]</item>
+        <item control="304">$ADDON[script.skinshortcuts 32003]</item>
+        <item control="302">$ADDON[script.skinshortcuts 32001]</item>
+        <item control="301">$ADDON[script.skinshortcuts 32000]</item>
+    </contextmenu>
+
+    <!-- Menu thumbnails -->
+    <thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault>
+
+    <icon labelID="live tv">special://skin/extras/icons/remote.png</icon>
+    <icon labelID="radio">special://skin/extras/icons/remote.png</icon>
+    <icon labelID="settings">special://skin/extras/icons/settings.png</icon>
+    <icon labelID="playlists">special://skin/extras/icons/playlist.png</icon>
+    <icon labelID="programs">special://skin/extras/icons/program.png</icon>
+    <icon labelID="sets">special://skin/extras/icons/set.png</icon>
+    <icon labelID="weather">special://skin/extras/icons/weather.png</icon>
+    <icon labelID="widgets">special://skin/extras/icons/widget.png</icon>
+    <icon labelID="0">special://skin/extras/icons/program.png</icon>
+    <icon labelID="1">special://skin/extras/icons/camera.png</icon>
+    <icon labelID="2">special://skin/extras/icons/music.png</icon>
+    <icon labelID="3">special://skin/extras/icons/video.png</icon>
+    <icon labelID="7">special://skin/extras/icons/file.png</icon>
+    <icon labelID="8">special://skin/extras/icons/weather.png</icon>
+    <icon labelID="136">special://skin/extras/icons/playlist.png</icon>
+    <icon labelID="360">special://skin/extras/icons/screensaver.png</icon>
+    <icon labelID="400">special://skin/extras/icons/weather.png</icon>
+    <icon labelID="480">special://skin/extras/icons/skin.png</icon>
+    <icon labelID="589">special://skin/extras/icons/musicdisc.png</icon>
+    <icon labelID="600">special://skin/extras/icons/disc.png</icon>
+    <icon labelID="626">special://skin/extras/icons/progress.png</icon>
+    <icon labelID="1036">special://skin/extras/icons/favourite.png</icon>
+    <icon labelID="10007">special://skin/extras/icons/harddisk.png</icon>
+    <icon labelID="10504">special://skin/extras/icons/music.png</icon>
+    <icon labelID="10505">special://skin/extras/icons/music.png</icon>
+    <icon labelID="12600">special://skin/extras/icons/weather.png</icon>
+    <icon labelID="13000">special://skin/extras/icons/settings.png</icon>
+    <icon labelID="13005">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13009">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13010">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13011">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13013">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13014">special://skin/extras/icons/screensaver.png</icon>
+    <icon labelID="13016">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13200">special://skin/extras/icons/actor.png</icon>
+    <icon labelID="13313">special://skin/extras/icons/power.png</icon>
+    <icon labelID="14022">special://skin/extras/icons/folder.png</icon>
+    <icon labelID="14036">special://skin/extras/icons/service.png</icon>
+    <icon labelID="14111">special://skin/extras/icons/info.png</icon>
+    <icon labelID="14200">special://skin/extras/icons/play.png</icon>
+    <icon labelID="14202">special://skin/extras/icons/set.png</icon>
+    <icon labelID="14206">special://skin/extras/icons/visualization.png</icon>
+    <icon labelID="15100">special://skin/extras/icons/folder.png</icon>
+    <icon labelID="16003">special://skin/extras/icons/play.png</icon>
+    <icon labelID="19020">special://skin/extras/icons/tv.png</icon>
+    <icon labelID="19026">special://skin/extras/icons/timer.png</icon>
+    <icon labelID="20045">special://skin/extras/icons/actor.png</icon>
+    <icon labelID="20077">special://skin/extras/icons/skin.png</icon>
+    <icon labelID="20126">special://skin/extras/icons/power.png</icon>
+    <icon labelID="20151">special://skin/extras/icons/timer.png</icon>
+    <icon labelID="20434">special://skin/extras/icons/set.png</icon>
+    <icon labelID="24001">special://skin/extras/icons/addon.png</icon>
+    <icon labelID="24027">special://skin/extras/icons/weather.png</icon>
+    <icon labelID="29956">special://skin/extras/icons/weather.png</icon>
+    <icon labelID="31502">special://skin/extras/icons/remote.png</icon>
+    <icon labelID="32046">special://skin/extras/icons/refresh.png</icon>
+    <icon labelID="32047">special://skin/extras/icons/refresh.png</icon>
+    <icon labelID="32055">special://skin/extras/icons/wand.png</icon>
+    <icon labelID="32056">special://skin/extras/icons/wand.png</icon>
+    <icon image="DefaultAddonVideo.png">special://skin/extras/icons/addon.png</icon>
+    <icon image="DefaultAddonMusic.png">special://skin/extras/icons/addon.png</icon>
+
+
+    <!-- Use Single Widget -->
+    <propertySettings property="SingleWidget" title="Enable/Disable Single Widget" showNone="False" />
+    <property property="SingleWidget">Enable</property>
+    <property property="SingleWidget">Disable</property>
+
+    <!-- Widget Icon Aspect Ratio Single -->
+    <propertySettings property="WideWidgetSingle" title="Enable/Disable Wide Widgets" showNone="False" />
+    <property property="WideWidgetSingle">Enable</property>
+    <property property="WideWidgetSingle">Disable</property>
+
+    <!-- Widget Icon Aspect Ratio 1 -->
+    <propertySettings property="WideWidget" title="Enable/Disable Wide Widgets" showNone="False" />
+    <property property="WideWidget">Enable</property>
+    <property property="WideWidget">Disable</property>
+
+    <!-- Widget Icon Aspect Ratio 2 -->
+    <propertySettings property="WideWidget2" title="Enable/Disable Wide Widgets 2" showNone="False" />
+    <property property="WideWidget2">Enable</property>
+    <property property="WideWidget2">Disable</property>
+
+    <!-- Widget Icon Aspect Ratio 3 -->
+    <propertySettings property="WideWidget3" title="Enable/Disable Wide Widgets 3" showNone="False" />
+    <property property="WideWidget3">Enable</property>
+    <property property="WideWidget3">Disable</property>
+
+    <!-- Widget Icon Aspect Ratio 4 -->
+    <propertySettings property="WideWidget4" title="Enable/Disable Wide Widgets 4" showNone="False" />
+    <property property="WideWidget4">Enable</property>
+    <property property="WideWidget4">Disable</property>
+
+</overrides>

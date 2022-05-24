@@ -1,0 +1,3205 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+	<include name="skinshortcuts-mainmenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<label>$LOCALIZE[12600]</label>
+			<label2>Common menu item</label2>
+			<icon>special://skin/extras/icons/weather.png</icon>
+			<thumb />
+			<property name="labelID">weather</property>
+			<property name="defaultID">weather</property>
+			<property name="SingleWidget">Enable</property>
+			<property name="widget.Widgetsingle">weather</property>
+			<property name="widgetName.Widgetsingle">Weather</property>
+			<property name="widgetType.Widgetsingle" />
+			<property name="widgetTarget.Widgetsingle" />
+			<property name="widgetPath.Widgetsingle" />
+			<visible>!String.IsEmpty(Weather.Plugin)</visible>
+			<onclick>ActivateWindow(Weather)</onclick>
+			<property name="path">ActivateWindow(Weather)</property>
+			<property name="list">Weather</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">weather</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<label>$LOCALIZE[10006]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultVideo.png</icon>
+			<thumb />
+			<property name="labelID">videos</property>
+			<property name="defaultID">videos</property>
+			<property name="WideWidget">Enable</property>
+			<property name="SingleWidget">Enable</property>
+			<property name="widget.Widgetsingle">Library</property>
+			<property name="widgetName.Widgetsingle">Video add-ons</property>
+			<property name="widgetType.Widgetsingle">video</property>
+			<property name="widgetTarget.Widgetsingle">videos</property>
+			<property name="widgetPath.Widgetsingle">addons://sources/video/</property>
+			<onclick>ActivateWindow(Videos)</onclick>
+			<property name="path">ActivateWindow(Videos)</property>
+			<property name="list">Videos</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">videos</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<label>$LOCALIZE[342]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultMovies.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<property name="SingleWidget">Enable</property>
+			<property name="widget.Widgetsingle">Addon</property>
+			<property name="widgetName.Widgetsingle">Menus</property>
+			<property name="widgetType.Widgetsingle">videos</property>
+			<property name="widgetTarget.Widgetsingle">videos</property>
+			<property name="widgetPath.Widgetsingle">plugin://plugin.video.furkit/?url_mode=&amp;language=&amp;certification=&amp;network_id=&amp;menu_type=&amp;db_type=&amp;iconImage=C%3A%5CUsers%5CPeter%5CDesktop%5CKodi+v17%5Cportable_data%5Caddons%5Cscript.furkit.artwork%5Cresources%5Cmedia%5Clight%5Cfurk_favourites.png&amp;final_mode=&amp;period=&amp;refresh=&amp;foldername=Menu+Favourites&amp;duration=&amp;mode=navigator.build_favourites_list&amp;year=&amp;action=&amp;query=&amp;genre_id=&amp;type=&amp;slug=&amp;user=&amp;reload=$INFO[Window(Home).Property(widgetreload)]</property>
+			<property name="WideWidgetSingle">Enable</property>
+			<visible>Library.HasContent(Movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
+			<property name="list">videodb://movies/titles/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">movies</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<label>$LOCALIZE[20343]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">tvshows</property>
+			<property name="defaultID">tvshows</property>
+			<property name="widget">Addon</property>
+			<property name="widgetName">Furk It - Next Episodes</property>
+			<property name="widgetType">episodes</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://plugin.video.furkit/?url_mode=&amp;language=&amp;certification=&amp;network_id=&amp;menu_type=&amp;db_type=&amp;iconImage=C%3A%5CUsers%5CPeter%5CDesktop%5CKodi+v17%5Cportable_data%5Caddons%5Cscript.furkit.artwork%5Cresources%5Cmedia%5Clight%5Cnext_episodes.png&amp;final_mode=&amp;period=&amp;refresh=&amp;foldername=It+Next+Episodes&amp;duration=&amp;mode=build_next_episode&amp;year=&amp;action=&amp;query=&amp;genre_id=&amp;type=&amp;slug=&amp;user=&amp;reload=$INFO[Window(Home).Property(widgetreload)]</property>
+			<property name="WideWidget">Enable</property>
+			<property name="widget.Widget2">Addon</property>
+			<property name="widgetName.Widget2">Furk It - Trending</property>
+			<property name="widgetType.Widget2">movies</property>
+			<property name="widgetTarget.Widget2">videos</property>
+			<property name="widgetPath.Widget2">plugin://plugin.video.furkit/?url_mode=&amp;language=&amp;certification=&amp;network_id=&amp;menu_type=&amp;db_type=&amp;iconImage=C%3A%5CUsers%5CPeter%5CDesktop%5CKodi+v17%5Cportable_data%5Caddons%5Cscript.furkit.artwork%5Cresources%5Cmedia%5Clight%5Ctrending.png&amp;final_mode=&amp;period=&amp;refresh=&amp;foldername=Trending&amp;duration=&amp;mode=build_movie_list&amp;year=&amp;action=trakt_movies_trending&amp;query=&amp;genre_id=&amp;type=&amp;slug=&amp;user=&amp;reload=$INFO[Window(Home).Property(widgetreload)]</property>
+			<property name="widget.Widget3">Library</property>
+			<property name="widgetName.Widget3">TV shows - Recently added episodes</property>
+			<property name="widgetType.Widget3">tvshows</property>
+			<property name="widgetTarget.Widget3">videos</property>
+			<property name="widgetPath.Widget3">library://video/tvshows/recentlyaddedepisodes.xml/</property>
+			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
+			<property name="list">videodb://tvshows/titles/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">tvshows</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<label>$LOCALIZE[10005]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultMusicAlbums.png</icon>
+			<thumb />
+			<property name="labelID">music</property>
+			<property name="defaultID">music</property>
+			<onclick>ActivateWindow(Music)</onclick>
+			<property name="path">ActivateWindow(Music)</property>
+			<property name="list">Music</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">music</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<label>$LOCALIZE[24001]</label>
+			<label2>Common menu item</label2>
+			<icon>special://skin/extras/icons/addon.png</icon>
+			<thumb>DefaultAddon.png</thumb>
+			<property name="labelID">24001</property>
+			<property name="defaultID">24001</property>
+			<property name="widget">addons</property>
+			<property name="widgetName">Addons</property>
+			<property name="widgetType" />
+			<property name="widgetTarget" />
+			<property name="widgetPath" />
+			<property name="widget.Widget2">systeminfo</property>
+			<property name="widgetName.Widget2">System Info</property>
+			<property name="widgetType.Widget2" />
+			<property name="widgetTarget.Widget2" />
+			<property name="widgetPath.Widget2" />
+			<onclick>ActivateWindow(1110)</onclick>
+			<property name="path">ActivateWindow(1110)</property>
+			<property name="list">1110</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-24001</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<label>$LOCALIZE[10004]</label>
+			<label2>Common menu item</label2>
+			<icon>special://skin/extras/icons/settings.png</icon>
+			<thumb />
+			<property name="labelID">settings</property>
+			<property name="defaultID">settings</property>
+			<property name="SingleWidget">Enable</property>
+			<property name="widget.Widgetsingle">settings</property>
+			<property name="widgetName.Widgetsingle">Settings</property>
+			<property name="widgetType.Widgetsingle" />
+			<property name="widgetTarget.Widgetsingle" />
+			<property name="widgetPath.Widgetsingle" />
+			<onclick>ActivateWindow(Settings)</onclick>
+			<property name="path">ActivateWindow(Settings)</property>
+			<property name="list">Settings</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">settings</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+	</include>
+	<include />
+	<include name="skinshortcuts-submenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">2</property>
+			<label>$LOCALIZE[744]</label>
+			<label2>Videos</label2>
+			<icon>DefaultFolder.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick>ActivateWindow(Videos,Files,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Files,return)</property>
+			<property name="list">Files</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">2</property>
+			<label>Add-ons</label>
+			<label2>Videos</label2>
+			<icon>special://skin/extras/icons/addon.png</icon>
+			<thumb />
+			<property name="labelID">add-ons</property>
+			<property name="defaultID">1037</property>
+			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Addons,return)</property>
+			<property name="list">Addons</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Recently Added</label>
+			<label2>Videos</label2>
+			<icon>DefaultRecentlyAddedMovies.png</icon>
+			<thumb />
+			<property name="labelID">recentlyadded</property>
+			<property name="defaultID">20386</property>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
+			<property name="list">videodb://recentlyaddedmovies/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[20434]</label>
+			<label2>Movies</label2>
+			<icon>special://skin/extras/icons/set.png</icon>
+			<thumb />
+			<property name="labelID">20434</property>
+			<property name="defaultID">20434</property>
+			<visible>[Library.HasContent(MovieSets)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
+			<property name="list">videodb://movies/sets/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[135]</label>
+			<label2>Movies</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">135</property>
+			<property name="defaultID">135</property>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
+			<property name="list">videodb://movies/genres/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[562]</label>
+			<label2>Movies</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">562</property>
+			<property name="defaultID">562</property>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
+			<property name="list">videodb://movies/years/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">4</property>
+			<label>Recently Added</label>
+			<label2>Videos</label2>
+			<icon>DefaultRecentlyAddedEpisodes.png</icon>
+			<thumb />
+			<property name="labelID">recentlyadded</property>
+			<property name="defaultID">20387</property>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
+			<property name="list">videodb://recentlyaddedepisodes/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">4</property>
+			<label>$LOCALIZE[135]</label>
+			<label2>TV shows</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">135</property>
+			<property name="defaultID">135</property>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
+			<property name="list">videodb://tvshows/genres/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">4</property>
+			<label>$LOCALIZE[562]</label>
+			<label2>TV shows</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">562</property>
+			<property name="defaultID">562</property>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
+			<property name="list">videodb://tvshows/years/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-weather">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-weather">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-videos">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">2</property>
+			<label>$LOCALIZE[744]</label>
+			<label2>Videos</label2>
+			<icon>DefaultFolder.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick>ActivateWindow(Videos,Files,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Files,return)</property>
+			<property name="list">Files</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">2</property>
+			<label>Add-ons</label>
+			<label2>Videos</label2>
+			<icon>special://skin/extras/icons/addon.png</icon>
+			<thumb />
+			<property name="labelID">add-ons</property>
+			<property name="defaultID">1037</property>
+			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Addons,return)</property>
+			<property name="list">Addons</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-videos">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">2</property>
+			<label>$LOCALIZE[744]</label>
+			<label2>Videos</label2>
+			<icon>DefaultFolder.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick>ActivateWindow(Videos,Files,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Files,return)</property>
+			<property name="list">Files</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">2</property>
+			<label>Add-ons</label>
+			<label2>Videos</label2>
+			<icon>special://skin/extras/icons/addon.png</icon>
+			<thumb />
+			<property name="labelID">add-ons</property>
+			<property name="defaultID">1037</property>
+			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Addons,return)</property>
+			<property name="list">Addons</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-movies">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Recently Added</label>
+			<label2>Videos</label2>
+			<icon>DefaultRecentlyAddedMovies.png</icon>
+			<thumb />
+			<property name="labelID">recentlyadded</property>
+			<property name="defaultID">20386</property>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
+			<property name="list">videodb://recentlyaddedmovies/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[20434]</label>
+			<label2>Movies</label2>
+			<icon>special://skin/extras/icons/set.png</icon>
+			<thumb />
+			<property name="labelID">20434</property>
+			<property name="defaultID">20434</property>
+			<visible>Library.HasContent(MovieSets)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
+			<property name="list">videodb://movies/sets/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[135]</label>
+			<label2>Movies</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">135</property>
+			<property name="defaultID">135</property>
+			<visible>Library.HasContent(Movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
+			<property name="list">videodb://movies/genres/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[562]</label>
+			<label2>Movies</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">562</property>
+			<property name="defaultID">562</property>
+			<visible>Library.HasContent(Movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
+			<property name="list">videodb://movies/years/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-movies">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Recently Added</label>
+			<label2>Videos</label2>
+			<icon>DefaultRecentlyAddedMovies.png</icon>
+			<thumb />
+			<property name="labelID">recentlyadded</property>
+			<property name="defaultID">20386</property>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
+			<property name="list">videodb://recentlyaddedmovies/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[20434]</label>
+			<label2>Movies</label2>
+			<icon>special://skin/extras/icons/set.png</icon>
+			<thumb />
+			<property name="labelID">20434</property>
+			<property name="defaultID">20434</property>
+			<visible>[Library.HasContent(MovieSets)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
+			<property name="list">videodb://movies/sets/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[135]</label>
+			<label2>Movies</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">135</property>
+			<property name="defaultID">135</property>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
+			<property name="list">videodb://movies/genres/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[562]</label>
+			<label2>Movies</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">562</property>
+			<property name="defaultID">562</property>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
+			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
+			<property name="list">videodb://movies/years/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">movies</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-tvshows">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">4</property>
+			<label>Recently Added</label>
+			<label2>Videos</label2>
+			<icon>DefaultRecentlyAddedEpisodes.png</icon>
+			<thumb />
+			<property name="labelID">recentlyadded</property>
+			<property name="defaultID">20387</property>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
+			<property name="list">videodb://recentlyaddedepisodes/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">4</property>
+			<label>$LOCALIZE[135]</label>
+			<label2>TV shows</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">135</property>
+			<property name="defaultID">135</property>
+			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
+			<property name="list">videodb://tvshows/genres/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">4</property>
+			<label>$LOCALIZE[562]</label>
+			<label2>TV shows</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">562</property>
+			<property name="defaultID">562</property>
+			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
+			<property name="list">videodb://tvshows/years/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-tvshows">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">4</property>
+			<label>Recently Added</label>
+			<label2>Videos</label2>
+			<icon>DefaultRecentlyAddedEpisodes.png</icon>
+			<thumb />
+			<property name="labelID">recentlyadded</property>
+			<property name="defaultID">20387</property>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
+			<property name="list">videodb://recentlyaddedepisodes/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">4</property>
+			<label>$LOCALIZE[135]</label>
+			<label2>TV shows</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">135</property>
+			<property name="defaultID">135</property>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
+			<property name="list">videodb://tvshows/genres/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">4</property>
+			<label>$LOCALIZE[562]</label>
+			<label2>TV shows</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">562</property>
+			<property name="defaultID">562</property>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
+			<property name="list">videodb://tvshows/years/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">tvshows</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-music">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-music">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-24001">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-24001">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-settings">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-settings">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-specialitemswidget">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-specialitemswidget">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-template-widgetsingle">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widgetsingle-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-widgetsingle-Master user">
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80011) | Control.HasFocus(80021) | Control.HasFocus(80031) | Control.HasFocus(80041) | Control.HasFocus(80051) | Control.HasFocus(80061)" effect="slide" end="-360,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>185</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVarSingle]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80011).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80011</param>
+						<param name="widgetLine1">widgetLine011</param>
+						<param name="widgetLine2">widgetLine021</param>
+						<param name="widgetLine3">widgetLine031</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80021</param>
+						<param name="widgetLine1">widgetLine011</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80031</param>
+						<param name="widgetLine1">widgetLine011</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80041</param>
+						<param name="widgetLine1">widgetLine011</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80051</param>
+						<param name="widgetLine1">widgetLine011</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80061</param>
+						<param name="widgetLine1">widgetLine011</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>225</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+				<control id="80011" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80011</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidgetSingle)</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80011</param>
+						<param name="ondown">80011</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80011</param>
+						<param name="orientation">Vertical</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="" />
+				</control>
+				<control id="80021" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80021</param>
+						<param name="left">0</param>
+						<param name="top">330</param>
+						<param name="width">1620</param>
+						<param name="height">330</param>
+						<param name="onup">80021</param>
+						<param name="ondown">80021</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80021</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control type="group">
+					<top>0</top>
+					<control type="image">
+						<description>background</description>
+						<visible>Control.IsVisible(80021)</visible>
+						<left>0</left>
+						<top>0</top>
+						<width>1620</width>
+						<height>330</height>
+						<texture border="15">RecentAddedBack.png</texture>
+					</control>
+					<control type="group">
+						<visible>Control.IsVisible(80021)</visible>
+						<top>0</top>
+						<left>0</left>
+						<width>1200</width>
+						<height>300</height>
+						<top>300</top>
+						<control type="label">
+							<animation condition="Control.HasFocus(80021)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>450</left>
+							<top>240</top>
+							<height>75</height>
+							<orientation>horizontal</orientation>
+							<width>auto</width>
+							<font>font13</font>
+							<label>$INFO[Window(weather).Property(Location)]</label>
+						</control>
+						<control type="image">
+							<animation condition="Control.HasFocus(80021)" effect="slide" end="65,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>0</left>
+							<top>0</top>
+							<height>300</height>
+							<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+							<texture background="true">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+						</control>
+						<control type="grouplist">
+							<top>23</top>
+							<left>450</left>
+							<orientation>horizontal</orientation>
+							<animation condition="Control.HasFocus(80021)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<control type="label">
+								<description>current temp Value</description>
+								<width>auto</width>
+								<height>375</height>
+								<font>WeatherTemp</font>
+								<label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+							</control>
+							<control type="label">
+								<description>current temp Value Units</description>
+								<left>405</left>
+								<width>auto</width>
+								<height>324</height>
+								<font>font16</font>
+								<label>$INFO[System.TemperatureUnits]</label>
+							</control>
+						</control>
+						<control type="label">
+							<animation condition="Control.HasFocus(80021)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<description>current condition label</description>
+							<top>180</top>
+							<left>450</left>
+							<width>657</width>
+							<height>60</height>
+							<align>left</align>
+							<label>$INFO[Window(weather).Property(Current.Condition)]</label>
+							<font>font30</font>
+						</control>
+						<control type="grouplist">
+							<animation condition="Control.HasFocus(80021)" effect="slide" end="270,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>645</left>
+							<top>38</top>
+							<width>657</width>
+							<itemgap>15</itemgap>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33027]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunrise)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33028]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunset)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+						</control>
+					</control>
+				</control>
+				<control id="80031" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80031</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80031</param>
+						<param name="ondown">80031</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80031</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80041" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80041</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80041</param>
+						<param name="ondown">80041</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80041</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80051" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80051</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80051</param>
+						<param name="ondown">80051</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80051</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80061" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80061</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80061</param>
+						<param name="ondown">80061</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80061</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80011</param>
+					<param name="id2" />
+					<param name="id3">80031</param>
+					<param name="id4">80041</param>
+					<param name="id5">80051</param>
+					<param name="id6">80061</param>
+					<param name="leftmainvertical">2135</param>
+					<param name="topmainvertical">230</param>
+					<param name="leftmainhorizontal">-150</param>
+					<param name="topmainhorizontal">-150</param>
+					<param name="vertbuttonup">0</param>
+					<param name="vertbuttondown">620</param>
+					<param name="leftbuttonleft1" />
+					<param name="leftbuttonleft2" />
+					<param name="leftbuttonright1" />
+					<param name="leftbuttonright2" />
+				</include>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80012) | Control.HasFocus(80022) | Control.HasFocus(80032) | Control.HasFocus(80042) | Control.HasFocus(80052) | Control.HasFocus(80062)" effect="slide" end="-360,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>185</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVarSingle]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80012).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80012</param>
+						<param name="widgetLine1">widgetLine012</param>
+						<param name="widgetLine2">widgetLine022</param>
+						<param name="widgetLine3">widgetLine032</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80022</param>
+						<param name="widgetLine1">widgetLine012</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80032</param>
+						<param name="widgetLine1">widgetLine012</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80042</param>
+						<param name="widgetLine1">widgetLine012</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80052</param>
+						<param name="widgetLine1">widgetLine012</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80062</param>
+						<param name="widgetLine1">widgetLine012</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>225</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+				<control id="80012" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80012</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidgetSingle)</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80012</param>
+						<param name="ondown">80012</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80012</param>
+						<param name="orientation">Vertical</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="videos">addons://sources/video/</content>
+				</control>
+				<control id="80022" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80022</param>
+						<param name="left">0</param>
+						<param name="top">330</param>
+						<param name="width">1620</param>
+						<param name="height">330</param>
+						<param name="onup">80022</param>
+						<param name="ondown">80022</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80022</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control type="group">
+					<top>0</top>
+					<control type="image">
+						<description>background</description>
+						<visible>Control.IsVisible(80022)</visible>
+						<left>0</left>
+						<top>0</top>
+						<width>1620</width>
+						<height>330</height>
+						<texture border="15">RecentAddedBack.png</texture>
+					</control>
+					<control type="group">
+						<visible>Control.IsVisible(80022)</visible>
+						<top>0</top>
+						<left>0</left>
+						<width>1200</width>
+						<height>300</height>
+						<top>300</top>
+						<control type="label">
+							<animation condition="Control.HasFocus(80022)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>450</left>
+							<top>240</top>
+							<height>75</height>
+							<orientation>horizontal</orientation>
+							<width>auto</width>
+							<font>font13</font>
+							<label>$INFO[Window(weather).Property(Location)]</label>
+						</control>
+						<control type="image">
+							<animation condition="Control.HasFocus(80022)" effect="slide" end="65,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>0</left>
+							<top>0</top>
+							<height>300</height>
+							<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+							<texture background="true">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+						</control>
+						<control type="grouplist">
+							<top>23</top>
+							<left>450</left>
+							<orientation>horizontal</orientation>
+							<animation condition="Control.HasFocus(80022)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<control type="label">
+								<description>current temp Value</description>
+								<width>auto</width>
+								<height>375</height>
+								<font>WeatherTemp</font>
+								<label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+							</control>
+							<control type="label">
+								<description>current temp Value Units</description>
+								<left>405</left>
+								<width>auto</width>
+								<height>324</height>
+								<font>font16</font>
+								<label>$INFO[System.TemperatureUnits]</label>
+							</control>
+						</control>
+						<control type="label">
+							<animation condition="Control.HasFocus(80022)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<description>current condition label</description>
+							<top>180</top>
+							<left>450</left>
+							<width>657</width>
+							<height>60</height>
+							<align>left</align>
+							<label>$INFO[Window(weather).Property(Current.Condition)]</label>
+							<font>font30</font>
+						</control>
+						<control type="grouplist">
+							<animation condition="Control.HasFocus(80022)" effect="slide" end="270,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>645</left>
+							<top>38</top>
+							<width>657</width>
+							<itemgap>15</itemgap>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33027]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunrise)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33028]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunset)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+						</control>
+					</control>
+				</control>
+				<control id="80032" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80032</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80032</param>
+						<param name="ondown">80032</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80032</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80042" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80042</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80042</param>
+						<param name="ondown">80042</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80042</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80052" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80052</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80052</param>
+						<param name="ondown">80052</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80052</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80062" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80062</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80062</param>
+						<param name="ondown">80062</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80062</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80012</param>
+					<param name="id2" />
+					<param name="id3">80032</param>
+					<param name="id4">80042</param>
+					<param name="id5">80052</param>
+					<param name="id6">80062</param>
+					<param name="leftmainvertical">2135</param>
+					<param name="topmainvertical">230</param>
+					<param name="leftmainhorizontal">-150</param>
+					<param name="topmainhorizontal">-150</param>
+					<param name="vertbuttonup">0</param>
+					<param name="vertbuttondown">620</param>
+					<param name="leftbuttonleft1" />
+					<param name="leftbuttonleft2" />
+					<param name="leftbuttonright1" />
+					<param name="leftbuttonright2" />
+				</include>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80013) | Control.HasFocus(80023) | Control.HasFocus(80033) | Control.HasFocus(80043) | Control.HasFocus(80053) | Control.HasFocus(80063)" effect="slide" end="-360,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>185</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVarSingle]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80013).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80013</param>
+						<param name="widgetLine1">widgetLine013</param>
+						<param name="widgetLine2">widgetLine023</param>
+						<param name="widgetLine3">widgetLine033</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80023</param>
+						<param name="widgetLine1">widgetLine013</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80033</param>
+						<param name="widgetLine1">widgetLine013</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80043</param>
+						<param name="widgetLine1">widgetLine013</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80053</param>
+						<param name="widgetLine1">widgetLine013</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80063</param>
+						<param name="widgetLine1">widgetLine013</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>225</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+				<control id="80013" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80013</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidgetSingle)</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80013</param>
+						<param name="ondown">80013</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80013</param>
+						<param name="orientation">Vertical</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="videos">plugin://plugin.video.furkit/?url_mode=&amp;language=&amp;certification=&amp;network_id=&amp;menu_type=&amp;db_type=&amp;iconImage=C%3A%5CUsers%5CPeter%5CDesktop%5CKodi+v17%5Cportable_data%5Caddons%5Cscript.furkit.artwork%5Cresources%5Cmedia%5Clight%5Cfurk_favourites.png&amp;final_mode=&amp;period=&amp;refresh=&amp;foldername=Menu+Favourites&amp;duration=&amp;mode=navigator.build_favourites_list&amp;year=&amp;action=&amp;query=&amp;genre_id=&amp;type=&amp;slug=&amp;user=&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
+				</control>
+				<control id="80023" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80023</param>
+						<param name="left">0</param>
+						<param name="top">330</param>
+						<param name="width">1620</param>
+						<param name="height">330</param>
+						<param name="onup">80023</param>
+						<param name="ondown">80023</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80023</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control type="group">
+					<top>0</top>
+					<control type="image">
+						<description>background</description>
+						<visible>Control.IsVisible(80023)</visible>
+						<left>0</left>
+						<top>0</top>
+						<width>1620</width>
+						<height>330</height>
+						<texture border="15">RecentAddedBack.png</texture>
+					</control>
+					<control type="group">
+						<visible>Control.IsVisible(80023)</visible>
+						<top>0</top>
+						<left>0</left>
+						<width>1200</width>
+						<height>300</height>
+						<top>300</top>
+						<control type="label">
+							<animation condition="Control.HasFocus(80023)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>450</left>
+							<top>240</top>
+							<height>75</height>
+							<orientation>horizontal</orientation>
+							<width>auto</width>
+							<font>font13</font>
+							<label>$INFO[Window(weather).Property(Location)]</label>
+						</control>
+						<control type="image">
+							<animation condition="Control.HasFocus(80023)" effect="slide" end="65,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>0</left>
+							<top>0</top>
+							<height>300</height>
+							<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+							<texture background="true">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+						</control>
+						<control type="grouplist">
+							<top>23</top>
+							<left>450</left>
+							<orientation>horizontal</orientation>
+							<animation condition="Control.HasFocus(80023)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<control type="label">
+								<description>current temp Value</description>
+								<width>auto</width>
+								<height>375</height>
+								<font>WeatherTemp</font>
+								<label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+							</control>
+							<control type="label">
+								<description>current temp Value Units</description>
+								<left>405</left>
+								<width>auto</width>
+								<height>324</height>
+								<font>font16</font>
+								<label>$INFO[System.TemperatureUnits]</label>
+							</control>
+						</control>
+						<control type="label">
+							<animation condition="Control.HasFocus(80023)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<description>current condition label</description>
+							<top>180</top>
+							<left>450</left>
+							<width>657</width>
+							<height>60</height>
+							<align>left</align>
+							<label>$INFO[Window(weather).Property(Current.Condition)]</label>
+							<font>font30</font>
+						</control>
+						<control type="grouplist">
+							<animation condition="Control.HasFocus(80023)" effect="slide" end="270,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>645</left>
+							<top>38</top>
+							<width>657</width>
+							<itemgap>15</itemgap>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33027]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunrise)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33028]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunset)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+						</control>
+					</control>
+				</control>
+				<control id="80033" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80033</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80033</param>
+						<param name="ondown">80033</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80033</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80043" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80043</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80043</param>
+						<param name="ondown">80043</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80043</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80053" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80053</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80053</param>
+						<param name="ondown">80053</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80053</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80063" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80063</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80063</param>
+						<param name="ondown">80063</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80063</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80013</param>
+					<param name="id2" />
+					<param name="id3">80033</param>
+					<param name="id4">80043</param>
+					<param name="id5">80053</param>
+					<param name="id6">80063</param>
+					<param name="leftmainvertical">2135</param>
+					<param name="topmainvertical">230</param>
+					<param name="leftmainhorizontal">-150</param>
+					<param name="topmainhorizontal">-150</param>
+					<param name="vertbuttonup">0</param>
+					<param name="vertbuttondown">620</param>
+					<param name="leftbuttonleft1" />
+					<param name="leftbuttonleft2" />
+					<param name="leftbuttonright1" />
+					<param name="leftbuttonright2" />
+				</include>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80017) | Control.HasFocus(80027) | Control.HasFocus(80037) | Control.HasFocus(80047) | Control.HasFocus(80057) | Control.HasFocus(80067)" effect="slide" end="-360,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>185</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVarSingle]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80017).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80017</param>
+						<param name="widgetLine1">widgetLine017</param>
+						<param name="widgetLine2">widgetLine027</param>
+						<param name="widgetLine3">widgetLine037</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80027</param>
+						<param name="widgetLine1">widgetLine017</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80037</param>
+						<param name="widgetLine1">widgetLine017</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80047</param>
+						<param name="widgetLine1">widgetLine017</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80057</param>
+						<param name="widgetLine1">widgetLine017</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80067</param>
+						<param name="widgetLine1">widgetLine017</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>225</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+				<control id="80017" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80017</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidgetSingle)</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80017</param>
+						<param name="ondown">80017</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80017</param>
+						<param name="orientation">Vertical</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="" />
+				</control>
+				<control id="80027" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80027</param>
+						<param name="left">0</param>
+						<param name="top">330</param>
+						<param name="width">1620</param>
+						<param name="height">330</param>
+						<param name="onup">80027</param>
+						<param name="ondown">80027</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80027</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control type="group">
+					<top>0</top>
+					<control type="image">
+						<description>background</description>
+						<visible>Control.IsVisible(80027)</visible>
+						<left>0</left>
+						<top>0</top>
+						<width>1620</width>
+						<height>330</height>
+						<texture border="15">RecentAddedBack.png</texture>
+					</control>
+					<control type="group">
+						<visible>Control.IsVisible(80027)</visible>
+						<top>0</top>
+						<left>0</left>
+						<width>1200</width>
+						<height>300</height>
+						<top>300</top>
+						<control type="label">
+							<animation condition="Control.HasFocus(80027)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>450</left>
+							<top>240</top>
+							<height>75</height>
+							<orientation>horizontal</orientation>
+							<width>auto</width>
+							<font>font13</font>
+							<label>$INFO[Window(weather).Property(Location)]</label>
+						</control>
+						<control type="image">
+							<animation condition="Control.HasFocus(80027)" effect="slide" end="65,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>0</left>
+							<top>0</top>
+							<height>300</height>
+							<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+							<texture background="true">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+						</control>
+						<control type="grouplist">
+							<top>23</top>
+							<left>450</left>
+							<orientation>horizontal</orientation>
+							<animation condition="Control.HasFocus(80027)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<control type="label">
+								<description>current temp Value</description>
+								<width>auto</width>
+								<height>375</height>
+								<font>WeatherTemp</font>
+								<label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+							</control>
+							<control type="label">
+								<description>current temp Value Units</description>
+								<left>405</left>
+								<width>auto</width>
+								<height>324</height>
+								<font>font16</font>
+								<label>$INFO[System.TemperatureUnits]</label>
+							</control>
+						</control>
+						<control type="label">
+							<animation condition="Control.HasFocus(80027)" effect="slide" end="220,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<description>current condition label</description>
+							<top>180</top>
+							<left>450</left>
+							<width>657</width>
+							<height>60</height>
+							<align>left</align>
+							<label>$INFO[Window(weather).Property(Current.Condition)]</label>
+							<font>font30</font>
+						</control>
+						<control type="grouplist">
+							<animation condition="Control.HasFocus(80027)" effect="slide" end="270,0" reversible="true" start="0,0" time="300">conditional</animation>
+							<left>645</left>
+							<top>38</top>
+							<width>657</width>
+							<itemgap>15</itemgap>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33027]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunrise)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+							<control type="label">
+								<label>[COLOR grey2]$LOCALIZE[33028]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunset)][/LOWERCASE]</label>
+								<width>657</width>
+								<height>45</height>
+								<align>right</align>
+								<font>font14</font>
+							</control>
+						</control>
+					</control>
+				</control>
+				<control id="80037" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80037</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80037</param>
+						<param name="ondown">80037</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80037</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80047" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80047</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80047</param>
+						<param name="ondown">80047</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80047</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80057" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80057</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80057</param>
+						<param name="ondown">80057</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80057</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+				<control id="80067" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80067</param>
+						<param name="left">0</param>
+						<param name="top">0</param>
+						<param name="width">1620</param>
+						<param name="height">660</param>
+						<param name="onup">80067</param>
+						<param name="ondown">80067</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80067</param>
+						<param name="orientation">Vertical</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80017</param>
+					<param name="id2" />
+					<param name="id3">80037</param>
+					<param name="id4">80047</param>
+					<param name="id5">80057</param>
+					<param name="id6">80067</param>
+					<param name="leftmainvertical">2135</param>
+					<param name="topmainvertical">230</param>
+					<param name="leftmainhorizontal">-150</param>
+					<param name="topmainhorizontal">-150</param>
+					<param name="vertbuttonup">0</param>
+					<param name="vertbuttondown">620</param>
+					<param name="leftbuttonleft1" />
+					<param name="leftbuttonleft2" />
+					<param name="leftbuttonright1" />
+					<param name="leftbuttonright2" />
+				</include>
+			</control>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-WidgetFanart">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-WidgetFanart-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-WidgetFanart-Master user">
+		<control type="multiimage">
+			<visible>Control.HasFocus(80011) | Control.HasFocus(80021) | Control.HasFocus(80031) | Control.HasFocus(80041) | Control.HasFocus(80051) | Control.HasFocus(80061) | Control.HasFocus(80111) | Control.HasFocus(80121) | Control.HasFocus(80131) | Control.HasFocus(80141) | Control.HasFocus(80151) | Control.HasFocus(80161) | Control.HasFocus(80211) | Control.HasFocus(80221) | Control.HasFocus(80231) | Control.HasFocus(80241) | Control.HasFocus(80251) | Control.HasFocus(80261) | Control.HasFocus(80311) | Control.HasFocus(80321) | Control.HasFocus(80331) | Control.HasFocus(80341) | Control.HasFocus(80351) | Control.HasFocus(80361) | Control.HasFocus(80411) | Control.HasFocus(80421) | Control.HasFocus(80431) | Control.HasFocus(80441) | Control.HasFocus(80451) | Control.HasFocus(80461)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar1]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+		<control type="multiimage">
+			<visible>Control.HasFocus(80012) | Control.HasFocus(80022) | Control.HasFocus(80032) | Control.HasFocus(80042) | Control.HasFocus(80052) | Control.HasFocus(80062) | Control.HasFocus(80112) | Control.HasFocus(80122) | Control.HasFocus(80132) | Control.HasFocus(80142) | Control.HasFocus(80152) | Control.HasFocus(80162) | Control.HasFocus(80212) | Control.HasFocus(80222) | Control.HasFocus(80232) | Control.HasFocus(80242) | Control.HasFocus(80252) | Control.HasFocus(80262) | Control.HasFocus(80312) | Control.HasFocus(80322) | Control.HasFocus(80332) | Control.HasFocus(80342) | Control.HasFocus(80352) | Control.HasFocus(80362) | Control.HasFocus(80412) | Control.HasFocus(80422) | Control.HasFocus(80432) | Control.HasFocus(80442) | Control.HasFocus(80452) | Control.HasFocus(80462)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar2]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+		<control type="multiimage">
+			<visible>Control.HasFocus(80013) | Control.HasFocus(80023) | Control.HasFocus(80033) | Control.HasFocus(80043) | Control.HasFocus(80053) | Control.HasFocus(80063) | Control.HasFocus(80113) | Control.HasFocus(80123) | Control.HasFocus(80133) | Control.HasFocus(80143) | Control.HasFocus(80153) | Control.HasFocus(80163) | Control.HasFocus(80213) | Control.HasFocus(80223) | Control.HasFocus(80233) | Control.HasFocus(80243) | Control.HasFocus(80253) | Control.HasFocus(80263) | Control.HasFocus(80313) | Control.HasFocus(80323) | Control.HasFocus(80333) | Control.HasFocus(80343) | Control.HasFocus(80353) | Control.HasFocus(80363) | Control.HasFocus(80413) | Control.HasFocus(80423) | Control.HasFocus(80433) | Control.HasFocus(80443) | Control.HasFocus(80453) | Control.HasFocus(80463)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar3]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+		<control type="multiimage">
+			<visible>Control.HasFocus(80014) | Control.HasFocus(80024) | Control.HasFocus(80034) | Control.HasFocus(80044) | Control.HasFocus(80054) | Control.HasFocus(80064) | Control.HasFocus(80114) | Control.HasFocus(80124) | Control.HasFocus(80134) | Control.HasFocus(80144) | Control.HasFocus(80154) | Control.HasFocus(80164) | Control.HasFocus(80214) | Control.HasFocus(80224) | Control.HasFocus(80234) | Control.HasFocus(80244) | Control.HasFocus(80254) | Control.HasFocus(80264) | Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364) | Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar4]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+		<control type="multiimage">
+			<visible>Control.HasFocus(80015) | Control.HasFocus(80025) | Control.HasFocus(80035) | Control.HasFocus(80045) | Control.HasFocus(80055) | Control.HasFocus(80065) | Control.HasFocus(80115) | Control.HasFocus(80125) | Control.HasFocus(80135) | Control.HasFocus(80145) | Control.HasFocus(80155) | Control.HasFocus(80165) | Control.HasFocus(80215) | Control.HasFocus(80225) | Control.HasFocus(80235) | Control.HasFocus(80245) | Control.HasFocus(80255) | Control.HasFocus(80265) | Control.HasFocus(80315) | Control.HasFocus(80325) | Control.HasFocus(80335) | Control.HasFocus(80345) | Control.HasFocus(80355) | Control.HasFocus(80365) | Control.HasFocus(80415) | Control.HasFocus(80425) | Control.HasFocus(80435) | Control.HasFocus(80445) | Control.HasFocus(80455) | Control.HasFocus(80465)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar5]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+		<control type="multiimage">
+			<visible>Control.HasFocus(80016) | Control.HasFocus(80026) | Control.HasFocus(80036) | Control.HasFocus(80046) | Control.HasFocus(80056) | Control.HasFocus(80066) | Control.HasFocus(80116) | Control.HasFocus(80126) | Control.HasFocus(80136) | Control.HasFocus(80146) | Control.HasFocus(80156) | Control.HasFocus(80166) | Control.HasFocus(80216) | Control.HasFocus(80226) | Control.HasFocus(80236) | Control.HasFocus(80246) | Control.HasFocus(80256) | Control.HasFocus(80266) | Control.HasFocus(80316) | Control.HasFocus(80326) | Control.HasFocus(80336) | Control.HasFocus(80346) | Control.HasFocus(80356) | Control.HasFocus(80366) | Control.HasFocus(80416) | Control.HasFocus(80426) | Control.HasFocus(80436) | Control.HasFocus(80446) | Control.HasFocus(80456) | Control.HasFocus(80466)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar6]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+		<control type="multiimage">
+			<visible>Control.HasFocus(80017) | Control.HasFocus(80027) | Control.HasFocus(80037) | Control.HasFocus(80047) | Control.HasFocus(80057) | Control.HasFocus(80067) | Control.HasFocus(80117) | Control.HasFocus(80127) | Control.HasFocus(80137) | Control.HasFocus(80147) | Control.HasFocus(80157) | Control.HasFocus(80167) | Control.HasFocus(80217) | Control.HasFocus(80227) | Control.HasFocus(80237) | Control.HasFocus(80247) | Control.HasFocus(80257) | Control.HasFocus(80267) | Control.HasFocus(80317) | Control.HasFocus(80327) | Control.HasFocus(80337) | Control.HasFocus(80347) | Control.HasFocus(80357) | Control.HasFocus(80367) | Control.HasFocus(80417) | Control.HasFocus(80427) | Control.HasFocus(80437) | Control.HasFocus(80447) | Control.HasFocus(80457) | Control.HasFocus(80467)</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<imagepath background="true" colordiffuse="$VAR[WidgetBackground_Opacity]">$VAR[WidgetFanartVar7]</imagepath>
+			<visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-widget">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-widget-Master user">
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80114) | Control.HasFocus(80124) | Control.HasFocus(80134) | Control.HasFocus(80144) | Control.HasFocus(80154) | Control.HasFocus(80164) |                  Control.HasFocus(80214) | Control.HasFocus(80224) | Control.HasFocus(80234) | Control.HasFocus(80244) | Control.HasFocus(80254) | Control.HasFocus(80264) | Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364) | Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)" effect="slide" end="-485,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<animation condition="[Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364)]" effect="slide" end="0,-430" reversible="true" start="0,0" time="250">conditional</animation>
+			<animation condition="[Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)]" effect="slide" end="0,-860" reversible="true" start="0,0" time="250">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>140</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVar]  [/B]</label>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80114).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80114</param>
+						<param name="widgetLine1">widgetLine14</param>
+						<param name="widgetLine2">widgetLine24</param>
+						<param name="widgetLine3">widgetLine34</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80124</param>
+						<param name="widgetLine1">widgetLine14</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80134</param>
+						<param name="widgetLine1">widgetLine14</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80144</param>
+						<param name="widgetLine1">widgetLine14</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80154</param>
+						<param name="widgetLine1">widgetLine14</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80164</param>
+						<param name="widgetLine1">widgetLine14</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>0</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+				<control id="80114" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80114</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidget)</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1930</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80114</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="videos">plugin://plugin.video.furkit/?url_mode=&amp;language=&amp;certification=&amp;network_id=&amp;menu_type=&amp;db_type=&amp;iconImage=C%3A%5CUsers%5CPeter%5CDesktop%5CKodi+v17%5Cportable_data%5Caddons%5Cscript.furkit.artwork%5Cresources%5Cmedia%5Clight%5Cnext_episodes.png&amp;final_mode=&amp;period=&amp;refresh=&amp;foldername=It+Next+Episodes&amp;duration=&amp;mode=build_next_episode&amp;year=&amp;action=&amp;query=&amp;genre_id=&amp;type=&amp;slug=&amp;user=&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
+				</control>
+				<control id="80124" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80124</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80124</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80134" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80134</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80134</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80144" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80144</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80144</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80154" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80154</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80154</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80164" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80164</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80164</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80114</param>
+					<param name="id2">80124</param>
+					<param name="id3">80134</param>
+					<param name="id4">80144</param>
+					<param name="id5">80154</param>
+					<param name="id6">80164</param>
+					<param name="leftmainvertical">-150</param>
+					<param name="topmainvertical">-150</param>
+					<param name="leftmainhorizontal">510</param>
+					<param name="topmainhorizontal">515</param>
+					<param name="topbuttonup1" />
+					<param name="topbuttonup2" />
+					<param name="topbuttondown1" />
+					<param name="topbuttondown2" />
+					<param name="horizbuttonleft">0</param>
+					<param name="horizbuttonright">1850</param>
+				</include>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80116) | Control.HasFocus(80126) | Control.HasFocus(80136) | Control.HasFocus(80146) | Control.HasFocus(80156) | Control.HasFocus(80166) |                  Control.HasFocus(80216) | Control.HasFocus(80226) | Control.HasFocus(80236) | Control.HasFocus(80246) | Control.HasFocus(80256) | Control.HasFocus(80266) | Control.HasFocus(80316) | Control.HasFocus(80326) | Control.HasFocus(80336) | Control.HasFocus(80346) | Control.HasFocus(80356) | Control.HasFocus(80366) | Control.HasFocus(80416) | Control.HasFocus(80426) | Control.HasFocus(80436) | Control.HasFocus(80446) | Control.HasFocus(80456) | Control.HasFocus(80466)" effect="slide" end="-485,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<animation condition="[Control.HasFocus(80316) | Control.HasFocus(80326) | Control.HasFocus(80336) | Control.HasFocus(80346) | Control.HasFocus(80356) | Control.HasFocus(80366)]" effect="slide" end="0,-430" reversible="true" start="0,0" time="250">conditional</animation>
+			<animation condition="[Control.HasFocus(80416) | Control.HasFocus(80426) | Control.HasFocus(80436) | Control.HasFocus(80446) | Control.HasFocus(80456) | Control.HasFocus(80466)]" effect="slide" end="0,-860" reversible="true" start="0,0" time="250">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>140</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVar]  [/B]</label>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80116).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80116</param>
+						<param name="widgetLine1">widgetLine16</param>
+						<param name="widgetLine2">widgetLine26</param>
+						<param name="widgetLine3">widgetLine36</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80126</param>
+						<param name="widgetLine1">widgetLine16</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80136</param>
+						<param name="widgetLine1">widgetLine16</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80146</param>
+						<param name="widgetLine1">widgetLine16</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80156</param>
+						<param name="widgetLine1">widgetLine16</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80166</param>
+						<param name="widgetLine1">widgetLine16</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>0</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+				<control id="80116" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80116</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidget)</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1930</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80116</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="" />
+				</control>
+				<control id="80126" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80126</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80126</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80136" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80136</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80136</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80146" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80146</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80146</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80156" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80156</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80156</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80166" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80166</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9004</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80166</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80116</param>
+					<param name="id2">80126</param>
+					<param name="id3">80136</param>
+					<param name="id4">80146</param>
+					<param name="id5">80156</param>
+					<param name="id6">80166</param>
+					<param name="leftmainvertical">-150</param>
+					<param name="topmainvertical">-150</param>
+					<param name="leftmainhorizontal">510</param>
+					<param name="topmainhorizontal">515</param>
+					<param name="topbuttonup1" />
+					<param name="topbuttonup2" />
+					<param name="topbuttondown1" />
+					<param name="topbuttondown2" />
+					<param name="horizbuttonleft">0</param>
+					<param name="horizbuttonright">1850</param>
+				</include>
+			</control>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-widget2">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget2-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-widget2-Master user">
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80114) | Control.HasFocus(80124) | Control.HasFocus(80134) | Control.HasFocus(80144) | Control.HasFocus(80154) | Control.HasFocus(80164) |                  Control.HasFocus(80214) | Control.HasFocus(80224) | Control.HasFocus(80234) | Control.HasFocus(80244) | Control.HasFocus(80254) | Control.HasFocus(80264) | Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364) | Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)" effect="slide" end="-485,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<animation condition="[Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364)]" effect="slide" end="0,-430" reversible="true" start="0,0" time="250">conditional</animation>
+			<animation condition="[Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)]" effect="slide" end="0,-860" reversible="true" start="0,0" time="250">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>550</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVar2]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80214).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80214</param>
+						<param name="widgetLine1">widgetLine214</param>
+						<param name="widgetLine2">widgetLine224</param>
+						<param name="widgetLine3">widgetLine234</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80224</param>
+						<param name="widgetLine1">widgetLine214</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80234</param>
+						<param name="widgetLine1">widgetLine214</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80244</param>
+						<param name="widgetLine1">widgetLine214</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80254</param>
+						<param name="widgetLine1">widgetLine214</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80264</param>
+						<param name="widgetLine1">widgetLine214</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>410</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+				<control id="80214" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80214</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidget2)</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80214</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="videos">plugin://plugin.video.furkit/?url_mode=&amp;language=&amp;certification=&amp;network_id=&amp;menu_type=&amp;db_type=&amp;iconImage=C%3A%5CUsers%5CPeter%5CDesktop%5CKodi+v17%5Cportable_data%5Caddons%5Cscript.furkit.artwork%5Cresources%5Cmedia%5Clight%5Ctrending.png&amp;final_mode=&amp;period=&amp;refresh=&amp;foldername=Trending&amp;duration=&amp;mode=build_movie_list&amp;year=&amp;action=trakt_movies_trending&amp;query=&amp;genre_id=&amp;type=&amp;slug=&amp;user=&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
+				</control>
+				<control id="80224" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80224</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80224</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80234" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80234</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80234</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80244" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80244</param>
+						<param name="id">80244</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80244</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80254" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80254</param>
+						<param name="id">80254</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80254</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80264" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80264</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80264</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80214</param>
+					<param name="id2">80224</param>
+					<param name="id3">80234</param>
+					<param name="id4">80244</param>
+					<param name="id5">80254</param>
+					<param name="id6">80264</param>
+					<param name="leftmainvertical">-150</param>
+					<param name="topmainvertical">-150</param>
+					<param name="leftmainhorizontal">510</param>
+					<param name="topmainhorizontal">925</param>
+					<param name="topbuttonup1" />
+					<param name="topbuttonup2" />
+					<param name="topbuttondown1" />
+					<param name="topbuttondown2" />
+					<param name="horizbuttonleft">0</param>
+					<param name="horizbuttonright">1850</param>
+				</include>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80116) | Control.HasFocus(80126) | Control.HasFocus(80136) | Control.HasFocus(80146) | Control.HasFocus(80156) | Control.HasFocus(80166) |                  Control.HasFocus(80216) | Control.HasFocus(80226) | Control.HasFocus(80236) | Control.HasFocus(80246) | Control.HasFocus(80256) | Control.HasFocus(80266) | Control.HasFocus(80316) | Control.HasFocus(80326) | Control.HasFocus(80336) | Control.HasFocus(80346) | Control.HasFocus(80356) | Control.HasFocus(80366) | Control.HasFocus(80416) | Control.HasFocus(80426) | Control.HasFocus(80436) | Control.HasFocus(80446) | Control.HasFocus(80456) | Control.HasFocus(80466)" effect="slide" end="-485,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<animation condition="[Control.HasFocus(80316) | Control.HasFocus(80326) | Control.HasFocus(80336) | Control.HasFocus(80346) | Control.HasFocus(80356) | Control.HasFocus(80366)]" effect="slide" end="0,-430" reversible="true" start="0,0" time="250">conditional</animation>
+			<animation condition="[Control.HasFocus(80416) | Control.HasFocus(80426) | Control.HasFocus(80436) | Control.HasFocus(80446) | Control.HasFocus(80456) | Control.HasFocus(80466)]" effect="slide" end="0,-860" reversible="true" start="0,0" time="250">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>550</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVar2]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80216).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80216</param>
+						<param name="widgetLine1">widgetLine216</param>
+						<param name="widgetLine2">widgetLine226</param>
+						<param name="widgetLine3">widgetLine236</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80226</param>
+						<param name="widgetLine1">widgetLine216</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80236</param>
+						<param name="widgetLine1">widgetLine216</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80246</param>
+						<param name="widgetLine1">widgetLine216</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80256</param>
+						<param name="widgetLine1">widgetLine216</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80266</param>
+						<param name="widgetLine1">widgetLine216</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>410</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+				<control id="80216" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80216</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidget2)</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80216</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="" />
+				</control>
+				<control id="80226" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80226</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80226</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80236" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80236</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80236</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80246" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80246</param>
+						<param name="id">80246</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80246</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80256" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80256</param>
+						<param name="id">80256</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80256</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80266" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-24001)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80266</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9003</param>
+						<param name="ondown">9005</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80266</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80216</param>
+					<param name="id2">80226</param>
+					<param name="id3">80236</param>
+					<param name="id4">80246</param>
+					<param name="id5">80256</param>
+					<param name="id6">80266</param>
+					<param name="leftmainvertical">-150</param>
+					<param name="topmainvertical">-150</param>
+					<param name="leftmainhorizontal">510</param>
+					<param name="topmainhorizontal">925</param>
+					<param name="topbuttonup1" />
+					<param name="topbuttonup2" />
+					<param name="topbuttondown1" />
+					<param name="topbuttondown2" />
+					<param name="horizbuttonleft">0</param>
+					<param name="horizbuttonright">1850</param>
+				</include>
+			</control>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-widget3">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-widget3-Master user">
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<animation condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)" effect="fade" end="20" start="100" time="300">conditional</animation>
+			<animation condition="Control.HasFocus(80114) | Control.HasFocus(80124) | Control.HasFocus(80134) | Control.HasFocus(80144) | Control.HasFocus(80154) | Control.HasFocus(80164) |                  Control.HasFocus(80214) | Control.HasFocus(80224) | Control.HasFocus(80234) | Control.HasFocus(80244) | Control.HasFocus(80254) | Control.HasFocus(80264) | Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364) | Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)" effect="slide" end="-485,0" reversible="true" start="0,0" time="300">conditional</animation>
+			<animation condition="[Control.HasFocus(80314) | Control.HasFocus(80324) | Control.HasFocus(80334) | Control.HasFocus(80344) | Control.HasFocus(80354) | Control.HasFocus(80364)]" effect="slide" end="0,-430" reversible="true" start="0,0" time="250">conditional</animation>
+			<animation condition="[Control.HasFocus(80414) | Control.HasFocus(80424) | Control.HasFocus(80434) | Control.HasFocus(80444) | Control.HasFocus(80454) | Control.HasFocus(80464)]" effect="slide" end="0,-860" reversible="true" start="0,0" time="250">conditional</animation>
+			<control type="grouplist">
+				<left>503</left>
+				<top>960</top>
+				<width>1905</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<description>Title label</description>
+					<height>30</height>
+					<width>auto</width>
+					<label>[B]$VAR[WidgetTitleVar3]  [/B]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font14</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!Container(80314).IsUpdating</visible>
+				</control>
+				<control type="group">
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80314</param>
+						<param name="widgetLine1">widgetLine314</param>
+						<param name="widgetLine2">widgetLine324</param>
+						<param name="widgetLine3">widgetLine334</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80324</param>
+						<param name="widgetLine1">widgetLine314</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80334</param>
+						<param name="widgetLine1">widgetLine314</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80344</param>
+						<param name="widgetLine1">widgetLine314</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80354</param>
+						<param name="widgetLine1">widgetLine314</param>
+					</include>
+					<include content="mediawidgetLabelsInfo">
+						<param name="id">80364</param>
+						<param name="widgetLine1">widgetLine314</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<left>503</left>
+				<top>820</top>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+				<control id="80314" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<include content="MediaWidgetContent">
+						<param name="id">80314</param>
+						<param name="aspect">Container(9000).ListItem.Property(WideWidget3)</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9004</param>
+						<param name="ondown">9006</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80314</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+					<content limit="$INFO[Skin.String(WidgetLimit)]" target="videos">library://video/tvshows/recentlyaddedepisodes.xml/</content>
+				</control>
+				<control id="80324" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),weather)</visible>
+					<include content="WeatherWidgetContent">
+						<param name="id">80324</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9004</param>
+						<param name="ondown">9006</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80324</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80334" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),settings)</visible>
+					<include content="SettingsWidgetContent">
+						<param name="id">80334</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9004</param>
+						<param name="ondown">9006</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80334</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80344" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),addons)</visible>
+					<include content="AddonsWidgetContent">
+						<param name="id">80344</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9004</param>
+						<param name="ondown">9006</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80344</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80354" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),specialitems)</visible>
+					<include content="SpecialItemsWidgetContent">
+						<param name="id">80354</param>
+						<param name="id">80354</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9004</param>
+						<param name="ondown">9006</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80354</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+				<control id="80364" type="panel">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),systeminfo)</visible>
+					<include content="SystemInfoWidgetContent">
+						<param name="id">80364</param>
+						<param name="left">0</param>
+						<param name="top">180</param>
+						<param name="width">1890</param>
+						<param name="height">330</param>
+						<param name="onup">9004</param>
+						<param name="ondown">9006</param>
+						<param name="onleft">9000</param>
+						<param name="onright">80364</param>
+						<param name="orientation">Horizontal</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include content="WidgetArrowIndicators">
+					<param name="id1">80314</param>
+					<param name="id2">80324</param>
+					<param name="id3">80334</param>
+					<param name="id4">80344</param>
+					<param name="id5">80354</param>
+					<param name="id6">80364</param>
+					<param name="leftmainvertical">-150</param>
+					<param name="topmainvertical">-150</param>
+					<param name="leftmainhorizontal">510</param>
+					<param name="topmainhorizontal">1335</param>
+					<param name="topbuttonup1" />
+					<param name="topbuttonup2" />
+					<param name="topbuttondown1" />
+					<param name="topbuttondown2" />
+					<param name="horizbuttonleft">0</param>
+					<param name="horizbuttonright">1850</param>
+				</include>
+			</control>
+		</control>
+	</include>
+	<variable name="widgetLine011">
+		<value condition="!String.IsEmpty(Container(80011).ListItem.Episode)">$INFO[Container(80011).ListItem.Season,,x]$INFO[Container(80011).ListItem.Episode,,. ]$INFO[Container(80011).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80011).ListItem.Title)">$INFO[Container(80011).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80021)">$INFO[Container(80021).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80031)">$INFO[Container(80031).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80041)">$INFO[Container(80041).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80051)">$INFO[Container(80051).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80061)">$INFO[Container(80061).ListItem.Label]</value>
+		<value>$INFO[Container(80011).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine021">
+		<value condition="!String.IsEmpty(Container(80011).ListItem.Episode)">• $INFO[Container(80011).ListItem.TvShowTitle]$INFO[Container(80011).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80011).ListItem.Artist)">• $INFO[Container(80011).ListItem.Artist]$INFO[Container(80011).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80011).ListItem.Year)">• $INFO[Container(80011).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80011).ListItem.Label2)">• $INFO[Container(80011).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80071).ListItem.Episode)">• $INFO[Container(80071).ListItem.TvShowTitle]$INFO[Container(80071).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80071).ListItem.Artist)">• $INFO[Container(80071).ListItem.Artist]$INFO[Container(80071).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80071).ListItem.Year)">• $INFO[Container(80071).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80071).ListItem.Label2)">• $INFO[Container(80071).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80081).ListItem.Episode)">• $INFO[Container(80081).ListItem.TvShowTitle]$INFO[Container(80081).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80081).ListItem.Artist)">• $INFO[Container(80081).ListItem.Artist]$INFO[Container(80081).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80081).ListItem.Year)">• $INFO[Container(80081).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80081).ListItem.Label2)">• $INFO[Container(80081).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine031">
+		<value condition="!IsEmpty(Container(80011).ListItem.Duration)">$INFO[Container(80011).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="WidgetFanartVar1">
+		<value condition="Control.HasFocus(80011)">$INFO[Container(80011).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80021)">$INFO[Container(80021).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80031)">$INFO[Container(80031).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80041)">$INFO[Container(80041).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80051)">$INFO[Container(80051).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80061)">$INFO[Container(80061).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80111)">$INFO[Container(80111).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80121)">$INFO[Container(80121).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80131)">$INFO[Container(80131).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80141)">$INFO[Container(80141).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80151)">$INFO[Container(80151).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80161)">$INFO[Container(80161).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80211)">$INFO[Container(80211).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80221)">$INFO[Container(80221).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80231)">$INFO[Container(80231).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80241)">$INFO[Container(80241).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80251)">$INFO[Container(80251).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80261)">$INFO[Container(80261).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80311)">$INFO[Container(80311).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80321)">$INFO[Container(80321).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80331)">$INFO[Container(80331).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80341)">$INFO[Container(80341).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80351)">$INFO[Container(80351).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80361)">$INFO[Container(80361).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80411)">$INFO[Container(80411).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80421)">$INFO[Container(80421).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80431)">$INFO[Container(80431).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80441)">$INFO[Container(80441).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80451)">$INFO[Container(80451).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80461)">$INFO[Container(80461).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<variable name="widgetLine012">
+		<value condition="!String.IsEmpty(Container(80012).ListItem.Episode)">$INFO[Container(80012).ListItem.Season,,x]$INFO[Container(80012).ListItem.Episode,,. ]$INFO[Container(80012).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80012).ListItem.Title)">$INFO[Container(80012).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80022)">$INFO[Container(80022).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80032)">$INFO[Container(80032).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80042)">$INFO[Container(80042).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80052)">$INFO[Container(80052).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80062)">$INFO[Container(80062).ListItem.Label]</value>
+		<value>$INFO[Container(80012).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine022">
+		<value condition="!String.IsEmpty(Container(80012).ListItem.Episode)">• $INFO[Container(80012).ListItem.TvShowTitle]$INFO[Container(80012).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80012).ListItem.Artist)">• $INFO[Container(80012).ListItem.Artist]$INFO[Container(80012).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80012).ListItem.Year)">• $INFO[Container(80012).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80012).ListItem.Label2)">• $INFO[Container(80012).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80072).ListItem.Episode)">• $INFO[Container(80072).ListItem.TvShowTitle]$INFO[Container(80072).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80072).ListItem.Artist)">• $INFO[Container(80072).ListItem.Artist]$INFO[Container(80072).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80072).ListItem.Year)">• $INFO[Container(80072).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80072).ListItem.Label2)">• $INFO[Container(80072).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80082).ListItem.Episode)">• $INFO[Container(80082).ListItem.TvShowTitle]$INFO[Container(80082).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80082).ListItem.Artist)">• $INFO[Container(80082).ListItem.Artist]$INFO[Container(80082).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80082).ListItem.Year)">• $INFO[Container(80082).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80082).ListItem.Label2)">• $INFO[Container(80082).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine032">
+		<value condition="!IsEmpty(Container(80012).ListItem.Duration)">$INFO[Container(80012).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="WidgetFanartVar2">
+		<value condition="Control.HasFocus(80012)">$INFO[Container(80012).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80022)">$INFO[Container(80022).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80032)">$INFO[Container(80032).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80042)">$INFO[Container(80042).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80052)">$INFO[Container(80052).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80062)">$INFO[Container(80062).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80112)">$INFO[Container(80112).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80122)">$INFO[Container(80122).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80132)">$INFO[Container(80132).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80142)">$INFO[Container(80142).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80152)">$INFO[Container(80152).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80162)">$INFO[Container(80162).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80212)">$INFO[Container(80212).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80222)">$INFO[Container(80222).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80232)">$INFO[Container(80232).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80242)">$INFO[Container(80242).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80252)">$INFO[Container(80252).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80262)">$INFO[Container(80262).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80312)">$INFO[Container(80312).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80322)">$INFO[Container(80322).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80332)">$INFO[Container(80332).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80342)">$INFO[Container(80342).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80352)">$INFO[Container(80352).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80362)">$INFO[Container(80362).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80412)">$INFO[Container(80412).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80422)">$INFO[Container(80422).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80432)">$INFO[Container(80432).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80442)">$INFO[Container(80442).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80452)">$INFO[Container(80452).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80462)">$INFO[Container(80462).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<variable name="widgetLine013">
+		<value condition="!String.IsEmpty(Container(80013).ListItem.Episode)">$INFO[Container(80013).ListItem.Season,,x]$INFO[Container(80013).ListItem.Episode,,. ]$INFO[Container(80013).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80013).ListItem.Title)">$INFO[Container(80013).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80023)">$INFO[Container(80023).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80033)">$INFO[Container(80033).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80043)">$INFO[Container(80043).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80053)">$INFO[Container(80053).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80063)">$INFO[Container(80063).ListItem.Label]</value>
+		<value>$INFO[Container(80013).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine023">
+		<value condition="!String.IsEmpty(Container(80013).ListItem.Episode)">• $INFO[Container(80013).ListItem.TvShowTitle]$INFO[Container(80013).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80013).ListItem.Artist)">• $INFO[Container(80013).ListItem.Artist]$INFO[Container(80013).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80013).ListItem.Year)">• $INFO[Container(80013).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80013).ListItem.Label2)">• $INFO[Container(80013).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80073).ListItem.Episode)">• $INFO[Container(80073).ListItem.TvShowTitle]$INFO[Container(80073).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80073).ListItem.Artist)">• $INFO[Container(80073).ListItem.Artist]$INFO[Container(80073).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80073).ListItem.Year)">• $INFO[Container(80073).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80073).ListItem.Label2)">• $INFO[Container(80073).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80083).ListItem.Episode)">• $INFO[Container(80083).ListItem.TvShowTitle]$INFO[Container(80083).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80083).ListItem.Artist)">• $INFO[Container(80083).ListItem.Artist]$INFO[Container(80083).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80083).ListItem.Year)">• $INFO[Container(80083).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80083).ListItem.Label2)">• $INFO[Container(80083).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine033">
+		<value condition="!IsEmpty(Container(80013).ListItem.Duration)">$INFO[Container(80013).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="WidgetFanartVar3">
+		<value condition="Control.HasFocus(80013)">$INFO[Container(80013).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80023)">$INFO[Container(80023).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80033)">$INFO[Container(80033).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80043)">$INFO[Container(80043).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80053)">$INFO[Container(80053).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80063)">$INFO[Container(80063).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80113)">$INFO[Container(80113).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80123)">$INFO[Container(80123).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80133)">$INFO[Container(80133).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80143)">$INFO[Container(80143).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80153)">$INFO[Container(80153).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80163)">$INFO[Container(80163).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80213)">$INFO[Container(80213).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80223)">$INFO[Container(80223).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80233)">$INFO[Container(80233).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80243)">$INFO[Container(80243).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80253)">$INFO[Container(80253).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80263)">$INFO[Container(80263).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80313)">$INFO[Container(80313).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80323)">$INFO[Container(80323).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80333)">$INFO[Container(80333).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80343)">$INFO[Container(80343).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80353)">$INFO[Container(80353).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80363)">$INFO[Container(80363).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80413)">$INFO[Container(80413).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80423)">$INFO[Container(80423).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80433)">$INFO[Container(80433).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80443)">$INFO[Container(80443).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80453)">$INFO[Container(80453).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80463)">$INFO[Container(80463).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<variable name="widgetLine14">
+		<value condition="!String.IsEmpty(Container(80114).ListItem.Episode)">$INFO[Container(80114).ListItem.Season,,x]$INFO[Container(80114).ListItem.Episode,,. ]$INFO[Container(80114).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80114).ListItem.Title)">$INFO[Container(80114).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80124)">$INFO[Container(80124).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80134)">$INFO[Container(80134).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80144)">$INFO[Container(80144).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80154)">$INFO[Container(80154).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80164)">$INFO[Container(80164).ListItem.Label]</value>
+		<value>$INFO[Container(80114).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine24">
+		<value condition="!String.IsEmpty(Container(80114).ListItem.Episode)">• $INFO[Container(80114).ListItem.TvShowTitle]$INFO[Container(80114).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80114).ListItem.Artist)">• $INFO[Container(80114).ListItem.Artist]$INFO[Container(80114).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80114).ListItem.Year)">• $INFO[Container(80114).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80114).ListItem.Label2)">• $INFO[Container(80114).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine34">
+		<value condition="!IsEmpty(Container(80114).ListItem.Duration)">$INFO[Container(80114).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="widgetExtraArt4">
+		<value condition="StringCompare(Container(80114).ListItem.DBTYPE,episode)">$INFO[Container(80114).ListItem.Art(thumb)]</value>
+		<value condition="!IsEmpty(Container(80114).ListItem.Art(fanart)">$INFO[Container(80114).ListItem.Art(fanart)]</value>
+		<value condition="String.IsEmpty(Container(80214).ListItem.Episode)">$INFO[Container(80214).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Episode)">$INFO[Container(80214).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Container(80214).Listitem.Art(fanart))">$INFO[Container(80214).ListItem.Art(fanart)]</value>
+		<value condition="String.IsEmpty(Container(80314).ListItem.Episode)">$INFO[Container(80314).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Episode)">$INFO[Container(80314).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Container(80314).Listitem.Art(fanart))">$INFO[Container(80314).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(80114).ListItem.Icon)]</value>
+	</variable>
+	<variable name="widgetLine214">
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Episode)">$INFO[Container(80214).ListItem.Season,,x]$INFO[Container(80214).ListItem.Episode,,. ]$INFO[Container(80214).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Title)">$INFO[Container(80214).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80224)">$INFO[Container(80224).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80234)">$INFO[Container(80234).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80244)">$INFO[Container(80244).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80254)">$INFO[Container(80254).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80264)">$INFO[Container(80264).ListItem.Label]</value>
+		<value>$INFO[Container(80214).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine224">
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Episode)">• $INFO[Container(80214).ListItem.TvShowTitle]$INFO[Container(80214).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Artist)">• $INFO[Container(80214).ListItem.Artist]$INFO[Container(80214).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Year)">• $INFO[Container(80214).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80214).ListItem.Label2)">• $INFO[Container(80214).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine234">
+		<value condition="!IsEmpty(Container(80214).ListItem.Duration)">$INFO[Container(80214).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="widgetLine314">
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Episode)">$INFO[Container(80314).ListItem.Season,,x]$INFO[Container(80314).ListItem.Episode,,. ]$INFO[Container(80314).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Title)">$INFO[Container(80314).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80324)">$INFO[Container(80324).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80334)">$INFO[Container(80334).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80344)">$INFO[Container(80344).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80354)">$INFO[Container(80354).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80364)">$INFO[Container(80364).ListItem.Label]</value>
+		<value>$INFO[Container(80314).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine324">
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Episode)">• $INFO[Container(80314).ListItem.TvShowTitle]$INFO[Container(80314).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Artist)">• $INFO[Container(80314).ListItem.Artist]$INFO[Container(80314).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Year)">• $INFO[Container(80314).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80314).ListItem.Label2)">• $INFO[Container(80314).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine334">
+		<value condition="!IsEmpty(Container(80314).ListItem.Duration)">$INFO[Container(80314).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="WidgetFanartVar4">
+		<value condition="Control.HasFocus(80014)">$INFO[Container(80014).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80024)">$INFO[Container(80024).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80034)">$INFO[Container(80034).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80044)">$INFO[Container(80044).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80054)">$INFO[Container(80054).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80064)">$INFO[Container(80064).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80114)">$INFO[Container(80114).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80124)">$INFO[Container(80124).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80134)">$INFO[Container(80134).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80144)">$INFO[Container(80144).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80154)">$INFO[Container(80154).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80164)">$INFO[Container(80164).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80214)">$INFO[Container(80214).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80224)">$INFO[Container(80224).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80234)">$INFO[Container(80234).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80244)">$INFO[Container(80244).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80254)">$INFO[Container(80254).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80264)">$INFO[Container(80264).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80314)">$INFO[Container(80314).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80324)">$INFO[Container(80324).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80334)">$INFO[Container(80334).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80344)">$INFO[Container(80344).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80354)">$INFO[Container(80354).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80364)">$INFO[Container(80364).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80414)">$INFO[Container(80414).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80424)">$INFO[Container(80424).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80434)">$INFO[Container(80434).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80444)">$INFO[Container(80444).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80454)">$INFO[Container(80454).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80464)">$INFO[Container(80464).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<variable name="WidgetFanartVar5">
+		<value condition="Control.HasFocus(80015)">$INFO[Container(80015).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80025)">$INFO[Container(80025).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80035)">$INFO[Container(80035).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80045)">$INFO[Container(80045).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80055)">$INFO[Container(80055).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80065)">$INFO[Container(80065).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80115)">$INFO[Container(80115).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80125)">$INFO[Container(80125).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80135)">$INFO[Container(80135).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80145)">$INFO[Container(80145).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80155)">$INFO[Container(80155).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80165)">$INFO[Container(80165).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80215)">$INFO[Container(80215).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80225)">$INFO[Container(80225).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80235)">$INFO[Container(80235).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80245)">$INFO[Container(80245).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80255)">$INFO[Container(80255).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80265)">$INFO[Container(80265).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80315)">$INFO[Container(80315).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80325)">$INFO[Container(80325).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80335)">$INFO[Container(80335).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80345)">$INFO[Container(80345).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80355)">$INFO[Container(80355).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80365)">$INFO[Container(80365).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80415)">$INFO[Container(80415).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80425)">$INFO[Container(80425).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80435)">$INFO[Container(80435).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80445)">$INFO[Container(80445).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80455)">$INFO[Container(80455).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80465)">$INFO[Container(80465).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<variable name="widgetLine16">
+		<value condition="!String.IsEmpty(Container(80116).ListItem.Episode)">$INFO[Container(80116).ListItem.Season,,x]$INFO[Container(80116).ListItem.Episode,,. ]$INFO[Container(80116).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80116).ListItem.Title)">$INFO[Container(80116).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80126)">$INFO[Container(80126).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80136)">$INFO[Container(80136).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80146)">$INFO[Container(80146).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80156)">$INFO[Container(80156).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80166)">$INFO[Container(80166).ListItem.Label]</value>
+		<value>$INFO[Container(80116).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine26">
+		<value condition="!String.IsEmpty(Container(80116).ListItem.Episode)">• $INFO[Container(80116).ListItem.TvShowTitle]$INFO[Container(80116).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80116).ListItem.Artist)">• $INFO[Container(80116).ListItem.Artist]$INFO[Container(80116).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80116).ListItem.Year)">• $INFO[Container(80116).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80116).ListItem.Label2)">• $INFO[Container(80116).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine36">
+		<value condition="!IsEmpty(Container(80116).ListItem.Duration)">$INFO[Container(80116).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="widgetExtraArt6">
+		<value condition="StringCompare(Container(80116).ListItem.DBTYPE,episode)">$INFO[Container(80116).ListItem.Art(thumb)]</value>
+		<value condition="!IsEmpty(Container(80116).ListItem.Art(fanart)">$INFO[Container(80116).ListItem.Art(fanart)]</value>
+		<value condition="String.IsEmpty(Container(80216).ListItem.Episode)">$INFO[Container(80216).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Episode)">$INFO[Container(80216).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Container(80216).Listitem.Art(fanart))">$INFO[Container(80216).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(80116).ListItem.Icon)]</value>
+	</variable>
+	<variable name="widgetLine216">
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Episode)">$INFO[Container(80216).ListItem.Season,,x]$INFO[Container(80216).ListItem.Episode,,. ]$INFO[Container(80216).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Title)">$INFO[Container(80216).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80226)">$INFO[Container(80226).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80236)">$INFO[Container(80236).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80246)">$INFO[Container(80246).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80256)">$INFO[Container(80256).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80266)">$INFO[Container(80266).ListItem.Label]</value>
+		<value>$INFO[Container(80216).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine226">
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Episode)">• $INFO[Container(80216).ListItem.TvShowTitle]$INFO[Container(80216).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Artist)">• $INFO[Container(80216).ListItem.Artist]$INFO[Container(80216).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Year)">• $INFO[Container(80216).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80216).ListItem.Label2)">• $INFO[Container(80216).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine236">
+		<value condition="!IsEmpty(Container(80216).ListItem.Duration)">$INFO[Container(80216).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="WidgetFanartVar6">
+		<value condition="Control.HasFocus(80016)">$INFO[Container(80016).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80026)">$INFO[Container(80026).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80036)">$INFO[Container(80036).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80046)">$INFO[Container(80046).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80056)">$INFO[Container(80056).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80066)">$INFO[Container(80066).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80116)">$INFO[Container(80116).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80126)">$INFO[Container(80126).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80136)">$INFO[Container(80136).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80146)">$INFO[Container(80146).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80156)">$INFO[Container(80156).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80166)">$INFO[Container(80166).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80216)">$INFO[Container(80216).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80226)">$INFO[Container(80226).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80236)">$INFO[Container(80236).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80246)">$INFO[Container(80246).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80256)">$INFO[Container(80256).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80266)">$INFO[Container(80266).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80316)">$INFO[Container(80316).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80326)">$INFO[Container(80326).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80336)">$INFO[Container(80336).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80346)">$INFO[Container(80346).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80356)">$INFO[Container(80356).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80366)">$INFO[Container(80366).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80416)">$INFO[Container(80416).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80426)">$INFO[Container(80426).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80436)">$INFO[Container(80436).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80446)">$INFO[Container(80446).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80456)">$INFO[Container(80456).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80466)">$INFO[Container(80466).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<variable name="widgetLine017">
+		<value condition="!String.IsEmpty(Container(80017).ListItem.Episode)">$INFO[Container(80017).ListItem.Season,,x]$INFO[Container(80017).ListItem.Episode,,. ]$INFO[Container(80017).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(80017).ListItem.Title)">$INFO[Container(80017).ListItem.Title]</value>
+		<value condition="Control.HasFocus(80027)">$INFO[Container(80027).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80037)">$INFO[Container(80037).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(80047)">$INFO[Container(80047).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80057)">$INFO[Container(80057).ListItem.Label]</value>
+		<value condition="Control.HasFocus(80067)">$INFO[Container(80067).ListItem.Label]</value>
+		<value>$INFO[Container(80017).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine027">
+		<value condition="!String.IsEmpty(Container(80017).ListItem.Episode)">• $INFO[Container(80017).ListItem.TvShowTitle]$INFO[Container(80017).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80017).ListItem.Artist)">• $INFO[Container(80017).ListItem.Artist]$INFO[Container(80017).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80017).ListItem.Year)">• $INFO[Container(80017).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80017).ListItem.Label2)">• $INFO[Container(80017).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80077).ListItem.Episode)">• $INFO[Container(80077).ListItem.TvShowTitle]$INFO[Container(80077).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80077).ListItem.Artist)">• $INFO[Container(80077).ListItem.Artist]$INFO[Container(80077).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80077).ListItem.Year)">• $INFO[Container(80077).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80077).ListItem.Label2)">• $INFO[Container(80077).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Container(80087).ListItem.Episode)">• $INFO[Container(80087).ListItem.TvShowTitle]$INFO[Container(80087).ListItem.Premiered, • ]</value>
+		<value condition="!String.IsEmpty(Container(80087).ListItem.Artist)">• $INFO[Container(80087).ListItem.Artist]$INFO[Container(80087).ListItem.Year, • ]</value>
+		<value condition="!String.IsEmpty(Container(80087).ListItem.Year)">• $INFO[Container(80087).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(80087).ListItem.Label2)">• $INFO[Container(80087).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine037">
+		<value condition="!IsEmpty(Container(80017).ListItem.Duration)">$INFO[Container(80017).ListItem.Duration,• , mins]</value>
+	</variable>
+	<variable name="WidgetFanartVar7">
+		<value condition="Control.HasFocus(80017)">$INFO[Container(80017).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80027)">$INFO[Container(80027).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80037)">$INFO[Container(80037).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80047)">$INFO[Container(80047).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80057)">$INFO[Container(80057).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80067)">$INFO[Container(80067).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80117)">$INFO[Container(80117).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80127)">$INFO[Container(80127).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80137)">$INFO[Container(80137).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80147)">$INFO[Container(80147).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80157)">$INFO[Container(80157).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80167)">$INFO[Container(80167).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80217)">$INFO[Container(80217).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80227)">$INFO[Container(80227).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80237)">$INFO[Container(80237).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80247)">$INFO[Container(80247).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80257)">$INFO[Container(80257).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80267)">$INFO[Container(80267).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80317)">$INFO[Container(80317).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80327)">$INFO[Container(80327).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80337)">$INFO[Container(80337).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80347)">$INFO[Container(80347).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80357)">$INFO[Container(80357).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80367)">$INFO[Container(80367).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80417)">$INFO[Container(80417).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80427)">$INFO[Container(80427).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80437)">$INFO[Container(80437).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80447)">$INFO[Container(80447).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80457)">$INFO[Container(80457).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(80467)">$INFO[Container(80467).ListItem.Art(fanart)]</value>
+		<value />
+	</variable>
+	<include name="skinshortcuts-template-widget4">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+</includes>

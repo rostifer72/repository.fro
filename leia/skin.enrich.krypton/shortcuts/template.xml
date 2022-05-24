@@ -1,0 +1,1269 @@
+<template>
+    <other include="widget">
+        <condition tag="property" attribute="name|widgetPath" />
+        <property name="content" tag="property" attribute="name|widgetPath" />
+        <property name="target" tag="property" attribute="name|widgetTarget" />
+        <property name="id" tag="mainmenuid" />
+        <controls>
+            <control type="group">
+                <skinshortcuts>visibility</skinshortcuts>
+                <animation effect="fade" start="100" end="20" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <!-- Focused -->
+                <animation effect="slide" reversible="true" start="0,0" end="-485,0" time="300" condition="Control.HasFocus(8011$SKINSHORTCUTS[id]) | Control.HasFocus(8012$SKINSHORTCUTS[id]) | Control.HasFocus(8013$SKINSHORTCUTS[id]) | Control.HasFocus(8014$SKINSHORTCUTS[id]) | Control.HasFocus(8015$SKINSHORTCUTS[id]) | Control.HasFocus(8016$SKINSHORTCUTS[id]) | 
+                Control.HasFocus(8021$SKINSHORTCUTS[id]) | Control.HasFocus(8022$SKINSHORTCUTS[id]) | Control.HasFocus(8023$SKINSHORTCUTS[id]) | Control.HasFocus(8024$SKINSHORTCUTS[id]) | Control.HasFocus(8025$SKINSHORTCUTS[id]) | Control.HasFocus(8026$SKINSHORTCUTS[id]) | Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id]) | Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])">conditional</animation>
+                <!-- Focus 3 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-430" time="250" condition="[Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Focus 4 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-860" time="250" condition="[Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Labels -->
+                <control type="grouplist">
+                    <left>503</left>
+                    <top>140</top>
+                    <width>1905</width>
+                    <orientation>horizontal</orientation>
+                    <control type="label">
+                        <description>Title label</description>
+                        <height>30</height>
+                        <width>auto</width>
+                        <label>[B]$VAR[WidgetTitleVar]  [/B]</label>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <textcolor>grey</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>!Container(8011$SKINSHORTCUTS[id]).IsUpdating</visible>
+                    </control>
+                    <control type="group">
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8011$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine1$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine2">widgetLine2$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine3">widgetLine3$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8012$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine1$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8013$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine1$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8014$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine1$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8015$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine1$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8016$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine1$SKINSHORTCUTS[id]</param>
+                        </include>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>503</left>
+                    <top>0</top>
+                    <skinshortcuts>visibility</skinshortcuts>
+                    <!-- All Content Widget-->
+                    <control type="panel" id="8011$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <include content="MediaWidgetContent">
+                            <param name="id">8011$SKINSHORTCUTS[id]</param>
+                            <param name="aspect">Container(9000).ListItem.Property(WideWidget)</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1930</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9004</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8011$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                        <content limit="$INFO[Skin.String(WidgetLimit)]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[content]</content>
+                    </control>
+                    <!-- Weather Widget -->
+                    <control type="panel" id="8012$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather)</visible>
+                        <include content="WeatherWidgetContent">
+                            <param name="id">8012$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9004</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8012$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Settings Widget -->
+                    <control type="panel" id="8013$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible>
+                        <include content="SettingsWidgetContent">
+                            <param name="id">8013$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9004</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8013$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Addons Widget -->
+                    <control type="panel" id="8014$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget),addons)</visible>
+                        <include content="AddonsWidgetContent">
+                            <param name="id">8014$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9004</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8014$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Special Items Widget -->
+                    <control type="panel" id="8015$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget),specialitems)</visible>
+                        <include content="SpecialItemsWidgetContent">
+                            <param name="id">8015$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9004</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8015$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- System Info Widget -->
+                    <control type="panel" id="8016$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget),systeminfo)</visible>
+                        <include content="SystemInfoWidgetContent">
+                            <param name="id">8016$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9004</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8016$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                </control>
+                <!-- Arrow Indicators Up/Down -->
+                <control type="group">
+                    <include content="WidgetArrowIndicators">
+                        <param name="id1">8011$SKINSHORTCUTS[id]</param>
+                        <param name="id2">8012$SKINSHORTCUTS[id]</param>
+                        <param name="id3">8013$SKINSHORTCUTS[id]</param>
+                        <param name="id4">8014$SKINSHORTCUTS[id]</param>
+                        <param name="id5">8015$SKINSHORTCUTS[id]</param>
+                        <param name="id6">8016$SKINSHORTCUTS[id]</param>
+                        <param name="leftmainvertical">-150</param>
+                        <param name="topmainvertical">-150</param>
+                        <param name="leftmainhorizontal">510</param>
+                        <param name="topmainhorizontal">515</param>
+                        <param name="topbuttonup1"></param>
+                        <param name="topbuttonup2"></param>
+                        <param name="topbuttondown1"></param>
+                        <param name="topbuttondown2"></param>
+                        <param name="horizbuttonleft">0</param>
+                        <param name="horizbuttonright">1850</param>
+                    </include>
+                </control>
+            </control>
+        </controls>
+        <variables>
+            <variable name="widgetLine1$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Season,,x]$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Episode,,. ]$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Title)">$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value>$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8012$SKINSHORTCUTS[id])">$INFO[Container(8012$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8013$SKINSHORTCUTS[id])">$INFO[Container(8013$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="Control.HasFocus(8014$SKINSHORTCUTS[id])">$INFO[Container(8014$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8015$SKINSHORTCUTS[id])">$INFO[Container(8015$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8016$SKINSHORTCUTS[id])">$INFO[Container(8016$SKINSHORTCUTS[id]).ListItem.Label]</value>
+            </variable>
+            <variable name="widgetLine2$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+            </variable>
+            <variable name="widgetLine3$SKINSHORTCUTS[id]">
+                <value condition="!IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Duration)">$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Duration,• , mins]</value>
+            </variable>
+            <variable name="widgetExtraArt$SKINSHORTCUTS[id]">
+                <value condition="StringCompare(Container(8011$SKINSHORTCUTS[id]).ListItem.DBTYPE,episode)">$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(thumb)]</value>
+                <value condition="!IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(fanart)">$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value>$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Icon)]</value>
+            </variable>
+        </variables>
+    </other>
+
+    <other include="widget2">
+        <condition tag="property" attribute="name|widgetPath.Widget2" />
+        <property name="content" tag="property" attribute="name|widgetPath.Widget2" />
+        <property name="target" tag="property" attribute="name|widgetTarget.Widget2" />
+        <property name="id" tag="mainmenuid" />
+        <propertyGroup>Navigation</propertyGroup>
+        <controls>
+            <control type="group">
+                <skinshortcuts>visibility</skinshortcuts>
+                <animation effect="fade" start="100" end="20" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <!-- Focused -->
+                <animation effect="slide" reversible="true" start="0,0" end="-485,0" time="300" condition="Control.HasFocus(8011$SKINSHORTCUTS[id]) | Control.HasFocus(8012$SKINSHORTCUTS[id]) | Control.HasFocus(8013$SKINSHORTCUTS[id]) | Control.HasFocus(8014$SKINSHORTCUTS[id]) | Control.HasFocus(8015$SKINSHORTCUTS[id]) | Control.HasFocus(8016$SKINSHORTCUTS[id]) | 
+                Control.HasFocus(8021$SKINSHORTCUTS[id]) | Control.HasFocus(8022$SKINSHORTCUTS[id]) | Control.HasFocus(8023$SKINSHORTCUTS[id]) | Control.HasFocus(8024$SKINSHORTCUTS[id]) | Control.HasFocus(8025$SKINSHORTCUTS[id]) | Control.HasFocus(8026$SKINSHORTCUTS[id]) | Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id]) | Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])">conditional</animation>
+                <!-- Focus 3 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-430" time="250" condition="[Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Focus 4 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-860" time="250" condition="[Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Labels -->
+                <control type="grouplist">
+                    <left>503</left>
+                    <top>550</top>
+                    <width>1905</width>
+                    <orientation>horizontal</orientation>
+                    <control type="label">
+                        <description>Title label</description>
+                        <height>30</height>
+                        <width>auto</width>
+                        <label>[B]$VAR[WidgetTitleVar2]  [/B]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <textcolor>grey</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>!Container(8021$SKINSHORTCUTS[id]).IsUpdating</visible>
+                    </control>
+                    <control type="group">
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8021$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine21$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine2">widgetLine22$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine3">widgetLine23$SKINSHORTCUTS[id]</param>              
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8022$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine21$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8023$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine21$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8024$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine21$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8025$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine21$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8026$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine21$SKINSHORTCUTS[id]</param>
+                        </include>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>503</left>
+                    <top>410</top>
+                    <skinshortcuts>visibility</skinshortcuts>
+                    <!-- All Content Widget-->
+                    <control type="panel" id="8021$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <include content="MediaWidgetContent">
+                            <param name="id">8021$SKINSHORTCUTS[id]</param>
+                            <param name="aspect">Container(9000).ListItem.Property(WideWidget2)</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9005</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8021$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                        <content limit="$INFO[Skin.String(WidgetLimit)]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[content]</content>
+                    </control>
+                    <!-- Weather Widget -->
+                    <control type="panel" id="8022$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),weather)</visible>
+                        <include content="WeatherWidgetContent">
+                            <param name="id">8022$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9005</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8022$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Settings Widget -->
+                    <control type="panel" id="8023$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),settings)</visible>
+                        <include content="SettingsWidgetContent">
+                            <param name="id">8023$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9005</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8023$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Addons Widget -->
+                    <control type="panel" id="8024$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),addons)</visible>
+                        <include content="AddonsWidgetContent">
+                            <param name="id">8024$SKINSHORTCUTS[id]</param>
+                            <param name="id">8024$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9005</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8024$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Special Items Widget -->
+                    <control type="panel" id="8025$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),specialitems)</visible>
+                        <include content="SpecialItemsWidgetContent">
+                            <param name="id">8025$SKINSHORTCUTS[id]</param>
+                            <param name="id">8025$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9005</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8025$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- System Info Widget -->
+                    <control type="panel" id="8026$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget2),systeminfo)</visible>
+                        <include content="SystemInfoWidgetContent">
+                            <param name="id">8026$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9003</param>
+                            <param name="ondown">9005</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8026$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                </control>
+                <!-- Arrow Indicators Up/Down -->
+                <control type="group">
+                    <include content="WidgetArrowIndicators">
+                        <param name="id1">8021$SKINSHORTCUTS[id]</param>
+                        <param name="id2">8022$SKINSHORTCUTS[id]</param>
+                        <param name="id3">8023$SKINSHORTCUTS[id]</param>
+                        <param name="id4">8024$SKINSHORTCUTS[id]</param>
+                        <param name="id5">8025$SKINSHORTCUTS[id]</param>
+                        <param name="id6">8026$SKINSHORTCUTS[id]</param>
+                        <param name="leftmainvertical">-150</param>
+                        <param name="topmainvertical">-150</param>
+                        <param name="leftmainhorizontal">510</param>
+                        <param name="topmainhorizontal">925</param>
+                        <param name="topbuttonup1"></param>
+                        <param name="topbuttonup2"></param>
+                        <param name="topbuttondown1"></param>
+                        <param name="topbuttondown2"></param>
+                        <param name="horizbuttonleft">0</param>
+                        <param name="horizbuttonright">1850</param>
+                    </include>
+                </control>
+            </control>
+        </controls>
+        <variables>
+            <variable name="widgetLine21$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Season,,x]$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Episode,,. ]$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Title)">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value>$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8022$SKINSHORTCUTS[id])">$INFO[Container(8022$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8023$SKINSHORTCUTS[id])">$INFO[Container(8023$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="Control.HasFocus(8024$SKINSHORTCUTS[id])">$INFO[Container(8024$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8025$SKINSHORTCUTS[id])">$INFO[Container(8025$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8026$SKINSHORTCUTS[id])">$INFO[Container(8026$SKINSHORTCUTS[id]).ListItem.Label]</value>
+            </variable>
+            <variable name="widgetLine22$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+            </variable>
+            <variable name="widgetLine23$SKINSHORTCUTS[id]">
+                <value condition="!IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Duration)">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Duration,• , mins]</value>
+            </variable>
+            <variable name="widgetExtraArt$SKINSHORTCUTS[id]">
+                <value condition="String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Art(thumb)]</value>
+                <value condition="!String.IsEmpty(Container(8021$SKINSHORTCUTS[id]).Listitem.Art(fanart))">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+            </variable>
+        </variables>
+    </other>
+
+    <other include="widget3">
+        <condition tag="property" attribute="name|widgetPath.Widget3" />
+        <property name="content" tag="property" attribute="name|widgetPath.Widget3" />
+        <property name="target" tag="property" attribute="name|widgetTarget.Widget3" />
+        <property name="id" tag="mainmenuid" />
+        <controls>
+            <control type="group">
+                <skinshortcuts>visibility</skinshortcuts>
+                <animation effect="fade" start="100" end="20" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <!-- Focused -->
+                <animation effect="slide" reversible="true" start="0,0" end="-485,0" time="300" condition="Control.HasFocus(8011$SKINSHORTCUTS[id]) | Control.HasFocus(8012$SKINSHORTCUTS[id]) | Control.HasFocus(8013$SKINSHORTCUTS[id]) | Control.HasFocus(8014$SKINSHORTCUTS[id]) | Control.HasFocus(8015$SKINSHORTCUTS[id]) | Control.HasFocus(8016$SKINSHORTCUTS[id]) | 
+                Control.HasFocus(8021$SKINSHORTCUTS[id]) | Control.HasFocus(8022$SKINSHORTCUTS[id]) | Control.HasFocus(8023$SKINSHORTCUTS[id]) | Control.HasFocus(8024$SKINSHORTCUTS[id]) | Control.HasFocus(8025$SKINSHORTCUTS[id]) | Control.HasFocus(8026$SKINSHORTCUTS[id]) | Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id]) | Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])">conditional</animation>
+                <!-- Focus 3 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-430" time="250" condition="[Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Focus 4 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-860" time="250" condition="[Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Labels -->
+                <control type="grouplist">
+                    <left>503</left>
+                    <top>960</top>
+                    <width>1905</width>
+                    <orientation>horizontal</orientation>
+                    <control type="label">
+                        <description>Title label</description>
+                        <height>30</height>
+                        <width>auto</width>
+                        <label>[B]$VAR[WidgetTitleVar3]  [/B]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <textcolor>grey</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>!Container(8031$SKINSHORTCUTS[id]).IsUpdating</visible>
+                    </control>
+                    <control type="group">
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8031$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine31$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine2">widgetLine32$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine3">widgetLine33$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8032$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine31$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8033$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine31$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8034$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine31$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8035$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine31$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8036$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine31$SKINSHORTCUTS[id]</param>
+                        </include>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>503</left>
+                    <top>820</top>
+                    <skinshortcuts>visibility</skinshortcuts>
+                    <!-- All Content Widget-->
+                    <control type="panel" id="8031$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <include content="MediaWidgetContent">
+                            <param name="id">8031$SKINSHORTCUTS[id]</param>
+                            <param name="aspect">Container(9000).ListItem.Property(WideWidget3)</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9004</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8031$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                        <content limit="$INFO[Skin.String(WidgetLimit)]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[content]</content>
+                    </control>
+                    <!-- Weather Widget -->
+                    <control type="panel" id="8032$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),weather)</visible>
+                        <include content="WeatherWidgetContent">
+                            <param name="id">8032$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9004</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8032$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Settings Widget -->
+                    <control type="panel" id="8033$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),settings)</visible>
+                        <include content="SettingsWidgetContent">
+                            <param name="id">8033$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9004</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8033$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Addons Widget -->
+                    <control type="panel" id="8034$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),addons)</visible>
+                        <include content="AddonsWidgetContent">
+                            <param name="id">8034$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9004</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8034$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Special Items Widget -->
+                    <control type="panel" id="8035$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),specialitems)</visible>
+                        <include content="SpecialItemsWidgetContent">
+                            <param name="id">8035$SKINSHORTCUTS[id]</param>
+                            <param name="id">8035$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9004</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8035$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- System Info Widget -->
+                    <control type="panel" id="8036$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget3),systeminfo)</visible>
+                        <include content="SystemInfoWidgetContent">
+                            <param name="id">8036$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9004</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8036$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                </control>
+                <!-- Arrow Indicators Up/Down -->
+                <control type="group">
+                    <include content="WidgetArrowIndicators">
+                        <param name="id1">8031$SKINSHORTCUTS[id]</param>
+                        <param name="id2">8032$SKINSHORTCUTS[id]</param>
+                        <param name="id3">8033$SKINSHORTCUTS[id]</param>
+                        <param name="id4">8034$SKINSHORTCUTS[id]</param>
+                        <param name="id5">8035$SKINSHORTCUTS[id]</param>
+                        <param name="id6">8036$SKINSHORTCUTS[id]</param>
+                        <param name="leftmainvertical">-150</param>
+                        <param name="topmainvertical">-150</param>
+                        <param name="leftmainhorizontal">510</param>
+                        <param name="topmainhorizontal">1335</param>
+                        <param name="topbuttonup1"></param>
+                        <param name="topbuttonup2"></param>
+                        <param name="topbuttondown1"></param>
+                        <param name="topbuttondown2"></param>
+                        <param name="horizbuttonleft">0</param>
+                        <param name="horizbuttonright">1850</param>
+                    </include>
+                </control>
+            </control>
+        </controls>
+        <variables>
+            <variable name="widgetLine31$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Season,,x]$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Episode,,. ]$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Title)">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value>$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8032$SKINSHORTCUTS[id])">$INFO[Container(8032$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8033$SKINSHORTCUTS[id])">$INFO[Container(8033$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="Control.HasFocus(8034$SKINSHORTCUTS[id])">$INFO[Container(8034$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8035$SKINSHORTCUTS[id])">$INFO[Container(8035$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8036$SKINSHORTCUTS[id])">$INFO[Container(8036$SKINSHORTCUTS[id]).ListItem.Label]</value>
+            </variable>
+            <variable name="widgetLine32$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+            </variable>
+            <variable name="widgetLine33$SKINSHORTCUTS[id]">
+                <value condition="!IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Duration)">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Duration,• , mins]</value>
+            </variable>
+            <variable name="widgetExtraArt$SKINSHORTCUTS[id]">
+                <value condition="String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Art(thumb)]</value>
+                <value condition="!String.IsEmpty(Container(8031$SKINSHORTCUTS[id]).Listitem.Art(fanart))">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+            </variable>
+        </variables>
+    </other>
+
+    <other include="widget4">
+        <condition tag="property" attribute="name|widgetPath.Widget4" />
+        <property name="content" tag="property" attribute="name|widgetPath.Widget4" />
+        <property name="target" tag="property" attribute="name|widgetTarget.Widget4" />
+        <property name="id" tag="mainmenuid" />
+        <controls>
+            <control type="group">
+                <skinshortcuts>visibility</skinshortcuts>
+                <animation effect="fade" start="100" end="20" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <!-- Focused -->
+                <animation effect="slide" reversible="true" start="0,0" end="-485,0" time="300" condition="Control.HasFocus(8011$SKINSHORTCUTS[id]) | Control.HasFocus(8012$SKINSHORTCUTS[id]) | Control.HasFocus(8013$SKINSHORTCUTS[id]) | Control.HasFocus(8014$SKINSHORTCUTS[id]) | Control.HasFocus(8015$SKINSHORTCUTS[id]) | Control.HasFocus(8016$SKINSHORTCUTS[id]) | 
+                Control.HasFocus(8021$SKINSHORTCUTS[id]) | Control.HasFocus(8022$SKINSHORTCUTS[id]) | Control.HasFocus(8023$SKINSHORTCUTS[id]) | Control.HasFocus(8024$SKINSHORTCUTS[id]) | Control.HasFocus(8025$SKINSHORTCUTS[id]) | Control.HasFocus(8026$SKINSHORTCUTS[id]) | Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id]) | Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])">conditional</animation>
+                <!-- Focus 3 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-430" time="250" condition="[Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Focus 4 -->
+                <animation effect="slide" reversible="true" start="0,0" end="0,-860" time="250" condition="[Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])]">conditional</animation>
+                <!-- Labels -->
+                <control type="grouplist">
+                    <left>503</left>
+                    <top>1370</top>
+                    <width>1905</width>
+                    <orientation>horizontal</orientation>
+                    <control type="label">
+                        <description>Title label</description>
+                        <height>30</height>
+                        <width>auto</width>
+                        <label>[B]$VAR[WidgetTitleVar4]  [/B]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <textcolor>grey</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>!Container(8041$SKINSHORTCUTS[id]).IsUpdating</visible>
+                    </control>
+                    <control type="group">
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8041$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine41$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine2">widgetLine42$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine3">widgetLine43$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8042$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine41$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8043$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine41$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8044$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine41$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8045$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine41$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8046$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine41$SKINSHORTCUTS[id]</param>
+                        </include>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>503</left>
+                    <top>1230</top>
+                    <skinshortcuts>visibility</skinshortcuts>
+                    <!-- All Content Widget-->
+                    <control type="panel" id="8041$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <include content="MediaWidgetContent">
+                            <param name="id">8041$SKINSHORTCUTS[id]</param>
+                            <param name="aspect">Container(9000).ListItem.Property(WideWidget4)</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9005</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8041$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                        <content limit="$INFO[Skin.String(WidgetLimit)]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[content]</content>
+                    </control>
+                    <!-- Weather Widget -->
+                    <control type="panel" id="8042$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget4),weather)</visible>
+                        <include content="WeatherWidgetContent">
+                            <param name="id">8042$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9005</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8042$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Settings Widget -->
+                    <control type="panel" id="8043$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget4),settings)</visible>
+                        <include content="SettingsWidgetContent">
+                            <param name="id">8043$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9005</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8043$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Addons Widget -->
+                    <control type="panel" id="8044$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget4),addons)</visible>
+                        <include content="AddonsWidgetContent">
+                            <param name="id">8044$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9005</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8044$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- Special Items Widget -->
+                    <control type="panel" id="8045$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget4),specialitems)</visible>
+                        <include content="SpecialItemsWidgetContent">
+                            <param name="id">8035$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9005</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8045$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <!-- System Info Widget -->
+                    <control type="panel" id="8046$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widget4),systeminfo)</visible>
+                        <include content="SystemInfoWidgetContent">
+                            <param name="id">8046$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">180</param>
+                            <param name="width">1890</param>
+                            <param name="height">330</param>
+                            <param name="onup">9005</param>
+                            <param name="ondown">9006</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8046$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                </control>
+                <!-- Arrow Indicators Up/Down -->
+                <control type="group">
+                    <include content="WidgetArrowIndicators">
+                        <param name="id1">8041$SKINSHORTCUTS[id]</param>
+                        <param name="id2">8042$SKINSHORTCUTS[id]</param>
+                        <param name="id3">8043$SKINSHORTCUTS[id]</param>
+                        <param name="id4">8044$SKINSHORTCUTS[id]</param>
+                        <param name="id5">8045$SKINSHORTCUTS[id]</param>
+                        <param name="id6">8046$SKINSHORTCUTS[id]</param>
+                        <param name="leftmainvertical">-150</param>
+                        <param name="topmainvertical">-150</param>
+                        <param name="leftmainhorizontal">510</param>
+                        <param name="topmainhorizontal">1745</param>
+                        <param name="topbuttonup1"></param>
+                        <param name="topbuttonup2"></param>
+                        <param name="topbuttondown1"></param>
+                        <param name="topbuttondown2"></param>
+                        <param name="horizbuttonleft">0</param>
+                        <param name="horizbuttonright">1850</param>
+                    </include>
+                </control>
+            </control>
+        </controls>
+        <variables>
+            <variable name="widgetLine41$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Season,,x]$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Episode,,. ]$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Title)">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value>$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8042$SKINSHORTCUTS[id])">$INFO[Container(8042$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8043$SKINSHORTCUTS[id])">$INFO[Container(8043$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="Control.HasFocus(8044$SKINSHORTCUTS[id])">$INFO[Container(8044$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8045$SKINSHORTCUTS[id])">$INFO[Container(8045$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8046$SKINSHORTCUTS[id])">$INFO[Container(8046$SKINSHORTCUTS[id]).ListItem.Label]</value>
+            </variable>
+            <variable name="widgetLine42$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+            </variable>
+            <variable name="widgetLine43$SKINSHORTCUTS[id]">
+                <value condition="!IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Duration)">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Duration,• , mins]</value>
+            </variable>
+            <variable name="widgetExtraArt$SKINSHORTCUTS[id]">
+                <value condition="String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Art(thumb)]</value>
+                <value condition="!String.IsEmpty(Container(8041$SKINSHORTCUTS[id]).Listitem.Art(fanart))">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+            </variable>
+        </variables>
+    </other>
+
+    <other include="widgetsingle">
+        <condition tag="property" attribute="name|widgetPath.Widgetsingle" />
+        <property name="content" tag="property" attribute="name|widgetPath.Widgetsingle" />
+        <property name="target" tag="property" attribute="name|widgetTarget.Widgetsingle" />
+        <property name="id" tag="mainmenuid" />
+        <controls>
+            <control type="group">
+                <skinshortcuts>visibility</skinshortcuts>
+                <animation effect="fade" start="100" end="20" time="300" condition="Control.HasFocus(9901) | Control.HasFocus(9902) | Control.HasFocus(9903) | Control.HasFocus(9904)">conditional</animation>
+                <!-- Focused -->
+                <animation effect="slide" reversible="true" start="0,0" end="-360,0" time="300" condition="Control.HasFocus(8001$SKINSHORTCUTS[id]) | Control.HasFocus(8002$SKINSHORTCUTS[id]) | Control.HasFocus(8003$SKINSHORTCUTS[id]) | Control.HasFocus(8004$SKINSHORTCUTS[id]) | Control.HasFocus(8005$SKINSHORTCUTS[id]) | Control.HasFocus(8006$SKINSHORTCUTS[id])">conditional</animation>
+                <!-- Labels -->
+                <control type="grouplist">
+                    <left>503</left>
+                    <top>185</top>
+                    <width>1905</width>
+                    <orientation>horizontal</orientation>
+                    <control type="label">
+                        <description>Title label</description>
+                        <height>30</height>
+                        <width>auto</width>
+                        <label>[B]$VAR[WidgetTitleVarSingle]  [/B]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <textcolor>grey</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>!Container(8001$SKINSHORTCUTS[id]).IsUpdating</visible>
+                    </control>
+                    <control type="group">
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8001$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine01$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine2">widgetLine02$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine3">widgetLine03$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8002$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine01$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8003$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine01$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8004$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine01$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8005$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine01$SKINSHORTCUTS[id]</param>
+                        </include>
+                        <include content="mediawidgetLabelsInfo">
+                            <param name="id">8006$SKINSHORTCUTS[id]</param>
+                            <param name="widgetLine1">widgetLine01$SKINSHORTCUTS[id]</param>
+                        </include>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>503</left>
+                    <top>225</top>
+                    <skinshortcuts>visibility</skinshortcuts>
+                    <!-- All Content Widget-->
+                    <control type="panel" id="8001$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <include content="MediaWidgetContent">
+                            <param name="id">8001$SKINSHORTCUTS[id]</param>
+                            <param name="aspect">Container(9000).ListItem.Property(WideWidgetSingle)</param>
+                            <param name="left">0</param>
+                            <param name="top">0</param>
+                            <param name="width">1620</param>
+                            <param name="height">660</param>
+                            <param name="onup">8001$SKINSHORTCUTS[id]</param>
+                            <param name="ondown">8001$SKINSHORTCUTS[id]</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8001$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Vertical</param>
+                        </include>
+                        <content limit="$INFO[Skin.String(WidgetLimit)]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[content]</content>
+                    </control>
+                    <!-- Weather Widget -->
+                    <control type="panel" id="8002$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),weather)</visible>
+                        <include content="WeatherWidgetContent">
+                            <param name="id">8002$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">330</param>
+                            <param name="width">1620</param>
+                            <param name="height">330</param>
+                            <param name="onup">8002$SKINSHORTCUTS[id]</param>
+                            <param name="ondown">8002$SKINSHORTCUTS[id]</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8002$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Horizontal</param>
+                        </include>
+                    </control>
+                    <control type="group">
+                        <top>0</top>
+                        <control type="image">
+                            <description>background</description>
+                            <visible>Control.IsVisible(8002$SKINSHORTCUTS[id])</visible>
+                            <left>0</left>
+                            <top>0</top>
+                            <width>1620</width>
+                            <height>330</height>
+                            <texture border="15">RecentAddedBack.png</texture>
+                        </control>
+                        <control type="group">
+                            <visible>Control.IsVisible(8002$SKINSHORTCUTS[id])</visible>
+                            <top>0</top>
+                            <left>0</left>
+                            <width>1200</width>
+                            <height>300</height>
+                            <top>300</top>
+                            <control type="label">
+                                <animation effect="slide" reversible="true" start="0,0" end="220,0" time="300" condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">conditional</animation>
+                                <left>450</left>
+                                <top>240</top>
+                                <height>75</height>
+                                <orientation>horizontal</orientation>
+                                <width>auto</width>
+                                <font>font13</font>
+                                <label>$INFO[Window(weather).Property(Location)]</label>
+                            </control>
+                            <control type="image">
+                                <animation effect="slide" reversible="true" start="0,0" end="65,0" time="300" condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">conditional</animation>
+                                <left>0</left>
+                                <top>0</top>
+                                <height>300</height>
+                                <aspectratio scalediffuse="false" align="left" aligny="center">keep</aspectratio>
+                                <texture background="true">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                            </control>
+                            <control type="grouplist">
+                                <top>23</top>
+                                <left>450</left>
+                                <orientation>horizontal</orientation>
+                                <animation effect="slide" reversible="true" start="0,0" end="220,0" time="300" condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">conditional</animation>
+                                <control type="label">
+                                    <description>current temp Value</description>
+                                    <width>auto</width>
+                                    <height>375</height>
+                                    <font>WeatherTemp</font>
+                                    <label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+                                </control>
+                                <control type="label">
+                                    <description>current temp Value Units</description>
+                                    <left>405</left>
+                                    <width>auto</width>
+                                    <height>324</height>
+                                    <font>font16</font>
+                                    <label>$INFO[System.TemperatureUnits]</label>
+                                </control>
+                            </control>
+                            <control type="label">
+                                <animation effect="slide" reversible="true" start="0,0" end="220,0" time="300" condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">conditional</animation>
+                                <description>current condition label</description>
+                                <top>180</top>
+                                <left>450</left>
+                                <width>657</width>
+                                <height>60</height>
+                                <align>left</align>
+                                <label>$INFO[Window(weather).Property(Current.Condition)]</label>
+                                <font>font30</font>
+                            </control>
+                            <control type="grouplist">
+                                <animation effect="slide" reversible="true" start="0,0" end="270,0" time="300" condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">conditional</animation>
+                                <left>645</left>
+                                <top>38</top>
+                                <width>657</width>
+                                <itemgap>15</itemgap>
+                                <control type="label">
+                                    <label>[COLOR grey2]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+                                    <width>657</width>
+                                    <height>45</height>
+                                    <align>right</align>
+                                    <font>font14</font>
+                                </control>
+                                <control type="label">
+                                    <label>[COLOR grey2]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+                                    <width>657</width>
+                                    <height>45</height>
+                                    <align>right</align>
+                                    <font>font14</font>
+                                </control>
+                                <control type="label">
+                                    <label>[COLOR grey2]$LOCALIZE[33027]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunrise)][/LOWERCASE]</label>
+                                    <width>657</width>
+                                    <height>45</height>
+                                    <align>right</align>
+                                    <font>font14</font>
+                                </control>
+                                <control type="label">
+                                    <label>[COLOR grey2]$LOCALIZE[33028]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunset)][/LOWERCASE]</label>
+                                    <width>657</width>
+                                    <height>45</height>
+                                    <align>right</align>
+                                    <font>font14</font>
+                                </control>
+                            </control>
+                        </control>
+                    </control>
+                    <!-- Settings Widget -->
+                    <control type="panel" id="8003$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),settings)</visible>
+                        <include content="SettingsWidgetContent">
+                            <param name="id">8003$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">0</param>
+                            <param name="width">1620</param>
+                            <param name="height">660</param>
+                            <param name="onup">8003$SKINSHORTCUTS[id]</param>
+                            <param name="ondown">8003$SKINSHORTCUTS[id]</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8003$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Vertical</param>
+                        </include>
+                    </control>
+                    <!-- Addons Widget -->
+                    <control type="panel" id="8004$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),addons)</visible>
+                        <include content="AddonsWidgetContent">
+                            <param name="id">8004$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">0</param>
+                            <param name="width">1620</param>
+                            <param name="height">660</param>
+                            <param name="onup">8004$SKINSHORTCUTS[id]</param>
+                            <param name="ondown">8004$SKINSHORTCUTS[id]</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8004$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Vertical</param>
+                        </include>
+                    </control>
+                    <!-- Special Items Widget -->
+                    <control type="panel" id="8005$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),specialitems)</visible>
+                        <include content="SpecialItemsWidgetContent">
+                            <param name="id">8005$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">0</param>
+                            <param name="width">1620</param>
+                            <param name="height">660</param>
+                            <param name="onup">8005$SKINSHORTCUTS[id]</param>
+                            <param name="ondown">8005$SKINSHORTCUTS[id]</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8005$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Vertical</param>
+                        </include>
+                    </control>
+                    <!-- System Info Widget -->
+                    <control type="panel" id="8006$SKINSHORTCUTS[id]">
+                        <skinshortcuts>visibility</skinshortcuts>
+                        <visible>String.IsEqual(Container(9000).ListItem.Property(widget.widgetsingle),systeminfo)</visible>
+                        <include content="SystemInfoWidgetContent">
+                            <param name="id">8006$SKINSHORTCUTS[id]</param>
+                            <param name="left">0</param>
+                            <param name="top">0</param>
+                            <param name="width">1620</param>
+                            <param name="height">660</param>
+                            <param name="onup">8006$SKINSHORTCUTS[id]</param>
+                            <param name="ondown">8006$SKINSHORTCUTS[id]</param>
+                            <param name="onleft">9000</param>
+                            <param name="onright">8006$SKINSHORTCUTS[id]</param>
+                            <param name="orientation">Vertical</param>
+                        </include>
+                    </control>
+                </control>
+                <!-- Arrow Indicators Up/Down -->
+                <control type="group">
+                    <include content="WidgetArrowIndicators">
+                        <param name="id1">8001$SKINSHORTCUTS[id]</param>
+                        <param name="id2"></param>
+                        <param name="id3">8003$SKINSHORTCUTS[id]</param>
+                        <param name="id4">8004$SKINSHORTCUTS[id]</param>
+                        <param name="id5">8005$SKINSHORTCUTS[id]</param>
+                        <param name="id6">8006$SKINSHORTCUTS[id]</param>
+                        <param name="leftmainvertical">2135</param>
+                        <param name="topmainvertical">230</param>
+                        <param name="leftmainhorizontal">-150</param>
+                        <param name="topmainhorizontal">-150</param>
+                        <param name="vertbuttonup">0</param>
+                        <param name="vertbuttondown">620</param>
+                        <param name="leftbuttonleft1"></param>
+                        <param name="leftbuttonleft2"></param>
+                        <param name="leftbuttonright1"></param>
+                        <param name="leftbuttonright2"></param>
+                    </include>
+                </control>
+            </control>
+        </controls>
+        <variables>
+            <variable name="widgetLine01$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Episode)">$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Season,,x]$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Episode,,. ]$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value condition="!String.IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Title)">$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Title]</value>
+                <value>$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">$INFO[Container(8002$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8003$SKINSHORTCUTS[id])">$INFO[Container(8003$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="Control.HasFocus(8004$SKINSHORTCUTS[id])">$INFO[Container(8004$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8005$SKINSHORTCUTS[id])">$INFO[Container(8005$SKINSHORTCUTS[id]).ListItem.Label]</value>
+                <value condition="Control.HasFocus(8006$SKINSHORTCUTS[id])">$INFO[Container(8006$SKINSHORTCUTS[id]).ListItem.Label]</value>
+            </variable>
+            <variable name="widgetLine02$SKINSHORTCUTS[id]">
+                <value condition="!String.IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="!String.IsEmpty(Container(8007$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8007$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8007$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8007$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8007$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8007$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8007$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8007$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8007$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8007$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+                <value condition="!String.IsEmpty(Container(8008$SKINSHORTCUTS[id]).ListItem.Episode)">• $INFO[Container(8008$SKINSHORTCUTS[id]).ListItem.TvShowTitle]$INFO[Container(8008$SKINSHORTCUTS[id]).ListItem.Premiered, • ]</value>
+                <value condition="!String.IsEmpty(Container(8008$SKINSHORTCUTS[id]).ListItem.Artist)">• $INFO[Container(8008$SKINSHORTCUTS[id]).ListItem.Artist]$INFO[Container(8008$SKINSHORTCUTS[id]).ListItem.Year, • ]</value>
+                <value condition="!String.IsEmpty(Container(8008$SKINSHORTCUTS[id]).ListItem.Year)">• $INFO[Container(8008$SKINSHORTCUTS[id]).ListItem.Year]</value>
+                <value condition="!String.IsEmpty(Container(8008$SKINSHORTCUTS[id]).ListItem.Label2)">• $INFO[Container(8008$SKINSHORTCUTS[id]).ListItem.Label2]</value>
+            </variable>
+            <variable name="widgetLine03$SKINSHORTCUTS[id]">
+                <value condition="!IsEmpty(Container(8001$SKINSHORTCUTS[id]).ListItem.Duration)">$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Duration,• , mins]</value>
+            </variable>
+        </variables>
+    </other>
+
+    <other include="WidgetFanart">
+        <property name="id" tag="mainmenuid" />
+        <property name="visible">Control.HasFocus(8001$SKINSHORTCUTS[id]) | Control.HasFocus(8002$SKINSHORTCUTS[id]) | Control.HasFocus(8003$SKINSHORTCUTS[id]) | Control.HasFocus(8004$SKINSHORTCUTS[id]) | Control.HasFocus(8005$SKINSHORTCUTS[id]) | Control.HasFocus(8006$SKINSHORTCUTS[id]) | Control.HasFocus(8011$SKINSHORTCUTS[id]) | Control.HasFocus(8012$SKINSHORTCUTS[id]) | Control.HasFocus(8013$SKINSHORTCUTS[id]) | Control.HasFocus(8014$SKINSHORTCUTS[id]) | Control.HasFocus(8015$SKINSHORTCUTS[id]) | Control.HasFocus(8016$SKINSHORTCUTS[id]) | Control.HasFocus(8021$SKINSHORTCUTS[id]) | Control.HasFocus(8022$SKINSHORTCUTS[id]) | Control.HasFocus(8023$SKINSHORTCUTS[id]) | Control.HasFocus(8024$SKINSHORTCUTS[id]) | Control.HasFocus(8025$SKINSHORTCUTS[id]) | Control.HasFocus(8026$SKINSHORTCUTS[id]) | Control.HasFocus(8031$SKINSHORTCUTS[id]) | Control.HasFocus(8032$SKINSHORTCUTS[id]) | Control.HasFocus(8033$SKINSHORTCUTS[id]) | Control.HasFocus(8034$SKINSHORTCUTS[id]) | Control.HasFocus(8035$SKINSHORTCUTS[id]) | Control.HasFocus(8036$SKINSHORTCUTS[id]) | Control.HasFocus(8041$SKINSHORTCUTS[id]) | Control.HasFocus(8042$SKINSHORTCUTS[id]) | Control.HasFocus(8043$SKINSHORTCUTS[id]) | Control.HasFocus(8044$SKINSHORTCUTS[id]) | Control.HasFocus(8045$SKINSHORTCUTS[id]) | Control.HasFocus(8046$SKINSHORTCUTS[id])</property>
+        <controls>
+             <control type="multiimage">
+                <visible>$SKINSHORTCUTS[visible]</visible>
+                <description>Widget Background Image</description>
+                <fadetime>300</fadetime>
+                <include>VisibleFadeEffect</include>
+                <include>backgroundfade</include>
+                <fadetime>FanartCrossfadeTime</fadetime>
+                <imagepath colordiffuse="$VAR[WidgetBackground_Opacity]" background="true">$VAR[WidgetFanartVar$SKINSHORTCUTS[id]]</imagepath>
+                <visible>![Player.HasVideo | Skin.HasSetting(HideBackGroundFanart)]</visible>
+            </control>
+        </controls>
+        <variables>
+            <variable name="WidgetFanartVar$SKINSHORTCUTS[id]">
+                <value condition="Control.HasFocus(8001$SKINSHORTCUTS[id])">$INFO[Container(8001$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8002$SKINSHORTCUTS[id])">$INFO[Container(8002$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8003$SKINSHORTCUTS[id])">$INFO[Container(8003$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8004$SKINSHORTCUTS[id])">$INFO[Container(8004$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8005$SKINSHORTCUTS[id])">$INFO[Container(8005$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8006$SKINSHORTCUTS[id])">$INFO[Container(8006$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8011$SKINSHORTCUTS[id])">$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8012$SKINSHORTCUTS[id])">$INFO[Container(8012$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8013$SKINSHORTCUTS[id])">$INFO[Container(8013$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8014$SKINSHORTCUTS[id])">$INFO[Container(8014$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8015$SKINSHORTCUTS[id])">$INFO[Container(8015$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8016$SKINSHORTCUTS[id])">$INFO[Container(8016$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8021$SKINSHORTCUTS[id])">$INFO[Container(8021$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8022$SKINSHORTCUTS[id])">$INFO[Container(8022$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8023$SKINSHORTCUTS[id])">$INFO[Container(8023$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8024$SKINSHORTCUTS[id])">$INFO[Container(8024$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8025$SKINSHORTCUTS[id])">$INFO[Container(8025$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8026$SKINSHORTCUTS[id])">$INFO[Container(8026$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8031$SKINSHORTCUTS[id])">$INFO[Container(8031$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8032$SKINSHORTCUTS[id])">$INFO[Container(8032$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8033$SKINSHORTCUTS[id])">$INFO[Container(8033$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8034$SKINSHORTCUTS[id])">$INFO[Container(8034$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8035$SKINSHORTCUTS[id])">$INFO[Container(8035$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8036$SKINSHORTCUTS[id])">$INFO[Container(8036$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8041$SKINSHORTCUTS[id])">$INFO[Container(8041$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8042$SKINSHORTCUTS[id])">$INFO[Container(8042$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8043$SKINSHORTCUTS[id])">$INFO[Container(8043$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8044$SKINSHORTCUTS[id])">$INFO[Container(8044$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8045$SKINSHORTCUTS[id])">$INFO[Container(8045$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value condition="Control.HasFocus(8046$SKINSHORTCUTS[id])">$INFO[Container(8046$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+                <value></value>
+            </variable>
+        </variables>
+    </other>
+</template>

@@ -1,0 +1,106 @@
+<settings>
+	<!-- Skin Opacity -->
+    <setting id="OpacityLevels" value="||SUBLEVEL||FanartOpacity" label="Set Fanart Opacity Levels" condition="" icon="DefaultAddonLookAndFeel.png" description="Set Skin Opacity Levels" />
+    <setting id="OpacityLevels" value="||SUBLEVEL||ContentPanelOpacity" label="Set Content Panel Opacity Levels" condition="" icon="DefaultAddonLookAndFeel.png" description="Set Skin Opacity Levels" />
+    <setting id="OpacityLevels" value="||SUBLEVEL||WidgetBackgroundOpacity" label="Set Widget Fanart Opacity Levels" condition="" icon="DefaultAddonLookAndFeel.png" description="Set Skin Opacity Levels" />
+    <setting id="OpacityLevels" value="||SUBLEVEL||DefaultBackgroundOpacity" label="Set Default Background Opacity Levels" condition="" icon="DefaultAddonLookAndFeel.png" description="Set Skin Opacity Levels" />
+
+    <!-- Fanart Opacity -->
+    <setting id="FanartOpacity" value="Default" label="$LOCALIZE[15109] - 100" condition="" icon="DefaultAddon.png" description="Skin Default 100%"/>
+    <setting id="FanartOpacity" value="0" label="0" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 0%"/>
+    <setting id="FanartOpacity" value="5" label="5" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 5%"/>
+    <setting id="FanartOpacity" value="10" label="10" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 10%"/>
+    <setting id="FanartOpacity" value="15" label="15" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 15%"/>
+    <setting id="FanartOpacity" value="20" label="20" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 20%"/>
+    <setting id="FanartOpacity" value="25" label="25" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 25%"/>
+    <setting id="FanartOpacity" value="30" label="30" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 30%"/>
+    <setting id="FanartOpacity" value="35" label="35" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 35%"/>
+    <setting id="FanartOpacity" value="40" label="40" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 40%"/>
+    <setting id="FanartOpacity" value="45" label="45" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 45%"/>
+    <setting id="FanartOpacity" value="50" label="50" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 50%"/>
+    <setting id="FanartOpacity" value="55" label="55" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 55%"/>
+    <setting id="FanartOpacity" value="60" label="60" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 60%"/>
+    <setting id="FanartOpacity" value="65" label="65" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 65%"/>
+    <setting id="FanartOpacity" value="70" label="70" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 70%"/>
+    <setting id="FanartOpacity" value="75" label="75" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 75%"/>
+    <setting id="FanartOpacity" value="80" label="80" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 80%"/>
+    <setting id="FanartOpacity" value="85" label="85" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 85%"/>
+    <setting id="FanartOpacity" value="90" label="90" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 90%"/>
+    <setting id="FanartOpacity" value="95" label="95" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 95%"/>
+    <setting id="FanartOpacity" value="100" label="100" condition="" icon="DefaultAddonLookAndFeel.png" description="Fanart Opacity: 100%"/>
+
+    <!-- Panel Opacity -->
+    <setting id="ContentPanelOpacity" value="Default" label="$LOCALIZE[15109] - 100" condition="" icon="DefaultAddon.png" description="Skin Deafult 100%"/>
+    <setting id="ContentPanelOpacity" value="0" label="0" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 0%"/>
+    <setting id="ContentPanelOpacity" value="5" label="5" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 5%"/>
+    <setting id="ContentPanelOpacity" value="10" label="10" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 10%"/>
+    <setting id="ContentPanelOpacity" value="15" label="15" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 15%"/>
+    <setting id="ContentPanelOpacity" value="20" label="20" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 20%"/>
+    <setting id="ContentPanelOpacity" value="25" label="25" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 25%"/>
+    <setting id="ContentPanelOpacity" value="30" label="30" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 30%"/>
+    <setting id="ContentPanelOpacity" value="35" label="35" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 35%"/>
+    <setting id="ContentPanelOpacity" value="40" label="40" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 40%"/>
+    <setting id="ContentPanelOpacity" value="45" label="45" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 45%"/>
+    <setting id="ContentPanelOpacity" value="50" label="50" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 50%"/>
+    <setting id="ContentPanelOpacity" value="55" label="55" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 55%"/>
+    <setting id="ContentPanelOpacity" value="60" label="60" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 60%"/>
+    <setting id="ContentPanelOpacity" value="65" label="65" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 65%"/>
+    <setting id="ContentPanelOpacity" value="70" label="70" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 70%"/>
+    <setting id="ContentPanelOpacity" value="75" label="75" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 75%"/>
+    <setting id="ContentPanelOpacity" value="80" label="80" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 80%"/>
+    <setting id="ContentPanelOpacity" value="85" label="85" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 85%"/>
+    <setting id="ContentPanelOpacity" value="90" label="90" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 90%"/>
+    <setting id="ContentPanelOpacity" value="95" label="95" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 95%"/>
+    <setting id="ContentPanelOpacity" value="100" label="100" condition="" icon="DefaultAddonLookAndFeel.png" description="Content Panel Opacity 100%"/>
+
+    <!-- Widget Background Opacity -->
+    <setting id="WidgetBackgroundOpacity" value="Default" label="$LOCALIZE[15109] - 25" condition="" icon="DefaultAddon.png" description="Skin Default 25%"/>
+    <setting id="WidgetBackgroundOpacity" value="0" label="0" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 0%"/>
+    <setting id="WidgetBackgroundOpacity" value="5" label="5" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 5%"/>
+    <setting id="WidgetBackgroundOpacity" value="10" label="10" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 10%"/>
+    <setting id="WidgetBackgroundOpacity" value="15" label="15" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 15%"/>
+    <setting id="WidgetBackgroundOpacity" value="20" label="20" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 20%"/>
+    <setting id="WidgetBackgroundOpacity" value="25" label="25" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 25%"/>
+    <setting id="WidgetBackgroundOpacity" value="30" label="30" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 30%"/>
+    <setting id="WidgetBackgroundOpacity" value="35" label="35" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 35%"/>
+    <setting id="WidgetBackgroundOpacity" value="40" label="40" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 40%"/>
+    <setting id="WidgetBackgroundOpacity" value="45" label="45" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 45%"/>
+    <setting id="WidgetBackgroundOpacity" value="50" label="50" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 50%"/>
+    <setting id="WidgetBackgroundOpacity" value="55" label="55" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 55%"/>
+    <setting id="WidgetBackgroundOpacity" value="60" label="60" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 60%"/>
+    <setting id="WidgetBackgroundOpacity" value="65" label="65" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 65%"/>
+    <setting id="WidgetBackgroundOpacity" value="70" label="70" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 70%"/>
+    <setting id="WidgetBackgroundOpacity" value="75" label="75" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 75%"/>
+    <setting id="WidgetBackgroundOpacity" value="80" label="80" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 80%"/>
+    <setting id="WidgetBackgroundOpacity" value="85" label="85" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 85%"/>
+    <setting id="WidgetBackgroundOpacity" value="90" label="90" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 90%"/>
+    <setting id="WidgetBackgroundOpacity" value="95" label="95" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 95%"/>
+    <setting id="WidgetBackgroundOpacity" value="100" label="100" condition="" icon="DefaultAddonLookAndFeel.png" description="Widget Background Opacity 100%"/>
+
+    <!-- Default Background Opacity -->
+    <setting id="DefaultBackgroundOpacity" value="Default" label="$LOCALIZE[15109] - 100" condition="" icon="DefaultAddon.png" description="Skin Default 100%"/>
+    <setting id="DefaultBackgroundOpacity" value="0" label="0" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 0%"/>
+    <setting id="DefaultBackgroundOpacity" value="5" label="5" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 5%"/>
+    <setting id="DefaultBackgroundOpacity" value="10" label="10" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 10%"/>
+    <setting id="DefaultBackgroundOpacity" value="15" label="15" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 15%"/>
+    <setting id="DefaultBackgroundOpacity" value="20" label="20" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 20%"/>
+    <setting id="DefaultBackgroundOpacity" value="25" label="25" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 25%"/>
+    <setting id="DefaultBackgroundOpacity" value="30" label="30" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 30%"/>
+    <setting id="DefaultBackgroundOpacity" value="35" label="35" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 35%"/>
+    <setting id="DefaultBackgroundOpacity" value="40" label="40" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 40%"/>
+    <setting id="DefaultBackgroundOpacity" value="45" label="45" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 45%"/>
+    <setting id="DefaultBackgroundOpacity" value="50" label="50" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 50%"/>
+    <setting id="DefaultBackgroundOpacity" value="55" label="55" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 55%"/>
+    <setting id="DefaultBackgroundOpacity" value="60" label="60" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 60%"/>
+    <setting id="DefaultBackgroundOpacity" value="65" label="65" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 65%"/>
+    <setting id="DefaultBackgroundOpacity" value="70" label="70" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 70%"/>
+    <setting id="DefaultBackgroundOpacity" value="75" label="75" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 75%"/>
+    <setting id="DefaultBackgroundOpacity" value="80" label="80" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 80%"/>
+    <setting id="DefaultBackgroundOpacity" value="85" label="85" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 85%"/>
+    <setting id="DefaultBackgroundOpacity" value="90" label="90" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 90%"/>
+    <setting id="DefaultBackgroundOpacity" value="95" label="95" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 95%"/>
+    <setting id="DefaultBackgroundOpacity" value="100" label="100" condition="" icon="DefaultAddonLookAndFeel.png" description="Media Views Background Opacity 100%"/>
+    
+    
+
+</settings>
