@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|specialitemswidget)</onunload>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <include>CommonBackground2</include>
+        <control type="image">
+            <include>Floor_Animation</include>
+            <left>0</left>
+            <top>150r</top>
+            <width>1920</width>
+            <height>150</height>
+            <texture>floor.png</texture>
+            <include>VisibleFadeEffect</include>
+        </control>
+        <include content="CommonWindowHeader">
+            <param name="Icon" value="icon_system" />
+        </include>
+        <control type="group">
+            <left>135</left>
+            <top>45</top>
+            <include>Animation.Common</include>
+            <control type="image">
+                <left>8</left>
+                <top>8</top>
+                <width>1635</width>
+                <height>945</height>
+                <texture border="22">ContentPanel.png</texture>
+            </control>
+            <control type="image">
+                <left>8</left>
+                <top>938</top>
+                <width>1635</width>
+                <height>96</height>
+                <texture border="22">ContentPanelMirror.png</texture>
+            </control>
+            <control type="button">
+                <description>Close Window button</description>
+                <left>1470</left>
+                <top>16</top>
+                <width>96</width>
+                <height>48</height>
+                <label></label>
+                <font></font>
+                <onclick>PreviousMenu</onclick>
+                <texturefocus>DialogCloseButton-focus.png</texturefocus>
+                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <onleft>1</onleft>
+                <onright>1</onright>
+                <onup>1</onup>
+                <ondown>1</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="image">
+                <description>LOGO</description>
+                <left>45</left>
+                <top>15</top>
+                <width>330</width>
+                <height>120</height>
+                <aspectratio>keep</aspectratio>
+                <texture>special://skin/extras/icon_settings.png</texture>
+            </control>
+            <control type="list" id="9000">
+                <left>15</left>
+                <top>135</top>
+                <width>390</width>
+                <height>722</height>
+                <onleft>9010</onleft>
+                <onright>9010</onright>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <pagecontrol></pagecontrol>
+                <scrolltime>300</scrolltime>
+                <itemlayout height="103" width="390">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>103</height>
+                        <texture border="8">MenuItemNF.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>15</left>
+                        <top>12</top>
+                        <width>360</width>
+                        <height>38</height>
+                        <font>font24_title</font>
+                        <textcolor>grey3</textcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>15</left>
+                        <top>53</top>
+                        <width>360</width>
+                        <height>38</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="103" width="390">
+                    <control type="group">
+                        <left>0</left>
+                        <top>0</top>
+                        <include content="SelectedSolidVar">
+                            <param name="width">390</param>
+                            <param name="height">103</param>
+                        </include>
+                        <animation type="UnFocus" reversible="false">
+                            <effect type="fade" start="100" end="40" time="0" />
+                        </animation>
+                    </control>
+                    <control type="label">
+                        <left>15</left>
+                        <top>12</top>
+                        <width>360</width>
+                        <height>38</height>
+                        <font>font24_title</font>
+                        <textcolor>white</textcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>15</left>
+                        <top>53</top>
+                        <width>360</width>
+                        <height>38</height>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item id="1">
+                        <label>513</label>
+                        <label2>31112</label2>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item id="2">
+                        <label>Widgets</label>
+                        <label2>31112</label2>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item id="3">
+                        <label>Colour</label>
+                        <label2>5</label2>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item id="4">
+                        <label>Opacity</label>
+                        <label2>5</label2>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item id="5">
+                        <label>Background</label>
+                        <label2>31112</label2>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item id="6">
+                        <label>128</label>
+                        <label2>5</label2>
+                        <onclick>noop</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="image">
+                <left>402</left>
+                <top>15</top>
+                <width>1185</width>
+                <height>927</height>
+                <texture border="8">black-back2.png</texture>
+            </control>
+            <control type="image">
+                <left>402</left>
+                <top>15</top>
+                <width>1185</width>
+                <height>78</height>
+                <texture>dialogheader.png</texture>
+            </control>
+            <control type="label">
+                <description>header label</description>
+                <left>450</left>
+                <top>30</top>
+                <width>1089</width>
+                <height>45</height>
+                <font>font16</font>
+                <label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label]</label>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+            </control>
+            
+            <control type="group" id="9010">
+                <!-- Home Window Settings (1) -->
+                <control type="grouplist" id="9001">
+                    <visible>Container(9000).Hasfocus(1)</visible>
+                    <left>435</left>
+                    <top>120</top>
+                    <width>1125</width>
+                    <height>756</height>
+                    <itemgap>-2</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9001</onup>
+                    <ondown>9001</ondown>
+                    <scrolltime>0</scrolltime>
+                    <control type="label" id="1000">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>Customize main menu options</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="button" id="1001">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Choose which items to display on the main menu</label>
+                        <onclick>Skin.Reset(CustomizeHeading)</onclick>
+                        <onclick>Skin.SetString(CustomizeHeading,homemenu)</onclick>
+                        <onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=mainmenu)</onclick>
+                        <enable>System.HasAddon(script.skinshortcuts)</enable>
+                        <usealttexture>Skin.HasSetting(UseOutline)</usealttexture>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <alttexturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">common/selectbox.png</alttexturefocus>
+                    </control>
+                    <control type="button" id="1002">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>- $ADDON[script.skinshortcuts 32037] to skin default</label>
+                        <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+                        <enable>System.HasAddon(script.skinshortcuts)</enable>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="label" id="1003">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>Customize other home window options</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="radiobutton" id="1004">
+                        <description>Use "outline" for home menus</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Use "outline" for home menus</label>
+                        <onclick>Skin.ToggleSetting(UseOutlineHomeMenus)</onclick>
+                        <selected>Skin.HasSetting(UseOutlineHomeMenus)</selected>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="radiobutton" id="1007">
+                        <description>enable weather info</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>20084</label>
+                        <onclick>Skin.ToggleSetting(homepageWeatherinfo)</onclick>
+                        <selected>Skin.HasSetting(homepageWeatherinfo)</selected>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <visible>!IsEmpty(Weather.Plugin)</visible>
+                    </control>
+                    <control type="button" id="1008">
+                        <width>1125</width>
+                        <height>60</height>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Choose weather icons</label>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
+                        <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
+                        <visible>!IsEmpty(Weather.Plugin)</visible>
+                    </control>
+                </control>
+                <control type="scrollbar" id="60">
+                    <left>1590</left>
+                    <top>90</top>
+                    <width>30</width>
+                    <height>795</height>
+                    <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                    <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                    <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                    <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                    <onleft>9001</onleft>
+                    <onright>9001</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible>Container(9000).Hasfocus(1)</visible>
+                </control>
+
+                <!-- Widget Settings (2) -->
+                <control type="grouplist" id="9002">
+                    <visible>Container(9000).Hasfocus(2)</visible>
+                    <left>435</left>
+                    <top>120</top>
+                    <width>1125</width>
+                    <height>756</height>
+                    <itemgap>-2</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9002</onup>
+                    <ondown>9002</ondown>
+                    <scrolltime>0</scrolltime>
+                    <control type="label" id="2000">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>Customize home widget options</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="radiobutton" id="2001">
+                        <description>Use "outline" for widget selection</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Use "outline" for widget selection</label>
+                        <onclick>Skin.ToggleSetting(UseOutlineWidget)</onclick>
+                        <selected>Skin.HasSetting(UseOutlineWidget)</selected>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="button" id="2002">
+                        <description>Choose maximum number of items in widgets</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Choose maximum number of items in media widgets</label>
+                        <label2>[COLOR=selected]$VAR[MaxMediaWidgetVar][/COLOR]</label2>
+                        <onclick>Skin.Reset(WidgetLimit)</onclick>
+                        <onclick>Skin.SetNumeric(WidgetLimit)</onclick>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="radiobutton" id="2005">
+                        <description>Widget defaults to position one when unfocused</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Widgets default to position one when unfocused</label>
+                        <onclick>Skin.ToggleSetting(EnableWidgetResetPosition)</onclick>
+                        <selected>Skin.HasSetting(EnableWidgetResetPosition)</selected>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="button" id="2006">
+                        <description>Choose items for "special items" widget</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Choose items for "special items" widget</label>
+                        <onclick>Skin.Reset(CustomizeHeading)</onclick>
+                        <onclick>Skin.SetString(CustomizeHeading,specialitemswidget)</onclick>
+                        <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=specialitemswidget)</onclick>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                </control>
+                <control type="scrollbar" id="60">
+                    <left>1590</left>
+                    <top>90</top>
+                    <width>30</width>
+                    <height>795</height>
+                    <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                    <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                    <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                    <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                    <onleft>9002</onleft>
+                    <onright>9002</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible>Container(9000).Hasfocus(2)</visible>
+                </control>
+
+                <!-- Colour Settings (3) -->
+                <control type="grouplist" id="9003">
+                    <visible>Container(9000).Hasfocus(3)</visible>
+                    <left>435</left>
+                    <top>120</top>
+                    <width>1125</width>
+                    <height>756</height>
+                    <itemgap>-2</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9003</onup>
+                    <ondown>9003</ondown>
+                    <scrolltime>0</scrolltime>
+                    <control type="label" id="3000">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>Choose highlight colour for Skin</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="button" id="3001">
+                        <width>1125</width>
+                        <height>60</height>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Choose highlight colour</label>
+                        <label2>[COLOR=$VAR[ColorHighlightVar]]$INFO[Skin.String(highlightcolor.name)][/COLOR]</label2>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick condition="System.HasAddon(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=highlightcolor.name)</onclick>
+                        <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                    </control>
+                    <control type="radiobutton" id="3002">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Use gradient for highlights</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(UseGradients)</onclick>
+                        <selected>Skin.HasSetting(UseGradients)</selected>
+                    </control>
+                    <control type="button" id="3003">
+                        <width>1125</width>
+                        <height>60</height>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Choose highlight gradient colour</label>
+                        <label2>[COLOR=$VAR[GradientColorHighlightVar]]$INFO[Skin.String(gradientcolor.name)][/COLOR]</label2>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick condition="System.HasAddon(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
+                        <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                        <visible>Skin.HasSetting(UseGradients)</visible>
+                    </control>
+                    <control type="button" id="3004">
+                        <width>1125</width>
+                        <height>60</height>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>- Reset custom colours to skin default</label>
+                        <label2></label2>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>AlarmClock(ResetColor,Skin.Reset(highlightcolor.name),00:00,silent)</onclick>
+                        <onclick>AlarmClock(ResetColor,Skin.Reset(gradientcolor.name),00:00,silent)</onclick>
+                    </control>
+                </control>
+                <control type="scrollbar" id="60">
+                    <left>1590</left>
+                    <top>90</top>
+                    <width>30</width>
+                    <height>795</height>
+                    <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                    <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                    <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                    <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                    <onleft>9003</onleft>
+                    <onright>9003</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible>Container(9000).Hasfocus(3)</visible>
+                </control>
+
+                <!-- Opacity Settings (4) -->
+                <control type="grouplist" id="9004">
+                    <visible>Container(9000).Hasfocus(4)</visible>
+                    <left>435</left>
+                    <top>120</top>
+                    <width>1125</width>
+                    <height>756</height>
+                    <itemgap>-2</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9004</onup>
+                    <ondown>9004</ondown>
+                    <scrolltime>0</scrolltime>
+                    <control type="label" id="4000">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>Set opacity levels</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="button" id="4001">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Set fanart opacity</label>
+                        <label2>$VAR[Label_SkinSetting_FanartOpacity]</label2>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=FanartOpacity,header=Set Fanart Opacity)</onclick>
+                    </control>
+                    <control type="button" id="4002">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Set content panel opacity</label>
+                        <label2>$VAR[Label_SkinSetting_ContentPanel_Opacity]</label2>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ContentPanelOpacity,header=Set Content Panel Opacity)</onclick>
+                    </control>
+                    <control type="button" id="4003">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Set widget background opacity</label>
+                        <label2>$VAR[Label_SkinSetting_WidgetBackground_Opacity]</label2>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=WidgetBackgroundOpacity,header=Set Widget Background Opacity)</onclick>
+                    </control>
+                    <control type="button" id="4004">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Set media views background opacity</label>
+                        <label2>$VAR[Label_SkinSetting_DefaultBackgroundOpacity_Opacity]</label2>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=DefaultBackgroundOpacity,header=Set Default Background Opacity)</onclick>
+                    </control>
+                    <control type="button" id="4005">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>- Reset opacity levels to skin default</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>RunScript(script.skin.helper.service,action=dialogyesno,header=Reset Background Opacity Defaults,message=Do you wish to reset all background opacity settings to skin defaults?,yesaction=RunScript(script.skin.helper.service,action=reset,filter=Opacity,silent=true))</onclick>
+                    </control>
+                </control>
+                <control type="scrollbar" id="60">
+                    <left>1590</left>
+                    <top>90</top>
+                    <width>30</width>
+                    <height>795</height>
+                    <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                    <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                    <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                    <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                    <onleft>9004</onleft>
+                    <onright>9004</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible>Container(9000).Hasfocus(4)</visible>
+                </control>
+
+                <!-- Background Settings (5)-->
+                <control type="grouplist" id="9005">
+                    <visible>Container(9000).Hasfocus(5)</visible>
+                    <left>435</left>
+                    <top>120</top>
+                    <width>1125</width>
+                    <height>756</height>
+                    <itemgap>-2</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9005</onup>
+                    <ondown>9005</ondown>
+                    <scrolltime>0</scrolltime>
+                    <control type="label" id="5000">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>31106</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="radiobutton" id="5001">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31119</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
+                        <selected>Skin.HasSetting(HideBackGroundFanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="5002">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31129</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
+                        <selected>Skin.HasSetting(HideVisualizationFanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="5003">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31124</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
+                        <selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
+                    </control>
+                    <control type="radiobutton" id="5004">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31125</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
+                        <selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
+                    </control>
+                    <control type="label" id="5005">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>31102</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="radiobutton" id="5006">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31109</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(UseCustomBackground)</onclick>
+                        <selected>Skin.HasSetting(UseCustomBackground)</selected>
+                    </control>
+                    <control type="button" id="5007">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>- $LOCALIZE[31110]</label>
+                        <label2>[COLOR=selected]$INFO[Skin.String(CustomBackgroundPath)][/COLOR]</label2>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.SetImage(CustomBackgroundPath)</onclick>
+                        <enable>Skin.HasSetting(UseCustomBackground)</enable>
+                    </control>
+                </control>
+                <control type="scrollbar" id="60">
+                    <left>1590</left>
+                    <top>90</top>
+                    <width>30</width>
+                    <height>795</height>
+                    <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                    <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                    <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                    <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                    <onleft>9005</onleft>
+                    <onright>9005</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible>Container(9000).Hasfocus(5)</visible>
+                </control>
+
+                <!-- General/Misc Settings (6)-->
+                <control type="grouplist" id="9006">
+                    <visible>Container(9000).Hasfocus(6)</visible>
+                    <left>435</left>
+                    <top>120</top>
+                    <width>1125</width>
+                    <height>756</height>
+                    <itemgap>-2</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9006</onup>
+                    <ondown>9006</ondown>
+                    <scrolltime>0</scrolltime>
+                    <control type="label" id="6000">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>31106</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="radiobutton" id="6001">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Use "outline" for list selection</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(UseOutline)</onclick>
+                        <selected>Skin.HasSetting(UseOutline)</selected>
+                    </control>
+                    <control type="radiobutton" id="6002">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Disable floor in media views</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(HideFloor)</onclick>
+                        <selected>Skin.HasSetting(HideFloor)</selected>
+                    </control>
+                    <control type="radiobutton" id="6003">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>20189</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(AutoScroll)</onclick>
+                        <selected>Skin.HasSetting(AutoScroll)</selected>
+                    </control>
+                    <control type="radiobutton" id="6004">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31103</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
+                        <selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
+                    </control>
+                    <control type="radiobutton" id="6005">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31104</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
+                        <selected>Skin.HasSetting(WindowedTrailer)</selected>
+                    </control>
+                    <control type="radiobutton" id="6006">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31107</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
+                        <selected>Skin.HasSetting(HideFilenameFlagging)</selected>
+                    </control>
+                    <control type="radiobutton" id="6007">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>31122</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(HideEPGwithRDS)</onclick>
+                        <selected>Skin.HasSetting(HideEPGwithRDS)</selected>
+                    </control>
+                    <control type="label" id="6008">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>512</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="radiobutton" id="6009">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <label>Use startup playlist</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
+                        <selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
+                    </control>
+                    <control type="button" id="6010">
+                        <description>Startup Playlist Path</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>15311</label>
+                        <label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
+                        <onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
+                    </control>
+                    <control type="label" id="6011">
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13_title</font>
+                        <label>Reset ALL skin settings to default</label>
+                        <textcolor>white</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+                    <control type="button" id="6012">
+                        <description>Reset all skin settings</description>
+                        <width>1125</width>
+                        <height>60</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>Pressing this will remove ALL your defined skin settings....</label>
+                        <onclick>RunScript(script.skin.helper.service,action=dialogyesno,header=Reset ALL skin settings to default,message=Are you sure you want to reset all skin settings?,yesaction=Skin.ResetSettings|RunScript(script.skinshortcuts,type=resetall))</onclick>
+                        <texturefocus colordiffuse="$VAR[ColorHighlightVar]" border="8">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                </control>
+                <control type="scrollbar" id="60">
+                    <left>1590</left>
+                    <top>90</top>
+                    <width>30</width>
+                    <height>795</height>
+                    <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                    <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                    <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                    <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                    <onleft>9006</onleft>
+                    <onright>9006</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible>Container(9000).Hasfocus(6)</visible>
+                </control>
+            </control>
+            <!-- Gradient Fade -->
+            <control type="group">
+                <include content="SettingsFocusGradientSolidHack">
+                    <param name="id">9001</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientSolidHack">
+                    <param name="id">9002</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientSolidHack">
+                    <param name="id">9003</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientSolidHack">
+                    <param name="id">9004</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientSolidHack">
+                    <param name="id">9005</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientSolidHack">
+                    <param name="id">9006</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+            </control>
+            <!--control type="group">
+                <include content="SettingsFocusGradientOutlineHack">
+                    <param name="id">9001</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientOutlineHack">
+                    <param name="id">9002</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+                <include content="SettingsFocusGradientOutlineHack">
+                    <param name="id">9003</param>
+                    <param name="top">120</param>
+                    <param name="left">435</param>
+                    <param name="width">1125</param>
+                    <param name="height">60</param>
+                    <param name="slide">58</param>
+                </include>
+            </control-->
+        </control>
+        <include>CommonNowPlaying</include>
+        <include>MainWindowMouseButtons</include>
+        <include>BehindDialogFadeOut</include>
+        <include content="CommonWindowHeader">
+            <param name="Icon" value="icon_system" />
+            <param name="ShowLabel" value="true" />
+            <param name="Label" value="Skin Settings" />
+        </include>
+    </controls>
+</window>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <include name="Title">
+        <control type="group">
+            <visible>Control.IsVisible(726)</visible>
+            <include>Animation.Common</include>
+            <include content="NoFloorSlide">
+                <param name="contentslide">60</param>
+            </include>
+            <control type="image">
+                <left>1275</left>
+                <top>45</top>
+                <width>540</width>
+                <height>810</height>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true">$VAR[PosterThumb]</texture>
+                <bordertexture border="12">ThumbShadow.png</bordertexture>
+                <bordersize>12</bordersize>
+                <aspectratio>keep</aspectratio>
+            </control>
+            <left>0</left>
+            <top>82</top>
+            <control type="list" id="726">
+                <viewtype label="Title">list</viewtype>
+                <pagecontrol>60</pagecontrol>
+                <left>-75</left>
+                <top>38</top>
+                <width>1800</width>
+                <height>795</height>
+                <scrolltime>50</scrolltime>
+                <orientation>vertical</orientation>
+                <onup>726</onup>
+                <ondown>726</ondown>
+                <onleft>2</onleft>
+                <onright>60</onright>
+                <pagecontrol></pagecontrol>
+                <visible>Container.Content(TVShows)</visible>
+                <itemlayout width="1035" height="60">
+                    <control type="label">
+                        <left>300</left>
+                        <top>12</top>
+                        <width>600</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <left>300</left>
+                        <top>12</top>
+                        <width>600</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font13</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <description>INFO txt</description>
+                        <left>1050</left>
+                        <top>12</top>
+                        <width>180</width>
+                        <height>30</height>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <wrapmultiline>false</wrapmultiline>
+                    </control>
+                    <control type="image">
+                        <left>1239</left>
+                        <top>12</top>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>$INFO[ListItem.Overlay]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1035" height="60">
+                    <control type="group">
+                        <left>270</left>
+                        <top>0</top>
+                        <include content="SelectedSolidVar" condition="!Skin.HasSetting(UseOutline)">
+                            <param name="width">1020</param>
+                            <param name="height">60</param>
+                        </include>
+                        <include content="SelectedOutlineVar" condition="Skin.HasSetting(UseOutline)">
+                            <param name="width">1020</param>
+                            <param name="height">60</param>
+                        </include>
+                        <include content="UnselectFade">
+                            <param name="id">726</param>
+                        </include>
+                    </control>
+                    <control type="image">
+                        <left>1239</left>
+                        <top>12</top>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>$INFO[ListItem.Overlay]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="label">
+                        <left>300</left>
+                        <top>12</top>
+                        <width>600</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <left>300</left>
+                        <top>12</top>
+                        <width>600</width>
+                        <height>30</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <selectedcolor>selected</selectedcolor>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="label">
+                        <description>INFO txt</description>
+                        <left>1050</left>
+                        <top>12</top>
+                        <width>180</width>
+                        <height>30</height>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <wrapmultiline>false</wrapmultiline>
+                    </control>
+                    <control type="label">
+                        <left>910</left>
+                        <top>12</top>
+                        <width>150</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>Rating: $INFO[ListItem.Rating]</label>
+                        <font>font12</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="60">
+                <include content="ScrollBarPosition">
+                    <param name="scrollbarslide">645</param>
+                </include>
+                <left>1206</left>
+                <top>6</top>
+                <width>30</width>
+                <height>846</height>
+                <texturesliderbackground border="15">scrollbars/scrollbaruni-bg.png</texturesliderbackground>
+                <texturesliderbar border="15">scrollbars/scrollbaruni-bar.png</texturesliderbar>
+                <texturesliderbarfocus colordiffuse="$VAR[ColorHighlightVar]" border="15">scrollbars/scrollbaruni-bar-focus.png</texturesliderbarfocus>
+                <textureslidernib>scrollbars/scrollbaruni-nib.png</textureslidernib>
+                <textureslidernibfocus>scrollbars/scrollbaruni-nib.png</textureslidernibfocus>
+                <onleft>726</onleft>
+                <onright>2</onright>
+                <visible>Control.IsVisible(726)</visible>
+                <showonepage>false</showonepage>
+                <orientation>vertical</orientation>
+            </control>
+        </control>
+    </include>
+</includes>

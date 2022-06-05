@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
+    <!--onload condition="IsEmpty(Skin.String(Color.Theme))">Skin.SetString(SkinHelper.ColorTheme,Default)</onload-->
+    <controls></controls>
+</window>

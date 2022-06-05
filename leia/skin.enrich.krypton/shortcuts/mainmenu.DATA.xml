@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<label>12600</label>
+		<label2>32034</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Weather)</action>
+	</shortcut>
+	<shortcut>
+		<label>10006</label>
+		<label2>32034</label2>
+		<icon>DefaultVideo.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos)</action>
+	</shortcut>
+	<shortcut>
+		<label>342</label>
+		<label2>32034</label2>
+		<icon>DefaultMovies.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://movies/titles/,return)</action>
+	</shortcut>
+	<shortcut>
+		<label>20343</label>
+		<label2>32034</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://tvshows/titles/,return)</action>
+	</shortcut>
+	<shortcut>
+		<label>10005</label>
+		<label2>32034</label2>
+		<icon>DefaultMusicAlbums.png</icon>
+		<thumb />
+		<action>ActivateWindow(Music)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>24001</defaultID>
+		<label>24001</label>
+		<label2>Common menu item</label2>
+		<icon>special://skin/extras/icons/addon.png</icon>
+		<thumb>DefaultAddon.png</thumb>
+		<action>ActivateWindow(1110)</action>
+	</shortcut>
+	<shortcut>
+		<label>10004</label>
+		<label2>32034</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Settings)</action>
+	</shortcut>
+</shortcuts>

@@ -1,0 +1,589 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="context.fencontextmenu" name="Fen Context Menu" version="1.0.02" provider-name="Tikipeter">
+  <requires>
+    <import addon="xbmc.python" version="2.25.0" />
+  </requires>
+  <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="fen_browse_into.py">
+                <label>[B]Fen Browse Series[/B]</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="fen_mark_watched.py">
+                <label>[B]Fen Mark Watched[/B]</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(fen_widget),true) + String.IsEqual(ListItem.Property(fen_playcount),0)</visible>
+            </item>
+            <item library="fen_mark_unwatched.py">
+                <label>[B]Fen Mark Unwatched[/B]</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(fen_widget),true) + String.IsEqual(ListItem.Property(fen_playcount),1)</visible>
+            </item>
+            <item library="fen_playback_context_menu.py">
+                <label>[B]Fen Settings[/B]</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + [String.IsEqual(ListItem.FileExtension,strm) | String.IsEqual(ListItem.Property(fen_widget),true)]</visible>
+            </item>
+        </menu>
+    </extension>
+  <extension point="xbmc.service" library="service.py" start="startup">
+  </extension>
+  <extension point="kodi.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Access Fen Playback Settings from Kodi</summary>
+    <description lang="en">Access Fen Playback Settings from Kodi.</description>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <forum />
+    <source />
+  </extension>
+</addon><addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.2.1">
+	<requires>
+		<import addon="script.module.requests" version="2.19.1" />
+	</requires>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="contextSettings.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - CM Settings</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.settings)) +
+					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true)
+				</visible>
+			</item>
+			<item library="traktManager.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Trakt Manager</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.traktManager)) +
+					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season) | String.IsEqual(ListItem.dbtype,movie)]
+				</visible>
+			</item>
+			<item library="clearProviders.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Clear Providers</label>
+				<visible>
+					[!String.IsEmpty(Window(home).Property(context.venom.clearProviders)) +
+					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]] |
+					[String.Contains(Container.FolderPath,videodb://) +
+					[String.Contains(Container.ListItem.Path,Window(home).Property(venom.movieLib.path)) | String.Contains(Container.ListItem.Path,Window(home).Property(venom.tvLib.path))] +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]]
+				</visible>
+			</item>
+			<item library="clearBookmark.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Clear Item Bookmark</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.clearBookmark)) +
+					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					ListItem.IsResumable +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
+				</visible>
+			</item>
+			<item library="rescrape.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Rescrape Item</label>
+				<visible>
+					[!String.IsEmpty(Window(home).Property(context.venom.rescrape)) +
+					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]]
+				</visible>
+			</item>
+			<item library="libRescrape.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Rescrape Lib Item</label>
+				<visible>
+					String.Contains(Container.FolderPath,videodb://) +
+					[String.Contains(Container.ListItem.Path,Window(home).Property(venom.movieLib.path)) | String.Contains(Container.ListItem.Path,Window(home).Property(venom.tvLib.path))] +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
+				</visible>
+			</item>
+			<item library="playFromHere.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Play from here</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.playFromHere)) +
+					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					String.IsEqual(ListItem.dbtype,episode)
+				</visible>
+			</item>
+			<item library="autoPlay.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Auto Play</label>
+				<visible>
+					String.IsEmpty(Window(home).Property(venom.autoPlay.enabled)) +
+					!String.IsEmpty(Window(home).Property(context.venom.autoPlay)) +
+					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
+				</visible>
+			</item>
+			<item library="sourceSelect.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Source Select</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(venom.autoPlay.enabled)) +
+					!String.IsEmpty(Window(home).Property(context.venom.sourceSelect)) +
+					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
+				</visible>
+			</item>
+			<item library="findSimilar.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Find Similar</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.findSimilar)) +
+					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,movie)]
+				</visible>
+			</item>
+			<item library="browseSeries.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Browse Series</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.browseSeries)) +
+					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,tvshow)]
+				</visible>
+			</item>
+			<item library="browseEpisodes.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Browse Episodes</label>
+				<visible>
+					!String.IsEmpty(Window(home).Property(context.venom.browseEpisodes)) +
+					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
+					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					String.IsEqual(ListItem.dbtype,episode)
+				</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Venom - This Addon is currently in beta. Please be aware there may be bugs present</summary>
+		<description lang="en">Adds Global Contextual Menu Items for Venom menu items throughout Kodi</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum />
+		<website>https://github.com/123Venom/context.venom</website>
+		<source>https://github.com/123Venom/context.venom</source>
+		<disclaimer lang="en" />
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot />
+		</assets>
+		<news>
+[B][COLOR red]Update - v1.2.1 - Nov. 04, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] The "Rescrape Item" context menu now has a pop-up select method of 4 possible choices to rescrape.  You can set a preferred default action in the settings to bypass the select dialog pop up.[/I]
+		</news>
+	</extension>
+</addon><addon id="plugin.video.ezra" name="Ezra" provider-name="Ezra Hubbard" version="0.0.7b">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.19.1" />
+        <import addon="script.ezart" version="0.0.1" />
+        <import addon="script.module.myaccounts" version="2.0.2" />
+        <import addon="script.module.ezscrapers" version="0.0.7" />
+        <import addon="repository.ezra" version="0.0.1" />
+    </requires>
+    <extension library="resources/lib/ezra.py" point="xbmc.python.pluginsource">
+        <provides>video</provides>
+    </extension>
+    <extension library="resources/lib/service.py" point="xbmc.service" />
+    <extension library="resources/lib/" point="xbmc.python.module" />
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="resources/contextmenu/refresh_widgets.py">
+                <label>40001</label>
+                <visible>String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/mark_watched.py">
+                <label>40003</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(ezra_widget),true) + String.IsEqual(ListItem.Property(ezra_playcount),0)</visible>
+            </item>
+            <item library="resources/contextmenu/mark_unwatched.py">
+                <label>40004</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(ezra_widget),true) + String.IsEqual(ListItem.Property(ezra_playcount),1)</visible>
+            </item>
+            <item library="resources/contextmenu/clear_progress.py">
+                <label>40009</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(ezra_widget),true) + String.IsEqual(ListItem.Property(ezra_in_progress),true)</visible>
+            </item>
+            <item library="resources/contextmenu/browse.py">
+                <label>40002</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/browse_season.py">
+                <label>40011</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/trakt_manager.py">
+                <label>40005</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/favorites_manager.py">
+                <label>40008</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/play_random.py">
+                <label>40010</label>
+                <visible>[String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/options.py">
+                <label>40007</label>
+                <visible>String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/extras.py">
+                <label>40006</label>
+                <visible>String.IsEqual(ListItem.Property(ezra_widget),true)</visible>
+            </item>
+        </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="en">Mainly used for Furk and Easynews.</summary>
+        <description lang="en">The book of Ezra relates how God's covenant people were restored from Babylonian exile to the covenant land</description>
+        <platform>all</platform>
+		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+    </extension>
+</addon><addon id="plugin.video.fen" name="Fen" provider-name="Tiki" version="2.6.13">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.19.1" />
+        <import addon="script.tikiart" version="1.0.0" />
+        <import addon="script.module.myaccounts" version="0.0.0" />
+        <import addon="script.module.fenomscrapers" version="0.0.0" />
+    </requires>
+    <extension library="resources/lib/fen.py" point="xbmc.python.pluginsource">
+        <provides>video</provides>
+    </extension>
+    <extension library="resources/lib/service.py" point="xbmc.service" />
+    <extension library="resources/lib/" point="xbmc.python.module" />
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="resources/contextmenu/refresh_widgets.py">
+                <label>40001</label>
+                <visible>String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/mark_watched.py">
+                <label>40003</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(fen_widget),true) + String.IsEqual(ListItem.Property(fen_playcount),0)</visible>
+            </item>
+            <item library="resources/contextmenu/mark_unwatched.py">
+                <label>40004</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(fen_widget),true) + String.IsEqual(ListItem.Property(fen_playcount),1)</visible>
+            </item>
+            <item library="resources/contextmenu/clear_progress.py">
+                <label>40009</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(fen_widget),true) + String.IsEqual(ListItem.Property(fen_in_progress),true)</visible>
+            </item>
+            <item library="resources/contextmenu/browse.py">
+                <label>40002</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/browse_season.py">
+                <label>40011</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/trakt_manager.py">
+                <label>40005</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/favorites_manager.py">
+                <label>40008</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/play_random.py">
+                <label>40010</label>
+                <visible>[String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/options.py">
+                <label>40007</label>
+                <visible>String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+            <item library="resources/contextmenu/extras.py">
+                <label>40006</label>
+                <visible>String.IsEqual(ListItem.Property(fen_widget),true)</visible>
+            </item>
+        </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="en">Mainly used for Furk and Easynews.</summary>
+        <description lang="en">This add-on is intended for advanced Kodi users only. Mainly used for Furk and Easynews(web) account access. Also utilizes Fenomscrapers for those without a Furk or Easynews(web) account. You must have a debrid service to use this add-on without Furk/Easynews.[CR][CR][B]Please Note: This add-on is NOT an Exodus fork, and as such will behave differently to an Exodus fork.[/B]</description>
+        <platform>all</platform>
+		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+    </extension>
+</addon><addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.4.5">
+	<requires>
+		<import addon="context.venom" />
+		<import addon="script.module.myaccounts" />
+		<import addon="script.module.fenomscrapers" />
+		<import addon="script.module.requests" />
+		<import addon="script.module.beautifulsoup4" />
+		<import addon="script.module.metahandler" optional="true" />
+		<import addon="plugin.video.youtube" optional="true" />
+		<import addon="script.module.addon.signals" optional="true" />
+	</requires>
+	<extension library="venom.py" point="xbmc.python.pluginsource">
+		<provides>video</provides>
+	</extension>
+	<extension library="service.py" point="xbmc.service" start="startup" />
+	<extension library="resources/lib/" point="xbmc.python.module" /> 
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>true</reuselanguageinvoker>
+		<summary lang="en">[B][COLOR red]Venom[/COLOR][/B] - We do not host any of the contents streamed</summary>
+		<description lang="en">[B][COLOR red]Venom[/COLOR][/B][CR] This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.[CR]The author does not host any of the content in this addon and takes no responsibility for content found</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum />
+		<website>https://github.com/123Venom/plugin.video.venom</website>
+		<source>https://github.com/123Venom/plugin.video.venom</source>
+		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshots/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot002.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
+		</assets>
+		<news>
+[B][COLOR red]Update - v4.4.5 - March 11, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed ampersand sign in news to be encoded.  Sorry about that
+    folks, simply forgot.[/I]
+[B][COLOR red]Update - v4.4.4 - March 11, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Note TMDBHelper player files have been updated.  Be sure
+    to update via the TMDBHelper settings.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed TMDBHelper playback of library files(.strm) when
+    TMDBHelper is set to "Automatically play local files".[/I]
+[COLOR yellow]--[/COLOR][I] Few tweaks to some annoying folder and file names used for
+    library integration. Ex. "&amp;" was replaced with an underscore,
+    now replaced with the word "and".  Apostrophes in names
+    were being replaces with a "."(dot), now just removed.[/I]
+		</news>
+	</extension>
+</addon><addon id="repository.Rising.Tides" name="[COLOR red][B]R[/B][/COLOR][COLOR white][B]ising[/B][/COLOR] [COLOR pink][B]T[/B][/COLOR][COLOR white][B]ides[/B][/COLOR] Repository" version="1.1" provider-name="[COLOR turquoise][B]@mullafabz[/B][/COLOR]">
+	<extension point="xbmc.addon.repository" name="[COLOR red][B]R[/B][/COLOR]ising [COLOR pink][B]T[/B][/COLOR]ides Repository">
+	<dir>
+		<info compressed="false">https://mullafabz.xyz/Plugins/K19/Plugins/addons.xml</info>
+		<checksum>https://mullafabz.xyz/Plugins/K19/Plugins/addons.xml.md5</checksum>
+		<datadir zip="true">https://mullafabz.xyz/Plugins/K19/Plugins/</datadir>
+	</dir>
+	<dir>
+		<info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+    </dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>All types of Contents</summary>
+		<description>Find any type of content</description>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
+</addon><addon id="repository.fro" name="Fro Repository" version="0.0.1" provider-name="rostifer72">
+    <extension point="xbmc.addon.repository" name="Fro Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/rostifer72/repository.fro/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/rostifer72/repository.fro/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/rostifer72/repository.fro/master/repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Fro Repo</summary>
+        <description>All I need are some tasty waves, a cool buzz, and I'm fine.</description>
+        <platform>all</platform>
+        <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="script.ezart" name="Ezra Art Module" provider-name="" version="0.0.1">
+    <extension point="xbmc.python.module" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Themes for Addons</summary>
+        <description>Themes for Addons</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+    </extension>
+</addon><addon id="script.module.ezscrapers" name="Ezra Scrapers Module" version="0.0.7" provider-name="Ezra Hubbard">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
+		<import addon="script.module.myaccounts" version="0.0.1" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="lib/default.py">
+		<provides>executable</provides>
+	</extension> 
+	<extension point="xbmc.service" library="lib/service.py" start="startup" />
+	<extension point="xbmc.python.module" library="lib" /> 
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<summary lang="en">Ezra Scrapers Module</summary>
+		<description>Scrape common video host for URL's to be playable in Kodi, simplifying addon development of video plugins requiring multi video hosts.</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum />
+		<website />
+		<source />
+		<disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+			<screenshot />
+		</assets>
+		<news>
+		</news>
+	</extension>
+</addon><addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="2.1.8" provider-name="Mr-Kodi">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
+		<import addon="script.module.myaccounts" version="2.0.0" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="lib/default.py">
+		<provides>executable</provides>
+	</extension> 
+	<extension point="xbmc.service" library="lib/service.py" start="startup" />
+	<extension point="xbmc.python.module" library="lib" /> 
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<summary lang="en">FenomScrapers Module</summary>
+		<description>Scrape common video host for URL's to be playable in Kodi, simplifying addon development of video plugins requiring multi video hosts.</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum />
+		<website>https://github.com/Mr-Kodi/repository.fenomscrapers</website>
+		<source>https://github.com/Mr-Kodi/repository.fenomscrapers</source>
+		<disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+			<screenshot />
+		</assets>
+		<news>
+[B][COLOR red]Update - v2.1.8 - April 07, 2022[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed BITCQ bug in pack file title checking.[/I]
+[COLOR yellow]--[/COLOR][I] Updated torrentinfo help file.[/I]
+[COLOR yellow]--[/COLOR][I] Small fix for BITSEARCH query results when an item might contain a new liked count mucking with the index.[/I]
+		</news>
+	</extension>
+</addon><addon id="script.module.metahandler" name="metahandler" version="5.0.1" provider-name="Eldorado">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.six" version="1.14.0+matrix.2" />
+		<import addon="script.module.simplejson" version="3.17.0+matrix.2" />
+		<import addon="script.module.myconnpy" version="8.0.18+matrix.1" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.python.pluginsource" library="lib/default.py" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Downloads Artwork for TV shows, Movies and Music videos for addons and stores them in a local SQLITE database</summary>
+		<description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com[CR]www.omdbapi.com[CR]This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
+		<disclaimer lang="en" />
+		<language />
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum />
+		<website />
+		<email />
+		<source />
+		<assets>
+			<icon>icon.png</icon>
+			<fanart />
+			<screenshot />
+		</assets>
+		<news>
+[B]Version 5.0.1[/B]
+- Fixed settings.xml version preventing setting UI from showing in Kodiunder Matrix
+		</news>
+	</extension>
+</addon><addon id="script.module.myaccounts" version="2.0.3" name="Ezra Accounts" provider-name="Ezra Hubbard">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" version="2.19.1" />
+	</requires>
+	<extension point="xbmc.python.script" library="lib/default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.service" library="lib/service.py" start="startup" />
+	<extension point="xbmc.python.module" library="lib" /> 
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<summary lang="en">Ezra Accounts Module</summary>
+		<description>Single placeholder for all your accounts.</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum />
+		<website />
+		<source />
+		<disclaimer lang="en">The author is not responsible for the use of this addon. [CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+			<screenshot />
+		</assets>
+		<news>
+		</news>
+	</extension>
+</addon><addon id="script.module.myaccounts2" version="2.0.0" name="My Accounts" provider-name="Venom, Fen">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" version="2.19.1" />
+	</requires>
+	<extension point="xbmc.python.script" library="lib/default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.service" library="lib/service.py" start="startup" />
+	<extension point="xbmc.python.module" library="lib" /> 
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<summary lang="en">My Accounts Module</summary>
+		<description>Single placeholder for all your accounts.</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum />
+		<website>https://github.com/Mr-Kodi/repository.myaccounts</website>
+		<source>https://github.com/Mr-Kodi/repository.myaccounts</source>
+		<disclaimer lang="en">The author is not responsible for the use of this addon. [CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+			<screenshot />
+		</assets>
+		<news>
+[B][COLOR red]Update - v2.0.0 - Nov. 23, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] First official py3 only version for Kodi Matrix.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed issue with "check for updates" using old github url.[/I]
+		</news>
+	</extension>
+</addon><addon id="script.tikiart" name="Tiki Art Module" provider-name="Tiki" version="1.1.58">
+    <extension point="xbmc.python.module" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Themes for Addons</summary>
+        <description>Themes for Addons</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+    </extension>
+</addon></addons>
