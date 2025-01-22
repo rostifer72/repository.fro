@@ -1,7 +1,0 @@
-Most likely with this release (Version 1.2.36), Furk It will be replaced with Fen with development of Furk It ceasing, and all future development dedicated to Fen.
-
-If you wish to try Fen (a renamed Furk It) then install it from Tikipeter repo. Users who rely on Furk It should migrate to the new Fen add-on.
-
-There is a tool to try to migrate your Furk It settings over to Fen, and there will be one notice like this in Fen to show you what to do.
-
-[B]THIS PROMPT SHOULD NOT SHOW AGAIN AFTER THIS INSTANCE.[/B]
